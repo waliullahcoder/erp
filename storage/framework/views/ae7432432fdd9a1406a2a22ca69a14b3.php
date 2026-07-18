@@ -1,0 +1,1 @@
+<?php /**PATH E:\laragon\www\erp\resources\views/errors/404.blade.php ENDPATH**/ ?>
