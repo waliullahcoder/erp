@@ -220,12 +220,13 @@
                 </button>
                 <div class="dropdown-menu custom-dropdown-menu shadow-lg border-0 rounded-3 mt-2">
                     <h6 class="dropdown-header fs-11 text-uppercase fw-bold text-muted px-3 pt-2 mb-1">{{__('messages.data_record')}}</h6>
-                    @can('admin.product.index')
+                
+                    @can('admin.product.create')
                     <a class="dropdown-item" href="{{url('/admin/product')}}">
                         <i class="fad fa-box-open text-primary"></i> <span>{{__('messages.product_list')}}</span>
                     </a>
                     @endcan
-                    @can('admin.client.index')
+                    @can('admin.client.create')
                     <a class="dropdown-item" href="{{url('/admin/client')}}">
                         <i class="fad fa-users text-success"></i> <span>{{__('messages.customer_list')}}</span>
                     </a>
