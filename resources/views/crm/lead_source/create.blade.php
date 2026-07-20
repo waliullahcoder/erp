@@ -9,10 +9,12 @@
                 <div class="card-header pe-2 py-2">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="h6 mb-0 text-uppercase">Lead Source Action</h6>
+                        @can('admin.lead-source.create')
                         <div class="flex-shrink-0">
                             <a href="{{ Route('admin.lead-source.index') }}" class="btn btn-primary btn-sm">Go Back</a>
                             <button type="submit" class="btn btn-primary btn-sm">Save</button>
                         </div>
+                        @endcan
                     </div>
                 </div>
                 <div class="card-body">

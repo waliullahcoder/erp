@@ -12,7 +12,7 @@
                         <h6 class="h6 mb-0 text-uppercase">Lead Source Edit Action</h6>
                         <div class="flex-shrink-0">
                             <a href="{{ Route('admin.lead-source.index') }}" class="btn btn-primary btn-sm">Go Back</a>
-                            <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end px-3 py-2">
-                    <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Update</button>
                 </div>
             </div>
         </form>

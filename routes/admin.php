@@ -111,7 +111,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
 });
 
 
-
+//CRM Module
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('/lead-source', LeadSourceController::class);
     Route::resource('/lead-status', LeadStatusController::class);
