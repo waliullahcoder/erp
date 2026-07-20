@@ -89,6 +89,11 @@ use App\Http\Controllers\Admin\LabelController;
 use App\Http\Controllers\Admin\PreOrderController;
 use App\Http\Controllers\Admin\RetailReturnController;
 
+//CRM
+use App\Http\Controllers\Crm\LeadController;
+use App\Http\Controllers\Crm\LeadSourceController;
+use App\Http\Controllers\Crm\LeadStatusController;
+
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
     Route::post('/login', [AdminController::class, 'login'])->name('login');
@@ -103,6 +108,15 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     return redirect()->back();
 
 })->name('language');
+});
+
+
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/lead-source', LeadSourceController::class);
+    Route::resource('/lead-status', LeadStatusController::class);
+    Route::resource('/lead', LeadController::class);
+
 });
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['admin_permission']], function () {

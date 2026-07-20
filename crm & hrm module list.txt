@@ -1,0 +1,61 @@
+CRM (Customer Relationship Management)
+Key	English	বাংলা
+========================
+Lead Management	লিড ব্যবস্থাপনা	
+Lead Source	লিডের উৎস	
+Lead Status	লিডের অবস্থা	
+Customer Management	গ্রাহক ব্যবস্থাপনা	
+Contact Management	যোগাযোগ ব্যবস্থাপনা	
+Follow Up	ফলো-আপ	
+Call Log	কল লগ	
+Meeting Schedule	মিটিং সময়সূচি
+Task Management	কাজের ব্যবস্থাপনা	
+Opportunity Management	বিক্রয় সুযোগ ব্যবস্থাপনা	
+Quotation	মূল্য প্রস্তাব
+Sales Pipeline	বিক্রয় পাইপলাইন	
+Customer Feedback	গ্রাহকের মতামত
+Support Ticket	সাপোর্ট টিকিট	
+Complaint Management	অভিযোগ ব্যবস্থাপনা	
+Campaign Management	ক্যাম্পেইন ব্যবস্থাপনা	
+Email Campaign	ইমেইল ক্যাম্পেইন	
+SMS Campaign	এসএমএস ক্যাম্পেইন	
+Customer Notes	গ্রাহক নোট	
+Customer Activity	গ্রাহকের কার্যক্রম
+CRM Dashboard	সিআরএম ড্যাশবোর্ড
+CRM Reports	সিআরএম প্রতিবেদন
+
+HRM & Payroll
+Key	English	বাংলা
+=====================
+Employee Management	কর্মচারী ব্যবস্থাপনা
+Department	বিভাগ
+Designation	পদবি
+Employee Attendance	কর্মচারীর উপস্থিতি
+Leave Management	ছুটি ব্যবস্থাপনা
+Leave Application	ছুটির আবেদন
+Holiday Setup	ছুটির তালিকা
+Shift Management	শিফট ব্যবস্থাপনা
+Roster Management	রোস্টার ব্যবস্থাপনা
+Payroll Management	বেতন ব্যবস্থাপনা
+Salary Structure	বেতন কাঠামো
+Generate Salary	বেতন তৈরি
+Salary Sheet	বেতন শীট
+Salary Payment	বেতন পরিশোধ
+Payslip	বেতন স্লিপ
+Bonus Management	বোনাস ব্যবস্থাপনা
+Increment Management	ইনক্রিমেন্ট ব্যবস্থাপনা
+Loan Management	ঋণ ব্যবস্থাপনা
+Advance Salary	অগ্রিম বেতন
+Overtime Management	ওভারটাইম ব্যবস্থাপনা
+Expense Claim	ব্যয় দাবি
+Employee Documents	কর্মচারীর ডকুমেন্ট
+Resignation	পদত্যাগ
+Termination	চাকরি সমাপ্তি
+Recruitment	নিয়োগ
+Interview	সাক্ষাৎকার
+Job Posting	চাকরির বিজ্ঞপ্তি
+Performance Appraisal	কর্মদক্ষতা মূল্যায়ন
+Training Management	প্রশিক্ষণ ব্যবস্থাপনা
+HR Dashboard	এইচআর ড্যাশবোর্ড
+HR Reports	এইচআর প্রতিবেদন
+Payroll Reports	বেতন প্রতিবেদন

@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
-const API_TOKEN = "zabcxpps-3p2u0j8t-poamlcuh-vfukis8d-gveezohu";
-const SID = "BONTONBULK";
-const DOMAIN = "https://smsplus.sslwireless.com";
+// const API_TOKEN = "zabcxpps-3p2u0j8t-poamlcuh-vfukis8d-gveezohu";
+// const SID = "BONTONBULK";
+// const DOMAIN = "https://smsplus.sslwireless.com";
 
 class CollectionController extends Controller
 {

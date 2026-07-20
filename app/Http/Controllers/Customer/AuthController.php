@@ -64,7 +64,7 @@ class AuthController extends Controller
         $msisdn = $phone;
         $messageBody = "Your Bonton Foods One Time Pin is " . $otp . ". It will expire in 5 minutes.";
         $csmsId = mt_rand(5, 15); // csms id must be unique
-        $this->singleSms($msisdn, $messageBody, $csmsId);
+       // $this->singleSms($msisdn, $messageBody, $csmsId);
         Session::forget('phone_number');
         Session::put(['phone_number' => $phone_number]);
         if($request->has('resend')){
