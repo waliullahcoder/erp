@@ -20,6 +20,7 @@ yarn-error.log
 # Laravel Storage
 /storage/*.key
 /storage/logs/*
+/storage/fonts/*
 /storage/debugbar/*
 /storage/framework/cache/*
 /storage/framework/sessions/*
