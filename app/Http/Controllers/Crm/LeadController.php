@@ -1,11 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Crm;
-
+use App\Models\Client;
+use App\Models\ClientCategory;
+use App\Models\CoaSetup;
+use App\Models\User;
+use App\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Services\ActionButtons\ActionButtons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -70,13 +75,13 @@ class LeadController extends Controller
                         </a>';
                     }
 
-                    if(auth()->user()->can('admin.lead.edit')){
+                    if(auth()->user()->can('admin.lead.edit') && $row->lead_status!='Converted'){
                         $btn .= '<a href="'.route('admin.lead.edit',$row->id).'"
                             class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
                         </a>';
                     }
-                    if(auth()->user()->can('admin.lead.edit')){
+                    if(auth()->user()->can('admin.lead.edit') && $row->lead_status!='Converted'){
                         $btn .= '<button type="button"
                             class="btn btn-sm btn-secondary btn-status"
                             data-id="'.$row->id.'"
@@ -113,7 +118,10 @@ class LeadController extends Controller
 
         return view('crm.leads.index',compact('lead_statuses'));
     }
-
+    public function dashboard()
+    {
+           return view('crm.dashboard.dashboard');
+    }
     /**
      * Show create form
      */
@@ -248,6 +256,51 @@ class LeadController extends Controller
                 'updated_at'=>now()
 
             ]);
+
+
+         if($request->lead_status_id==10){
+            DB::transaction(function () use ($request,$id) {
+                 $lead = DB::table('crm_leads')->where('id',$id)->first();
+                        $user = User::create([
+                            'company_id' => 1,
+                            'role' => 2,
+                            'name' => $lead->company_name,
+                            'user_name' => $request->mobile,
+                            'email' => $request->email,
+                            'phone' => $request->mobile,
+                            'status' => 1,
+                            'password' => Hash::make($request->mobile),
+                            'created_by' => Auth::user()->id,
+                        ]);
+
+                        Client::create([
+                            'company_id' => 1,
+                            'user_id' => $user->id,
+                            'reference_by' => Auth::user()->id,
+                            'area_id' => 1,
+                            'territory_id' => 1,
+                            'code' => 3,
+                            'name' => $lead->company_name,
+                            'contact_person' => $lead->contact_person,
+                            'email' => $lead->email,
+                            'phone' => $lead->mobile,
+                            'address' => $lead->address,
+                            'credit_limit' =>0,
+                            'discount' =>  0,
+                            'bin_no' => 0,
+                            'is_vat' =>0,
+                            'is_chain' => 0,
+                            'created_by' => Auth::user()->id,
+                        ]);
+
+                    });
+           return redirect()
+                ->back()
+                ->with('success','Converted Successfully as New Client!');
+            }
+          
+
+
 
         return redirect()
                 ->back()
