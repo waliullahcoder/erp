@@ -116,6 +116,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/lead-source', LeadSourceController::class);
     Route::resource('/lead-status', LeadStatusController::class);
     Route::resource('/lead', LeadController::class);
+    Route::put('/lead/{id}/status',[LeadController::class,'updateStatus'])->name('lead.status.update');
 
 });
 

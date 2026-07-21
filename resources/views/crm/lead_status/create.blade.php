@@ -81,7 +81,6 @@
                             <label for="status" class="form-label">
                                 <b>Status</b>
                             </label>
-
                             <div class="custom-select">
                                 <select class="form-control select2 custom-select__element"
                                     name="status"
@@ -103,7 +102,6 @@
                             <label for="description" class="form-label">
                                 <b>Description</b>
                             </label>
-
                             <textarea
                                 class="form-control"
                                 id="description"
