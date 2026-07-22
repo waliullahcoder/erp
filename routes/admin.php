@@ -93,6 +93,7 @@ use App\Http\Controllers\Admin\RetailReturnController;
 use App\Http\Controllers\Crm\LeadController;
 use App\Http\Controllers\Crm\LeadSourceController;
 use App\Http\Controllers\Crm\LeadStatusController;
+use App\Http\Controllers\Crm\MeetingController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -118,6 +119,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/lead', LeadController::class);
     Route::get('/crm/dashboard',[LeadController::class,'dashboard'])->name('crm.dashboard');
     Route::put('/lead/{id}/status',[LeadController::class,'updateStatus'])->name('lead.status.update');
+
+    Route::resource('/meeting-schedule', MeetingController::class);
 
 });
 
