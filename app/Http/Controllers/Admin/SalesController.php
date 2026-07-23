@@ -218,6 +218,7 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
+        d("fffff");
         $request->validate([
             'sales_type' => 'required',
             'invoice' => 'required',

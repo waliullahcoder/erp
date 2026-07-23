@@ -153,7 +153,7 @@ body,*{
             <tr>
                 <td>
                     <div class="logo-area">
-                        <img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents(!is_null($logo) && file_exists($logo) ? public_path($logo) : public_path('backend/images/logo/logo.jpg'))) }}"
+                        <img src="{{ file_exists(@$admin_setting->logo) ? asset(@$admin_setting->logo) : asset('backend/images/logo/logo.png') }}"
                             height="80" alt="Logo" />
                     </div>
                 </td>
