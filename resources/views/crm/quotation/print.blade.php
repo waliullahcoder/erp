@@ -139,6 +139,13 @@
                 </tr>
             </tbody>
         </table>
+        <table class="table mb-0 info-table align-middle" style="border: 2px solid black;margin-top:10px;">
+            <tbody>
+                 <tr>
+                    <td class="text-left" colspan="6"><b>Note :</b> {{ $data->note }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer class="print-footer">

@@ -113,6 +113,10 @@ Save
             <label class="form-label text-white d-sm-block d-none"><b>Add</b></label>
             <button type="button" class="btn btn-xs btn-primary w-100 px-2 py-2" id="add_item">Add Product</button>
         </div>
+          <div class="col-12">
+            <label for="note" class="form-label"><b>Quotation Note</b></label>
+            <textarea type="text" class="form-control" id="note" name="note" placeholder="Write note here.."></textarea>
+        </div>
         <div class="col-12">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped target-table align-middle mb-0">

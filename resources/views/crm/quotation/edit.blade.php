@@ -127,6 +127,10 @@ Save
             <button type="button" class="btn btn-xs btn-primary w-100 px-2 py-2" id="add_item">Add Product</button>
         </div>
         <div class="col-12">
+            <label for="note" class="form-label"><b>Quotation Note</b></label>
+            <textarea type="text" class="form-control" id="note" name="note">{{$quotation->note}}</textarea>
+        </div>
+        <div class="col-12">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped target-table align-middle mb-0">
                     <thead class="bg-primary border-primary text-white text-nowrap">
