@@ -15,9 +15,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for erp
-
-USE `technopa_proerp`;
+USE `technopa_crm`;
 
 -- Dumping structure for table erp.abouts
 DROP TABLE IF EXISTS `abouts`;
@@ -56,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `access_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.access_logs: ~6 rows (approximately)
 DELETE FROM `access_logs`;
@@ -66,7 +64,8 @@ INSERT INTO `access_logs` (`id`, `date_time`, `page`, `action`, `description`, `
 	(3, '2026-07-07 10:15:59', 'Retail Sales', 'Add', 'Create a new retail sales with invoice no RS26070001 to client www from store Shankhari Bazar sales amount is 33 sales discount 0 products  Test Quantity : 1 KG on Retail Sales', 1, '2026-07-07 10:15:59', '2026-07-07 10:15:59'),
 	(4, '2026-07-07 10:16:51', 'Purchase', 'Add', 'Create a new purhcase with purchase no STL2607000001 to Shankhari Bazar products  Test 100 KG  on credit', 1, '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
 	(5, '2026-07-13 08:26:25', 'Retail Sales', 'Add', 'Create a new retail sales with invoice no RS26070002 to client w from store Shankhari Bazar sales amount is 33 sales discount 0 products  Test Quantity : 1 KG Test Quantity : 1 KG on Retail Sales', 1, '2026-07-13 08:26:25', '2026-07-13 08:26:25'),
-	(6, '2026-07-13 08:42:31', 'Sales', 'Add', 'Create a new sales with invoice no STS2607000001 to client Wali from store Shankhari Bazar sales amount is 33 sales discount 3 products  Test Quanity : 1 KG on credit sale', 1, '2026-07-13 08:42:31', '2026-07-13 08:42:31');
+	(6, '2026-07-13 08:42:31', 'Sales', 'Add', 'Create a new sales with invoice no STS2607000001 to client Wali from store Shankhari Bazar sales amount is 33 sales discount 3 products  Test Quanity : 1 KG on credit sale', 1, '2026-07-13 08:42:31', '2026-07-13 08:42:31'),
+	(7, '2026-07-27 04:28:42', 'Purchase', 'Add', 'Create a new purhcase with purchase no STL2607000002 to Shankhari Bazar products  Hair Oil 100ml 100 Gm  on credit', 1, '2026-07-27 04:28:42', '2026-07-27 04:28:42');
 
 -- Dumping structure for table erp.account_transactions
 DROP TABLE IF EXISTS `account_transactions`;
@@ -122,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `account_transaction_autos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.account_transaction_autos: ~12 rows (approximately)
 DELETE FROM `account_transaction_autos`;
@@ -138,7 +137,9 @@ INSERT INTO `account_transaction_autos` (`id`, `company_id`, `voucher_no`, `vouc
 	(9, 1, 'RS26070002', 'Retail Sales', '2026-07-13', 26, 1010201, 'Retail Sales Against Invoice No - RS26070002', 33.00, 0.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
 	(10, 1, 'RS26070002', 'Retail Sales', '2026-07-13', 79, 30104, 'Retail Sales Against Invoice No - RS26070002', 0.00, 33.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
 	(11, 1, 'STS2607000001', 'Sales', '2026-07-13', 141, 1010102, 'Product Sales Against Invoice No - STS2607000001', 30.00, 0.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:42:31', '2026-07-13 08:42:31'),
-	(12, 1, 'STS2607000001', 'Sales', '2026-07-13', 78, 30103, 'Product Sales Against Invoice No - STS2607000001', 0.00, 30.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:42:31', '2026-07-13 08:42:31');
+	(12, 1, 'STS2607000001', 'Sales', '2026-07-13', 78, 30103, 'Product Sales Against Invoice No - STS2607000001', 0.00, 30.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:42:31', '2026-07-13 08:42:31'),
+	(13, 1, 'STL2607000002', 'Product Purchase', '2026-07-27', 127, 40201, 'Product Purchase Against Purchase No - STL2607000002', 5000.00, 0.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41'),
+	(14, 1, 'STL2607000002', 'Product Purchase', '2026-07-27', 166, 20101, 'Product Purchase Against Purchase No - STL2607000002', 0.00, 5000.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
 -- Dumping structure for table erp.admin_menus
 DROP TABLE IF EXISTS `admin_menus`;
@@ -156,9 +157,9 @@ CREATE TABLE IF NOT EXISTS `admin_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=254 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.admin_menus: ~145 rows (approximately)
+-- Dumping data for table erp.admin_menus: ~189 rows (approximately)
 DELETE FROM `admin_menus`;
 INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`, `route`, `icon`, `order`, `status`, `delete`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, 'Dashboard', 'ড্যাশবোর্ড', 'admin.dashboard', '<i class="fad fa-tachometer-alt-fastest"></i>', 1, 1, 1, '2023-09-19 09:04:28', '2026-07-16 03:36:40'),
@@ -199,7 +200,7 @@ INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`
 	(38, 50, 37, 'Transaction', 'লেনদেন', NULL, NULL, 1, 1, 1, '2023-09-19 09:28:16', '2023-09-19 09:28:16'),
 	(39, 51, 8, 'Region Setup', 'অঞ্চল সেটআপ', 'admin.region.index', NULL, 0, 0, 1, '2023-09-19 09:28:49', '2024-09-11 04:16:06'),
 	(40, 52, 8, 'Area Setup', 'এলাকা সেটআপ', 'admin.area.index', NULL, 1, 1, 1, '2023-09-19 09:29:03', '2023-09-23 14:48:28'),
-	(41, 53, 8, 'Address Setup', 'ঠিকানা সেটআপ', 'admin.territory.index', NULL, 2, 1, 1, '2023-09-19 09:29:15', '2023-09-23 14:48:48'),
+	(41, 53, 8, 'Zone/Territory Setup', 'ঠিকানা সেটআপ', 'admin.territory.index', NULL, 2, 1, 1, '2023-09-19 09:29:15', '2026-07-18 09:31:40'),
 	(42, 54, 38, 'Client Setup', 'গ্রাহক সেটআপ', 'admin.client.index', NULL, 0, 1, 1, '2023-09-19 09:29:28', '2023-10-13 04:45:32'),
 	(43, 55, 38, 'Invoice', ' বিক্রয়', 'admin.sales.index', NULL, 3, 1, 1, '2023-09-19 09:29:42', '2025-04-13 12:09:37'),
 	(44, 56, 38, 'Collection', 'গ্রাহক আদায়', 'admin.collection.index', NULL, 6, 1, 1, '2023-09-19 09:29:54', '2025-04-13 12:10:05'),
@@ -308,29 +309,15 @@ INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`
 	(197, 609, 48, 'Retail Return Report', 'খুচরা ফেরত প্রতিবেদন', 'admin.retail-return-report.index', NULL, 14, 1, 1, '2025-05-28 09:38:20', '2025-05-28 09:38:30'),
 	(198, 610, NULL, 'CRM', 'কাস্টমার রিলেশনশিপ ম্যানেজমেন্ট', 'crm', '<i class="fad fa-user-friends"></i>', 7, 1, 1, '2026-07-16 06:22:01', '2026-07-16 06:22:01'),
 	(199, 611, NULL, 'HRM & Payroll', 'হিউম্যান রিসোর্স & বেতন ব্যবস্থাপনা', 'hrm', '<i class="fad fa-user-tie"></i>', 8, 1, 1, '2026-07-16 06:24:08', '2026-07-16 06:26:18'),
-	(200, 612, 198, 'Lead Management', 'লিড ব্যবস্থাপনা', NULL, NULL, 1, 1, 1, '2026-07-16 06:28:14', '2026-07-16 06:28:14'),
+	(200, 612, 198, 'Lead Management', 'লিড ব্যবস্থাপনা', 'admin.lead.index', NULL, 2, 1, 1, '2026-07-16 06:28:14', '2026-07-21 05:11:00'),
 	(201, 613, 199, 'Employee Management', 'কর্মচারী ব্যবস্থাপনা', NULL, NULL, 1, 1, 1, '2026-07-16 06:29:37', '2026-07-16 06:29:37'),
-	(202, 614, 198, 'Lead Source', 'লিডের উৎস', NULL, NULL, 2, 1, 1, '2026-07-16 06:31:42', '2026-07-16 06:31:42'),
-	(203, 615, 198, 'Lead Status', 'লিডের অবস্থা', NULL, NULL, 3, 1, 1, '2026-07-16 06:32:37', '2026-07-16 06:32:37'),
-	(204, 616, 198, 'Customer Management', 'গ্রাহক ব্যবস্থাপনা', NULL, NULL, 4, 1, 1, '2026-07-16 06:33:06', '2026-07-16 06:33:06'),
-	(205, 617, 198, 'Contact Management', 'যোগাযোগ ব্যবস্থাপনা', NULL, NULL, 5, 1, 1, '2026-07-16 06:33:38', '2026-07-16 06:33:38'),
-	(206, 618, 198, 'Follow Up', 'ফলো-আপ', NULL, NULL, 6, 1, 1, '2026-07-16 06:34:07', '2026-07-16 06:34:38'),
-	(207, 619, 198, 'Call Log', 'কল লগ', NULL, NULL, 7, 1, 1, '2026-07-16 06:35:23', '2026-07-16 06:35:23'),
-	(208, 620, 198, 'Meeting Schedule', 'মিটিং সময়সূচি', NULL, NULL, 8, 1, 1, '2026-07-16 06:35:59', '2026-07-16 06:35:59'),
-	(209, 621, 198, 'Task Management', 'কাজের ব্যবস্থাপনা', NULL, NULL, 8, 1, 1, '2026-07-16 06:36:22', '2026-07-16 06:36:22'),
-	(210, 622, 198, 'Opportunity Management', 'বিক্রয় সুযোগ ব্যবস্থাপনা', NULL, NULL, 9, 1, 1, '2026-07-16 06:36:44', '2026-07-16 06:36:44'),
-	(211, 623, 198, 'Quotation', 'মূল্য প্রস্তাব', NULL, NULL, 10, 1, 1, '2026-07-16 06:37:10', '2026-07-16 06:37:10'),
-	(212, 624, 198, 'Sales Pipeline', 'বিক্রয় পাইপলাইন', NULL, NULL, 11, 1, 1, '2026-07-16 06:37:45', '2026-07-16 06:37:45'),
-	(213, 625, 198, 'Customer Feedback', 'গ্রাহকের মতামত', NULL, NULL, 12, 1, 1, '2026-07-16 06:38:10', '2026-07-16 06:38:10'),
-	(214, 626, 198, 'Support Ticket', 'সাপোর্ট টিকিট', NULL, NULL, 13, 1, 1, '2026-07-16 06:38:32', '2026-07-16 06:38:32'),
-	(215, 627, 198, 'Complaint Management', 'অভিযোগ ব্যবস্থাপনা', NULL, NULL, 14, 1, 1, '2026-07-16 06:38:56', '2026-07-16 06:38:56'),
-	(216, 628, 198, 'Campaign Management', 'ক্যাম্পেইন ব্যবস্থাপনা', NULL, NULL, 14, 1, 1, '2026-07-16 06:39:23', '2026-07-16 06:39:23'),
-	(217, 629, 198, 'Email Campaign', 'ইমেইল ক্যাম্পেইন', NULL, NULL, 15, 1, 1, '2026-07-16 06:39:52', '2026-07-16 06:39:52'),
-	(218, 630, 198, 'SMS Campaign', 'এসএমএস ক্যাম্পেইন', NULL, NULL, 16, 1, 1, '2026-07-16 06:40:14', '2026-07-16 06:40:14'),
-	(219, 631, 198, 'Customer Notes', 'গ্রাহক নোট', NULL, NULL, 17, 1, 1, '2026-07-16 06:40:44', '2026-07-16 06:40:44'),
-	(220, 632, 198, 'Customer Activity', 'গ্রাহকের কার্যক্রম', NULL, NULL, 18, 1, 1, '2026-07-16 06:41:09', '2026-07-16 06:41:09'),
-	(221, 633, 198, 'CRM Dashboard', 'সিআরএম ড্যাশবোর্ড', NULL, NULL, 19, 1, 1, '2026-07-16 06:41:34', '2026-07-16 06:41:34'),
-	(222, 634, 198, 'CRM Reports', 'সিআরএম প্রতিবেদন', NULL, NULL, 20, 1, 1, '2026-07-16 06:41:56', '2026-07-16 06:41:56'),
+	(202, 614, 198, 'Lead Source', 'লিডের উৎস', 'admin.lead-source.index', NULL, 2, 1, 1, '2026-07-16 06:31:42', '2026-07-19 11:05:22'),
+	(203, 615, 198, 'Lead Status', 'লিডের অবস্থা', 'admin.lead-status.index', NULL, 3, 1, 1, '2026-07-16 06:32:37', '2026-07-20 09:13:23'),
+	(204, 616, 198, 'Customer Management', 'গ্রাহক ব্যবস্থাপনা', 'admin.client.index', NULL, 4, 1, 1, '2026-07-16 06:33:06', '2026-07-21 04:02:13'),
+	(208, 620, 198, 'Meeting Schedule', 'মিটিং সময়সূচি', 'admin.meeting-schedule.index', NULL, 8, 1, 1, '2026-07-16 06:35:59', '2026-07-22 09:57:44'),
+	(211, 623, 198, 'Quotation', 'মূল্য প্রস্তাব', 'admin.quotation.index', NULL, 10, 1, 1, '2026-07-16 06:37:10', '2026-07-23 07:02:44'),
+	(221, 633, 198, 'CRM Dashboard', 'সিআরএম ড্যাশবোর্ড', 'admin.crm.dashboard', NULL, 1, 1, 1, '2026-07-16 06:41:34', '2026-07-21 05:50:33'),
+	(222, 634, 198, 'CRM Reports', 'সিআরএম প্রতিবেদন', 'admin.crm-report.index', NULL, 20, 1, 1, '2026-07-16 06:41:56', '2026-07-27 09:09:40'),
 	(223, 635, 199, 'Department', 'বিভাগ', NULL, NULL, 2, 1, 1, '2026-07-16 06:43:19', '2026-07-16 06:43:19'),
 	(224, 636, 199, 'Designation', 'পদবি', NULL, NULL, 3, 1, 1, '2026-07-16 06:46:04', '2026-07-16 06:46:04'),
 	(225, 637, 199, 'Employee Attendance', 'কর্মচারীর উপস্থিতি', NULL, NULL, 4, 1, 1, '2026-07-16 06:46:37', '2026-07-16 06:46:37'),
@@ -361,7 +348,8 @@ INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`
 	(250, 662, 199, 'Training Management', 'প্রশিক্ষণ ব্যবস্থাপনা', NULL, NULL, 28, 1, 1, '2026-07-16 08:46:06', '2026-07-16 08:46:06'),
 	(251, 663, 199, 'HR Dashboard', 'এইচআর ড্যাশবোর্ড', NULL, NULL, 29, 1, 1, '2026-07-16 08:46:26', '2026-07-16 08:46:26'),
 	(252, 664, 199, 'HR Reports', 'এইচআর প্রতিবেদন', NULL, NULL, 30, 1, 1, '2026-07-16 08:46:46', '2026-07-16 08:46:46'),
-	(253, 665, 199, 'Payroll Reports', 'বেতন প্রতিবেদন', NULL, NULL, 31, 1, 1, '2026-07-16 08:47:09', '2026-07-16 08:47:09');
+	(253, 665, 199, 'Payroll Reports', 'বেতন প্রতিবেদন', NULL, NULL, 31, 1, 1, '2026-07-16 08:47:09', '2026-07-16 08:47:09'),
+	(254, 676, 198, 'Customer Requirements', 'কাস্টমার চাহিদা', 'admin.customer-requirement.index', NULL, 10, 1, 1, '2026-07-21 05:08:08', '2026-07-27 05:37:04');
 
 -- Dumping structure for table erp.admin_menu_actions
 DROP TABLE IF EXISTS `admin_menu_actions`;
@@ -375,9 +363,9 @@ CREATE TABLE IF NOT EXISTS `admin_menu_actions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=414 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=432 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.admin_menu_actions: ~274 rows (approximately)
+-- Dumping data for table erp.admin_menu_actions: ~276 rows (approximately)
 DELETE FROM `admin_menu_actions`;
 INSERT INTO `admin_menu_actions` (`id`, `permission_id`, `admin_menu_id`, `name`, `route`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 8, 7, 'Create', 'admin.admin-menu.create', 1, '2023-09-19 09:16:56', '2023-09-19 09:16:56'),
@@ -653,7 +641,24 @@ INSERT INTO `admin_menu_actions` (`id`, `permission_id`, `admin_menu_id`, `name`
 	(409, 605, 1, 'Total Products', 'Total Products', 1, '2025-05-26 08:54:21', '2025-05-26 08:54:21'),
 	(410, 606, 1, 'Stock Value', 'Stock Value', 1, '2025-05-26 08:54:26', '2025-05-26 08:54:26'),
 	(411, 607, 1, 'Payment Due', 'Payment Due', 1, '2025-05-26 08:54:31', '2025-05-26 08:54:31'),
-	(412, 608, 1, 'Outstanding', 'Outstanding', 1, '2025-05-26 08:54:36', '2025-05-26 08:54:36');
+	(412, 608, 1, 'Outstanding', 'Outstanding', 1, '2025-05-26 08:54:36', '2025-05-26 08:54:36'),
+	(414, 667, 202, 'edit', 'admin.lead-source.edit', 1, '2026-07-19 11:06:55', '2026-07-19 11:06:55'),
+	(415, 668, 202, 'create', 'admin.lead-source.create', 1, '2026-07-20 08:31:25', '2026-07-20 08:31:25'),
+	(416, 669, 203, 'create', 'admin.lead-status.create', 1, '2026-07-20 09:14:43', '2026-07-20 09:14:43'),
+	(417, 670, 203, 'edit', 'admin.lead-status.edit', 1, '2026-07-20 09:14:55', '2026-07-20 09:14:55'),
+	(418, 671, 200, 'create', 'admin.lead.create', 1, '2026-07-20 10:52:20', '2026-07-20 10:52:20'),
+	(419, 672, 200, 'edit', 'admin.lead.edit', 1, '2026-07-20 10:52:31', '2026-07-20 10:52:31'),
+	(420, 673, 200, 'show', 'admin.lead.show', 1, '2026-07-20 11:06:30', '2026-07-20 11:06:30'),
+	(421, 674, 200, 'store', 'admin.lead.store', 1, '2026-07-20 11:35:06', '2026-07-20 11:35:06'),
+	(422, 675, 200, 'update', 'admin.lead.update', 1, '2026-07-20 11:35:19', '2026-07-20 11:35:19'),
+	(423, 677, 208, 'create', 'admin.meeting-schedule.create', 1, '2026-07-22 09:59:07', '2026-07-22 09:59:07'),
+	(424, 678, 208, 'edit', 'admin.meeting-schedule.edit', 1, '2026-07-22 09:59:21', '2026-07-22 09:59:21'),
+	(425, 679, 211, 'edit', 'admin.quotation.edit', 1, '2026-07-23 09:00:34', '2026-07-23 09:00:34'),
+	(426, 680, 211, 'show', 'admin.quotation.show', 1, '2026-07-23 09:00:49', '2026-07-23 09:00:49'),
+	(427, 681, 211, 'create', 'admin.quotation.create', 1, '2026-07-23 09:01:04', '2026-07-23 09:01:04'),
+	(429, 683, 254, 'edit', 'admin.customer-requirement.edit', 1, '2026-07-27 05:37:52', '2026-07-27 05:37:52'),
+	(430, 684, 254, 'create', 'admin.customer-requirement.create', 1, '2026-07-27 05:38:06', '2026-07-27 05:38:06'),
+	(431, 685, 254, 'show', 'admin.customer-requirement.show', 1, '2026-07-27 06:53:16', '2026-07-27 06:53:16');
 
 -- Dumping structure for table erp.admin_settings
 DROP TABLE IF EXISTS `admin_settings`;
@@ -681,7 +686,7 @@ CREATE TABLE IF NOT EXISTS `admin_settings` (
 -- Dumping data for table erp.admin_settings: ~1 rows (approximately)
 DELETE FROM `admin_settings`;
 INSERT INTO `admin_settings` (`id`, `logo`, `favicon`, `title`, `footer_text`, `secondary_color`, `primary_color`, `accounting`, `invest_value`, `store_id`, `facebook`, `twitter`, `linkedin`, `whatsapp`, `google`, `created_at`, `updated_at`) VALUES
-	(1, 'media/admin-setting//2026-07-15-ABhLVxbUicCewF4lf9izApmOuLIkjhJ3CIqsXenI.webp', 'media/admin-setting//2026-07-15-vbvTfL6D5b73pcbmXUwv1M8lPsiwQAny8u2BU0yA.webp', 'App Pro ERP', '© 2025 Developed by <a target="_blank" href="http://www.technoparkbd.com/">Techno Park Bangladesh</a>', '#ff6505', '#198754', 1, 50000, 2, NULL, NULL, NULL, NULL, NULL, '2023-09-19 09:03:18', '2026-07-15 06:57:43');
+	(1, 'media/admin-setting//2026-07-15-ABhLVxbUicCewF4lf9izApmOuLIkjhJ3CIqsXenI.webp', 'media/admin-setting//2026-07-15-vbvTfL6D5b73pcbmXUwv1M8lPsiwQAny8u2BU0yA.webp', 'AppproERP', '© 2025 Developed by <a target="_blank" href="http://www.technoparkbd.com/">Techno Park Bangladesh</a>', '#ff6505', '#198754', 1, 50000, 2, NULL, NULL, NULL, NULL, NULL, '2023-09-19 09:03:18', '2026-07-21 03:19:20');
 
 -- Dumping structure for table erp.areas
 DROP TABLE IF EXISTS `areas`;
@@ -897,9 +902,9 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=213 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.categories: ~170 rows (approximately)
+-- Dumping data for table erp.categories: ~171 rows (approximately)
 DELETE FROM `categories`;
 INSERT INTO `categories` (`id`, `company_id`, `parent_id`, `name`, `slug`, `image`, `meta_title`, `meta_keyword`, `meta_description`, `featured`, `order`, `status`, `show_frontend`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(31, 1, NULL, 'Chicken Item', 'chicken-item', NULL, 'Poultry', NULL, NULL, 0, 0, 1, 1, 1, 1, 2, '2025-04-27 12:15:44', '2024-07-07 11:44:44', '2025-04-27 12:15:44'),
@@ -1071,7 +1076,8 @@ INSERT INTO `categories` (`id`, `company_id`, `parent_id`, `name`, `slug`, `imag
 	(209, 1, 65, 'Fiter Cleaner', 'fiter-cleaner', NULL, 'Fiter Cleaner', NULL, NULL, 0, 0, 1, 0, 159, NULL, NULL, NULL, '2026-02-25 16:33:28', '2026-02-25 16:33:28'),
 	(210, 1, 82, 'Shoe Polish', 'shoe-polish', NULL, 'Shoe Polish', NULL, NULL, 0, 0, 1, 0, 159, NULL, NULL, NULL, '2026-02-26 15:56:46', '2026-02-26 15:56:46'),
 	(211, 1, 193, 'Plate', 'plate-2', NULL, 'Plate', NULL, NULL, 0, 0, 1, 0, 159, 159, NULL, NULL, '2026-03-10 08:18:09', '2026-03-10 08:18:46'),
-	(212, 1, 193, 'Designer Things', 'designer-things', NULL, 'Designer Things', NULL, NULL, 0, 0, 1, 0, 159, 159, NULL, NULL, '2026-03-10 08:28:46', '2026-04-08 09:16:23');
+	(212, 1, 193, 'Designer Things', 'designer-things', NULL, 'Designer Things', NULL, NULL, 0, 0, 1, 0, 159, 159, NULL, NULL, '2026-03-10 08:28:46', '2026-04-08 09:16:23'),
+	(213, 1, 104, 'Hair Oil', 'hair-oil', NULL, NULL, NULL, NULL, 0, 0, 1, 0, 1, NULL, NULL, NULL, '2026-07-27 04:25:07', '2026-07-27 04:25:07');
 
 -- Dumping structure for table erp.category_vendors
 DROP TABLE IF EXISTS `category_vendors`;
@@ -1082,7 +1088,7 @@ CREATE TABLE IF NOT EXISTS `category_vendors` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.category_vendors: ~32 rows (approximately)
 DELETE FROM `category_vendors`;
@@ -1118,7 +1124,8 @@ INSERT INTO `category_vendors` (`id`, `category_id`, `vendor_id`, `created_at`, 
 	(112, 82, 10, '2025-08-20 07:52:23', '2025-08-20 07:52:23'),
 	(114, 43, 21, '2025-10-07 11:16:33', '2025-10-07 11:16:33'),
 	(116, 107, 10, '2026-01-05 15:24:51', '2026-01-05 15:24:51'),
-	(117, 58, 3, '2026-02-23 15:09:23', '2026-02-23 15:09:23');
+	(117, 58, 3, '2026-02-23 15:09:23', '2026-02-23 15:09:23'),
+	(118, 213, 1, '2026-07-27 04:25:07', '2026-07-27 04:25:07');
 
 -- Dumping structure for table erp.chain_clients
 DROP TABLE IF EXISTS `chain_clients`;
@@ -1174,13 +1181,15 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3034 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3037 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.clients: ~2 rows (approximately)
+-- Dumping data for table erp.clients: ~4 rows (approximately)
 DELETE FROM `clients`;
 INSERT INTO `clients` (`id`, `company_id`, `user_id`, `coa_setup_id`, `reference_by`, `client_category_id`, `area_id`, `territory_id`, `code`, `name`, `contact_person`, `phone`, `email`, `address`, `credit_limit`, `bin_no`, `chain_client_id`, `discount`, `status`, `is_chain`, `is_vat`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(3032, 1, 147, 130, 52, NULL, 19, 58, 1, 'Frozen Foodi', NULL, '1111111111', NULL, NULL, 1000000.00, NULL, NULL, 0.00, 1, 0, 0, 1, 2, 1, '2025-04-30 08:08:20', '2024-10-13 17:27:48', '2025-04-30 08:08:20'),
-	(3033, 1, 170, 141, 60, NULL, 19, 58, 2, 'Wali', NULL, '01921588521', NULL, NULL, 10000.00, NULL, NULL, 0.00, 1, 0, 0, 1, 1, NULL, NULL, '2026-07-13 08:39:39', '2026-07-13 08:41:55');
+	(3033, 1, 170, 141, 60, NULL, 19, 58, 2, 'Wali', NULL, '01921588521', NULL, NULL, 10000.00, NULL, NULL, 0.00, 1, 0, 0, 1, 1, NULL, NULL, '2026-07-13 08:39:39', '2026-07-13 08:41:55'),
+	(3034, 1, 182, NULL, 60, NULL, 19, 58, 3, 'fffffffff', NULL, '33333', NULL, NULL, NULL, NULL, NULL, 0.00, 1, 0, 0, 1, NULL, 1, '2026-07-21 09:56:56', '2026-07-21 07:18:01', '2026-07-21 09:56:56'),
+	(3036, 1, 185, NULL, 60, NULL, 19, 58, 3, 'SGS', 'Techno Park', '019215554555', 'technoparkbd@gmail.com', 'aas', 0.00, 0, NULL, 0.00, 1, 0, 0, 1, 1, NULL, NULL, '2026-07-21 10:05:00', '2026-07-21 10:05:52');
 
 -- Dumping structure for table erp.client_categories
 DROP TABLE IF EXISTS `client_categories`;
@@ -1555,7 +1564,7 @@ CREATE TABLE IF NOT EXISTS `companies` (
 -- Dumping data for table erp.companies: ~0 rows (approximately)
 DELETE FROM `companies`;
 INSERT INTO `companies` (`id`, `prefix`, `name`, `username`, `email`, `phone`, `fax`, `website`, `vat`, `tin`, `trade_license`, `address`, `logo`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 'ERP', 'App Pro ERP', 'sahebbazaar', 'info@technoparkbd.com', '01552344239', '01552344239', 'Website: www.technoparkbd.com', '5', NULL, NULL, 'House # 10/B Road No 6, Dhaka 1205', 'media/company//2025-04-21-MmcWAfUBqLKihABVkKYLMvzQayIEol95B0YlwV6M.webp', 1, 1, NULL, NULL, '2023-09-23 06:52:33', '2026-07-16 08:58:39');
+	(1, 'ERP', 'App Pro ERP', 'sahebbazaar', 'info@technoparkbd.com', '01552344239', '01552344239', 'Website: www.technoparkbd.com', '5', NULL, NULL, 'House # 10/B Road No 6, Dhaka 1205', 'media/company//2026-07-23-YzSlNBtshZ2ucbW5wSG5Sps3ZFtnjR91rbTqsl0Y.webp', 1, 1, NULL, NULL, '2023-09-23 06:52:33', '2026-07-23 09:53:37');
 
 -- Dumping structure for table erp.contacts
 DROP TABLE IF EXISTS `contacts`;
@@ -1579,6 +1588,242 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 DELETE FROM `contacts`;
 INSERT INTO `contacts` (`id`, `heading`, `title`, `address`, `work_time`, `primary_mobile`, `primary_email`, `secondary_mobile`, `secondary_email`, `map_url`, `created_at`, `updated_at`) VALUES
 	(1, 'GET IN TOUCH', 'Don’t hesitate to contact us directly so that we can think together about a solution.', '<p style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, " segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="">৩১৬/২, ৬-বি, ডিআইটি রোড,  পূর্ব রামপুরা, ঢাকা-১২১৯।<br></p>', '<span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">Monday to Friday</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">7 a.m. 12 p.m. – 1 p.m. 4 p.m.</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">Saturday</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">8 a.m. 2 p.m.</span>', '01716918884', 'info@nijerbazarbd.com', NULL, 'sales@nijerbazarbd.com', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.6713598084884!2d90.41308638555972!3d23.759096033445807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8792521cc35%3A0xd5aaf741fec33d8e!2s316%2C%206%20DIT%20Rd%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1722152464023!5m2!1sen!2sbd', '2024-02-27 09:09:56', '2024-10-12 11:13:49');
+
+-- Dumping structure for table erp.crm_customer_requirements
+DROP TABLE IF EXISTS `crm_customer_requirements`;
+CREATE TABLE IF NOT EXISTS `crm_customer_requirements` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `lead_id` bigint unsigned NOT NULL,
+  `meeting_type` varchar(100) DEFAULT NULL,
+  `related_module` varchar(100) DEFAULT NULL,
+  `requirement_details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `req_date` date NOT NULL,
+  `record_time` time NOT NULL,
+  `requirement_status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1=Scheduled,2=Completed,3=Cancelled',
+  `created_by` bigint unsigned DEFAULT NULL,
+  `updated_by` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_customer_requirements: ~2 rows (approximately)
+DELETE FROM `crm_customer_requirements`;
+INSERT INTO `crm_customer_requirements` (`id`, `lead_id`, `meeting_type`, `related_module`, `requirement_details`, `req_date`, `record_time`, `requirement_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 3, 'Online', 'Support', 'csadsada', '2026-07-22', '12:22:00', 2, 1, 1, '2026-07-22 09:55:07', '2026-07-27 06:26:55'),
+	(2, 1, 'Online', 'Production', '<p><br></p><table class="table table-bordered"><tbody><tr><td>adasd</td><td>sadas</td><td>dsad</td><td>sadas</td><td><br></td></tr><tr><td><br></td><td>dsads</td><td>dasd</td><td><br></td><td>asdasas</td></tr><tr><td>sadasds</td><td>dasda</td><td>sdas</td><td>asdad</td><td><br></td></tr><tr><td><br></td><td>dasd</td><td><br></td><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td><td>dasdas</td><td><br></td><td><br></td></tr><tr><td><br></td><td>dasd</td><td><br></td><td><br></td><td><br></td></tr></tbody></table><p><br></p>', '2026-07-27', '00:45:00', 1, 1, 1, '2026-07-27 06:48:31', '2026-07-27 06:52:08');
+
+-- Dumping structure for table erp.crm_leads
+DROP TABLE IF EXISTS `crm_leads`;
+CREATE TABLE IF NOT EXISTS `crm_leads` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `lead_no` varchar(50) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  `contact_person` varchar(150) NOT NULL,
+  `mobile` varchar(20) NOT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `lead_source_id` bigint unsigned DEFAULT NULL,
+  `lead_status_id` bigint unsigned DEFAULT NULL,
+  `assigned_to` bigint unsigned DEFAULT NULL,
+  `proposal_value` double DEFAULT NULL,
+  `expected_value` decimal(15,2) DEFAULT '0.00',
+  `priority` enum('Low','Medium','High','Urgent') DEFAULT 'Medium',
+  `follow_up_date` date DEFAULT NULL,
+  `next_follow_up` datetime DEFAULT NULL,
+  `address` text,
+  `city` varchar(100) DEFAULT NULL,
+  `district` varchar(100) DEFAULT NULL,
+  `remarks` text,
+  `status` tinyint(1) DEFAULT '1',
+  `created_by` bigint unsigned DEFAULT NULL,
+  `updated_by` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `lead_no` (`lead_no`),
+  KEY `fk_lead_source` (`lead_source_id`),
+  KEY `fk_lead_status` (`lead_status_id`),
+  CONSTRAINT `fk_lead_source` FOREIGN KEY (`lead_source_id`) REFERENCES `crm_lead_sources` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `fk_lead_status` FOREIGN KEY (`lead_status_id`) REFERENCES `crm_lead_statuses` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_leads: ~4 rows (approximately)
+DELETE FROM `crm_leads`;
+INSERT INTO `crm_leads` (`id`, `lead_no`, `company_name`, `contact_person`, `mobile`, `email`, `website`, `lead_source_id`, `lead_status_id`, `assigned_to`, `proposal_value`, `expected_value`, `priority`, `follow_up_date`, `next_follow_up`, `address`, `city`, `district`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 'LEAD000001', 'SKCK Company', 'Masud', '019215555555', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 2, 1, 55, 55.00, 'Low', '2026-07-20', '2026-07-21 00:00:00', 'gdfgd', NULL, NULL, 'ddfd', 1, 1, 1, '2026-07-20 10:37:25', '2026-07-20 11:16:56'),
+	(2, 'LEAD000002', 'Vanila', 'Techno Park', '019215555556', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 4, 1, 44, 33.00, 'Low', '2026-07-20', '2026-07-20 00:00:00', 'fvd', NULL, NULL, 'dgdf', 1, 1, NULL, '2026-07-20 11:14:48', '2026-07-20 12:05:14'),
+	(3, 'LEAD000003', 'SGS', 'Techno Park', '019215554555', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 10, 1, 55, 55.00, 'Low', '2026-07-20', '2026-07-20 00:00:00', 'aas', NULL, NULL, 'adasd', 1, 1, NULL, '2026-07-20 11:25:19', '2026-07-21 10:05:00'),
+	(4, 'LEAD000004', 'GGG', 'Techno Park', '019215555555', 'nijer.bazar@gmail.com', 'www.salestracker.com', 1, 5, 1, 444, 44.00, 'Low', '2026-07-27', '2026-07-27 00:00:00', '316/2, Rampura Dhaka', NULL, NULL, 'dsfdf', 1, 1, NULL, '2026-07-27 08:49:22', '2026-07-27 09:43:40');
+
+-- Dumping structure for table erp.crm_lead_sources
+DROP TABLE IF EXISTS `crm_lead_sources`;
+CREATE TABLE IF NOT EXISTS `crm_lead_sources` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(50) DEFAULT NULL,
+  `name` varchar(150) NOT NULL,
+  `name_bn` varchar(150) DEFAULT NULL,
+  `description` text,
+  `status` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_lead_sources: ~12 rows (approximately)
+DELETE FROM `crm_lead_sources`;
+INSERT INTO `crm_lead_sources` (`id`, `code`, `name`, `name_bn`, `description`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
+	(1, 'FB', 'Facebook', 'ফেসবুক', NULL, 1, NULL, NULL, NULL, NULL),
+	(2, 'GOOGLE', 'Google Ads', 'গুগল বিজ্ঞাপন', 'dsfsdfsd', 1, NULL, NULL, NULL, NULL),
+	(3, 'WEB', 'Website', 'ওয়েবসাইট', NULL, 1, NULL, NULL, NULL, NULL),
+	(4, 'WA', 'WhatsApp', 'হোয়াটসঅ্যাপ', NULL, 1, NULL, NULL, NULL, NULL),
+	(5, 'REF', 'Referral', 'রেফারেল', NULL, 1, NULL, NULL, NULL, NULL),
+	(6, 'WALK', 'Walk-in Customer', 'সরাসরি গ্রাহক', NULL, 1, NULL, NULL, NULL, NULL),
+	(7, 'LINK', 'LinkedIn', 'লিংকডইন', NULL, 1, NULL, NULL, NULL, NULL),
+	(8, 'EMAIL', 'Email Marketing', 'ইমেইল মার্কেটিং', NULL, 1, NULL, NULL, NULL, NULL),
+	(9, 'YT', 'YouTube', 'ইউটিউব', NULL, 1, NULL, NULL, NULL, NULL),
+	(10, 'OTHER', 'Other', 'অন্যান্য', NULL, 1, NULL, NULL, NULL, NULL),
+	(11, 'Offcode33', 'Offline Marketing', NULL, 'hhhhhhh', 0, '2026-07-19 10:54:56', '2026-07-20 07:25:12', 1, 1),
+	(12, 'Offcode335', 'Offline Marketing5', NULL, 'xfdgdfgdfg', 0, '2026-07-19 10:57:46', '2026-07-19 12:02:03', 1, 1);
+
+-- Dumping structure for table erp.crm_lead_statuses
+DROP TABLE IF EXISTS `crm_lead_statuses`;
+CREATE TABLE IF NOT EXISTS `crm_lead_statuses` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(50) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `name_bn` varchar(100) DEFAULT NULL,
+  `color` varchar(20) DEFAULT '#007bff',
+  `sort_order` int DEFAULT '0',
+  `description` text,
+  `status` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_by` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_lead_statuses: ~10 rows (approximately)
+DELETE FROM `crm_lead_statuses`;
+INSERT INTO `crm_lead_statuses` (`id`, `code`, `name`, `name_bn`, `color`, `sort_order`, `description`, `status`, `created_at`, `updated_at`, `updated_by`, `created_by`) VALUES
+	(1, 'NEW', 'New', 'নতুন', '#007bff', 1, NULL, 1, NULL, NULL, NULL, NULL),
+	(2, 'CONTACTED', 'Contacted', 'যোগাযোগ করা হয়েছে', '#17a2b8', 2, 'fdf', 1, NULL, NULL, NULL, NULL),
+	(3, 'FOLLOWUP', 'Follow-up', 'ফলো-আপ চলছে', '#ffc107', 3, 'fdf', 1, NULL, NULL, NULL, NULL),
+	(4, 'QUALIFIED', 'Qualified', 'যোগ্য', '#28a745', 4, 'fdfd', 1, NULL, NULL, NULL, NULL),
+	(5, 'PROPOSAL', 'Proposal Sent', 'প্রস্তাব পাঠানো হয়েছে', '#6610f2', 5, 'fdfd', 1, NULL, NULL, NULL, NULL),
+	(6, 'NEGOTIATION', 'Negotiation', 'আলোচনা চলছে', '#fd7e14', 6, NULL, 1, NULL, NULL, NULL, NULL),
+	(7, 'WON', 'Won', 'সফল', '#20c997', 7, NULL, 1, NULL, NULL, NULL, NULL),
+	(8, 'LOST', 'Lost', 'বাতিল', '#dc3545', 8, NULL, 1, NULL, NULL, NULL, NULL),
+	(9, 'HOLD', 'Hold', 'স্থগিত', '#6c757d', 9, NULL, 1, NULL, NULL, NULL, NULL),
+	(10, 'CONVERTED', 'Converted', 'গ্রাহকে রূপান্তরিত', '#198754', 10, 'sdsd', 1, NULL, '2026-07-20 09:17:09', 1, NULL);
+
+-- Dumping structure for table erp.crm_meeting_schedules
+DROP TABLE IF EXISTS `crm_meeting_schedules`;
+CREATE TABLE IF NOT EXISTS `crm_meeting_schedules` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `meeting_title` varchar(255) NOT NULL,
+  `lead_id` bigint unsigned NOT NULL,
+  `meeting_type` varchar(100) DEFAULT NULL,
+  `related_module` varchar(100) DEFAULT NULL,
+  `meeting_details` text,
+  `meeting_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `meeting_status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1=Scheduled,2=Completed,3=Cancelled',
+  `created_by` bigint unsigned DEFAULT NULL,
+  `updated_by` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `lead_id` (`lead_id`),
+  CONSTRAINT `fk_meeting_lead` FOREIGN KEY (`lead_id`) REFERENCES `crm_leads` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_meeting_schedules: ~1 rows (approximately)
+DELETE FROM `crm_meeting_schedules`;
+INSERT INTO `crm_meeting_schedules` (`id`, `meeting_title`, `lead_id`, `meeting_type`, `related_module`, `meeting_details`, `meeting_date`, `start_time`, `end_time`, `meeting_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 'Demo meeting', 3, 'Online', 'Customer', 'csadsada', '2026-07-22', '12:22:00', '14:22:00', 2, 1, 1, '2026-07-22 09:55:07', '2026-07-22 10:02:43');
+
+-- Dumping structure for table erp.crm_quotations
+DROP TABLE IF EXISTS `crm_quotations`;
+CREATE TABLE IF NOT EXISTS `crm_quotations` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `company_id` bigint unsigned NOT NULL,
+  `product_type` tinyint NOT NULL DEFAULT '1',
+  `store_id` bigint unsigned DEFAULT NULL,
+  `staff_id` bigint unsigned DEFAULT NULL,
+  `client_id` bigint unsigned DEFAULT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci,
+  `quotation` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` date NOT NULL,
+  `quotation_type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `total_amount` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `discount` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `total_paid` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `status` tinyint NOT NULL DEFAULT '1' COMMENT '1=Pending,2=Approved,3=Rejected,4=Completed',
+  `created_by` bigint unsigned DEFAULT NULL,
+  `updated_by` bigint unsigned DEFAULT NULL,
+  `deleted_by` bigint unsigned DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `quotation` (`quotation`),
+  KEY `idx_company` (`company_id`),
+  KEY `idx_store` (`store_id`),
+  KEY `idx_staff` (`staff_id`),
+  KEY `idx_client` (`client_id`),
+  KEY `idx_quotation` (`quotation`),
+  KEY `idx_date` (`date`),
+  KEY `idx_status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_quotations: ~2 rows (approximately)
+DELETE FROM `crm_quotations`;
+INSERT INTO `crm_quotations` (`id`, `company_id`, `product_type`, `store_id`, `staff_id`, `client_id`, `note`, `quotation`, `date`, `quotation_type`, `total_amount`, `discount`, `total_paid`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(4, 1, 1, 2, 59, 1, NULL, 'QUOT2607000001', '2026-07-23', NULL, 33.00, 0.00, 0.00, 1, 1, 1, NULL, '2026-07-23 06:26:21', '2026-07-23 11:13:42', NULL),
+	(5, 1, 1, 2, 59, 1, 'This is your demo', 'QUOT2607000002', '2026-07-23', NULL, 18381.00, 9.00, 0.00, 1, 1, 1, NULL, '2026-07-23 06:55:18', '2026-07-23 11:06:32', NULL);
+
+-- Dumping structure for table erp.crm_quotation_details
+DROP TABLE IF EXISTS `crm_quotation_details`;
+CREATE TABLE IF NOT EXISTS `crm_quotation_details` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `company_id` bigint unsigned NOT NULL,
+  `product_type` tinyint NOT NULL DEFAULT '1',
+  `quotation_id` bigint unsigned NOT NULL,
+  `store_id` bigint unsigned DEFAULT NULL,
+  `client_id` bigint unsigned DEFAULT NULL,
+  `product_id` bigint unsigned NOT NULL,
+  `variant_id` bigint unsigned DEFAULT NULL,
+  `order_product_id` bigint unsigned DEFAULT NULL,
+  `rate` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `qty` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `amount` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `discount` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `returned_qty` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `returned_amount` decimal(18,2) NOT NULL DEFAULT '0.00',
+  `is_return` tinyint(1) NOT NULL DEFAULT '0',
+  `delivery_status` tinyint NOT NULL DEFAULT '0' COMMENT '0=Pending,1=Delivered,2=Partial',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_quotation` (`quotation_id`),
+  KEY `idx_product` (`product_id`),
+  KEY `idx_variant` (`variant_id`),
+  KEY `idx_client` (`client_id`),
+  KEY `idx_store` (`store_id`),
+  CONSTRAINT `fk_quotation_details_quotation` FOREIGN KEY (`quotation_id`) REFERENCES `crm_quotations` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table erp.crm_quotation_details: ~3 rows (approximately)
+DELETE FROM `crm_quotation_details`;
+INSERT INTO `crm_quotation_details` (`id`, `company_id`, `product_type`, `quotation_id`, `store_id`, `client_id`, `product_id`, `variant_id`, `order_product_id`, `rate`, `qty`, `amount`, `discount`, `returned_qty`, `returned_amount`, `is_return`, `delivery_status`, `created_at`, `updated_at`) VALUES
+	(10, 1, 1, 5, 2, 1, 2, NULL, NULL, 66.00, 1.00, 66.00, 0.03, 0.00, 0.00, 0, 0, '2026-07-23 11:06:32', '2026-07-23 11:06:32'),
+	(11, 1, 1, 5, 2, 1, 1, NULL, NULL, 33.00, 555.00, 18315.00, 8.97, 0.00, 0.00, 0, 0, '2026-07-23 11:06:32', '2026-07-23 11:06:32'),
+	(13, 1, 1, 4, 2, 1, 1, NULL, NULL, 33.00, 1.00, 33.00, 0.00, 0.00, 0.00, 0, 0, '2026-07-23 11:13:42', '2026-07-23 11:13:42');
 
 -- Dumping structure for table erp.deliveries
 DROP TABLE IF EXISTS `deliveries`;
@@ -2028,13 +2273,14 @@ CREATE TABLE IF NOT EXISTS `liftings` (
   PRIMARY KEY (`id`),
   KEY `liftings_company_id_foreign` (`company_id`),
   CONSTRAINT `liftings_company_id_foreign` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.liftings: ~2 rows (approximately)
 DELETE FROM `liftings`;
 INSERT INTO `liftings` (`id`, `company_id`, `product_type`, `store_id`, `vendor_id`, `coa_setup_id`, `lifting_no`, `payment_type`, `voucher_no`, `lifting_date`, `total_cost`, `discount`, `net_amount`, `total_paid`, `return_amount`, `return_paid`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', 2, 1, NULL, 'STL2605000001', 'credit', NULL, '2026-05-07', 330.00, 0.00, 330.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-05-07 09:50:04', '2026-05-07 09:50:04'),
-	(2, 1, 'Consumer', 2, 66, NULL, 'STL2607000001', 'credit', NULL, '2026-07-07', 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-07-07 10:16:51', '2026-07-07 10:16:51');
+	(2, 1, 'Consumer', 2, 66, NULL, 'STL2607000001', 'credit', NULL, '2026-07-07', 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
+	(3, 1, 'Consumer', 2, 1, NULL, 'STL2607000002', 'credit', '22', '2026-07-27', 5000.00, 0.00, 5000.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
 -- Dumping structure for table erp.lifting_documents
 DROP TABLE IF EXISTS `lifting_documents`;
@@ -2079,13 +2325,14 @@ CREATE TABLE IF NOT EXISTS `lifting_products` (
   PRIMARY KEY (`id`),
   KEY `lifting_products_lifting_id_foreign` (`lifting_id`),
   CONSTRAINT `lifting_products_lifting_id_foreign` FOREIGN KEY (`lifting_id`) REFERENCES `liftings` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.lifting_products: ~2 rows (approximately)
 DELETE FROM `lifting_products`;
 INSERT INTO `lifting_products` (`id`, `lifting_id`, `company_id`, `store_id`, `vendor_id`, `product_id`, `variant_id`, `product_type`, `lifting_price`, `expiry_date`, `qty`, `total_amount`, `discount`, `net_amount`, `total_paid`, `return_qty`, `return_amount`, `status`, `created_by`, `created_at`, `updated_at`) VALUES
 	(1, 1, 1, 2, 1, 1, NULL, 'Consumer', 33.00, NULL, 10.00, 330.00, 0.00, 330.00, 0.00, 0.00, 0.00, 1, 1, '2026-05-07 09:50:04', '2026-05-07 09:50:04'),
-	(2, 2, 1, 2, 66, 1, NULL, 'Consumer', 33.00, NULL, 100.00, 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, '2026-07-07 10:16:51', '2026-07-07 10:16:51');
+	(2, 2, 1, 2, 66, 1, NULL, 'Consumer', 33.00, NULL, 100.00, 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
+	(3, 3, 1, 2, 1, 3, NULL, 'Consumer', 50.00, NULL, 100.00, 5000.00, 0.00, 5000.00, 0.00, 0.00, 0.00, 1, 1, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
 -- Dumping structure for table erp.lifting_returns
 DROP TABLE IF EXISTS `lifting_returns`;
@@ -3548,7 +3795,7 @@ CREATE TABLE IF NOT EXISTS `model_has_roles` (
   KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.model_has_roles: ~69 rows (approximately)
+-- Dumping data for table erp.model_has_roles: ~78 rows (approximately)
 DELETE FROM `model_has_roles`;
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 	(10, 'App\\Models\\User', 1),
@@ -3630,7 +3877,8 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 	(23, 'App\\Models\\User', 178),
 	(22, 'App\\Models\\User', 179),
 	(21, 'App\\Models\\User', 180),
-	(24, 'App\\Models\\User', 181);
+	(24, 'App\\Models\\User', 181),
+	(11, 'App\\Models\\User', 182);
 
 -- Dumping structure for table erp.online_deliveries
 DROP TABLE IF EXISTS `online_deliveries`;
@@ -3817,9 +4065,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=667 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=686 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.permissions: ~419 rows (approximately)
+-- Dumping data for table erp.permissions: ~462 rows (approximately)
 DELETE FROM `permissions`;
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 	(1, 'Dashboard', 'web', '2023-09-19 09:04:28', '2023-09-19 09:04:28'),
@@ -3871,7 +4119,7 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(50, 'Transaction 3', 'web', '2023-09-19 09:28:16', '2023-09-19 09:28:16'),
 	(51, 'Region Setup', 'web', '2023-09-19 09:28:49', '2023-09-19 09:28:49'),
 	(52, 'Area Setup', 'web', '2023-09-19 09:29:03', '2023-09-19 09:29:03'),
-	(53, 'Territory Setup', 'web', '2023-09-19 09:29:15', '2023-09-19 09:29:15'),
+	(53, 'admin.territory.index', 'web', '2023-09-19 09:29:15', '2026-07-18 09:31:40'),
 	(54, 'Client Setup', 'web', '2023-09-19 09:29:28', '2023-09-19 09:29:28'),
 	(55, 'admin.sales.index', 'web', '2023-09-19 09:29:42', '2025-04-13 12:09:37'),
 	(56, 'admin.collection.index', 'web', '2023-09-19 09:29:54', '2025-04-13 12:10:05'),
@@ -4248,22 +4496,8 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(614, 'Lead Source', 'web', '2026-07-16 06:31:41', '2026-07-16 06:31:41'),
 	(615, 'Lead Status', 'web', '2026-07-16 06:32:36', '2026-07-16 06:32:36'),
 	(616, 'Customer Management', 'web', '2026-07-16 06:33:05', '2026-07-16 06:33:05'),
-	(617, 'Contact Management', 'web', '2026-07-16 06:33:37', '2026-07-16 06:33:37'),
-	(618, 'Follow Up', 'web', '2026-07-16 06:34:06', '2026-07-16 06:34:06'),
-	(619, 'Call Log', 'web', '2026-07-16 06:35:23', '2026-07-16 06:35:23'),
 	(620, 'Meeting Schedule', 'web', '2026-07-16 06:35:58', '2026-07-16 06:35:58'),
-	(621, 'Task Management', 'web', '2026-07-16 06:36:22', '2026-07-16 06:36:22'),
-	(622, 'Opportunity Management', 'web', '2026-07-16 06:36:44', '2026-07-16 06:36:44'),
 	(623, 'Quotation', 'web', '2026-07-16 06:37:09', '2026-07-16 06:37:09'),
-	(624, 'Sales Pipeline', 'web', '2026-07-16 06:37:45', '2026-07-16 06:37:45'),
-	(625, 'Customer Feedback', 'web', '2026-07-16 06:38:10', '2026-07-16 06:38:10'),
-	(626, 'Support Ticket', 'web', '2026-07-16 06:38:32', '2026-07-16 06:38:32'),
-	(627, 'Complaint Management', 'web', '2026-07-16 06:38:56', '2026-07-16 06:38:56'),
-	(628, 'Campaign Management', 'web', '2026-07-16 06:39:23', '2026-07-16 06:39:23'),
-	(629, 'Email Campaign', 'web', '2026-07-16 06:39:51', '2026-07-16 06:39:51'),
-	(630, 'SMS Campaign', 'web', '2026-07-16 06:40:14', '2026-07-16 06:40:14'),
-	(631, 'Customer Notes', 'web', '2026-07-16 06:40:44', '2026-07-16 06:40:44'),
-	(632, 'Customer Activity', 'web', '2026-07-16 06:41:08', '2026-07-16 06:41:08'),
 	(633, 'CRM Dashboard', 'web', '2026-07-16 06:41:34', '2026-07-16 06:41:34'),
 	(634, 'CRM Reports', 'web', '2026-07-16 06:41:56', '2026-07-16 06:41:56'),
 	(635, 'Department', 'web', '2026-07-16 06:43:19', '2026-07-16 06:43:19'),
@@ -4296,7 +4530,25 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(662, 'Training Management', 'web', '2026-07-16 08:46:05', '2026-07-16 08:46:05'),
 	(663, 'HR Dashboard', 'web', '2026-07-16 08:46:25', '2026-07-16 08:46:25'),
 	(664, 'HR Reports', 'web', '2026-07-16 08:46:46', '2026-07-16 08:46:46'),
-	(665, 'Payroll Reports', 'web', '2026-07-16 08:47:08', '2026-07-16 08:47:08');
+	(665, 'Payroll Reports', 'web', '2026-07-16 08:47:08', '2026-07-16 08:47:08'),
+	(667, 'admin.lead-source.edit', 'web', '2026-07-19 11:06:54', '2026-07-19 11:06:54'),
+	(668, 'admin.lead-source.create', 'web', '2026-07-20 08:31:24', '2026-07-20 08:31:24'),
+	(669, 'admin.lead-status.create', 'web', '2026-07-20 09:14:43', '2026-07-20 09:14:43'),
+	(670, 'admin.lead-status.edit', 'web', '2026-07-20 09:14:55', '2026-07-20 09:14:55'),
+	(671, 'admin.lead.create', 'web', '2026-07-20 10:52:20', '2026-07-20 10:52:20'),
+	(672, 'admin.lead.edit', 'web', '2026-07-20 10:52:31', '2026-07-20 10:52:31'),
+	(673, 'admin.lead.show', 'web', '2026-07-20 11:06:30', '2026-07-20 11:06:30'),
+	(674, 'admin.lead.store', 'web', '2026-07-20 11:35:05', '2026-07-20 11:35:05'),
+	(675, 'admin.lead.update', 'web', '2026-07-20 11:35:18', '2026-07-20 11:35:18'),
+	(676, 'Customer Requirements', 'web', '2026-07-21 05:08:08', '2026-07-21 05:08:08'),
+	(677, 'admin.meeting-schedule.create', 'web', '2026-07-22 09:59:06', '2026-07-22 09:59:06'),
+	(678, 'admin.meeting-schedule.edit', 'web', '2026-07-22 09:59:21', '2026-07-22 09:59:21'),
+	(679, 'admin.quotation.edit', 'web', '2026-07-23 09:00:34', '2026-07-23 09:00:34'),
+	(680, 'admin.quotation.show', 'web', '2026-07-23 09:00:49', '2026-07-23 09:00:49'),
+	(681, 'admin.quotation.create', 'web', '2026-07-23 09:01:03', '2026-07-23 09:01:03'),
+	(683, 'admin.customer-requirement.edit', 'web', '2026-07-27 05:37:52', '2026-07-27 05:37:52'),
+	(684, 'admin.customer-requirement.create', 'web', '2026-07-27 05:38:05', '2026-07-27 05:38:05'),
+	(685, 'admin.customer-requirement.show', 'web', '2026-07-27 06:53:15', '2026-07-27 06:53:15');
 
 -- Dumping structure for table erp.personal_access_tokens
 DROP TABLE IF EXISTS `personal_access_tokens`;
@@ -4430,12 +4682,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `products_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.products: ~0 rows (approximately)
+-- Dumping data for table erp.products: ~3 rows (approximately)
 DELETE FROM `products`;
 INSERT INTO `products` (`id`, `company_id`, `product_type`, `vendor_id`, `attribute_id`, `category_id`, `brand_id`, `name`, `code`, `slug`, `thumbnail`, `more_images`, `short_description`, `description`, `additional_info`, `meta_title`, `meta_description`, `meta_keyword`, `alert_quantity`, `min_order`, `max_order`, `video`, `video_id`, `ctn_size`, `attributes`, `choice_options`, `stock`, `status`, `trending`, `featured`, `top_rated`, `best_selling`, `serial`, `allowed_investor`, `shared_profit`, `show_on_website`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 1, 'Consumer', NULL, 11, 43, NULL, 'Test', 'test', 'test', 'media/product//2026-05-07-2GgJIyuH0ujtj2tHSeASmHrmXFZzjepRdl5D5OYI.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, 110.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, NULL, NULL, NULL, '2026-05-07 07:42:47', '2026-07-13 08:26:24');
+	(1, 1, 'Consumer', NULL, 11, 43, NULL, 'Test', 'test', 'test', 'media/product//2026-05-07-2GgJIyuH0ujtj2tHSeASmHrmXFZzjepRdl5D5OYI.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, 110.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, NULL, NULL, NULL, '2026-05-07 07:42:47', '2026-07-13 08:26:24'),
+	(2, 1, 'Consumer', NULL, 11, 47, NULL, 'Mango', 'mng', 'mango-1', 'media/product//2026-07-23-jDsflBzX68L8KSVLTsQbo7vzyUyjArJPc8AyIKi6.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, 0.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, 1, NULL, NULL, '2026-07-23 09:34:38', '2026-07-23 09:34:58'),
+	(3, 1, 'Consumer', NULL, 12, 101, NULL, 'Hair Oil 100ml', 'barcode123', 'hair-oil-100ml', 'media/product//2026-07-27-vZ5LdniDJ6vZNe7BYEJnRdNTI30yRnn7ESesdwZW.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 33223, 1, NULL, NULL, NULL, 0, NULL, NULL, 100.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, NULL, NULL, NULL, '2026-07-27 04:27:44', '2026-07-27 04:28:41');
 
 -- Dumping structure for table erp.product_prices
 DROP TABLE IF EXISTS `product_prices`;
@@ -4451,12 +4705,14 @@ CREATE TABLE IF NOT EXISTS `product_prices` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_prices_product_id_foreign` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.product_prices: ~0 rows (approximately)
+-- Dumping data for table erp.product_prices: ~3 rows (approximately)
 DELETE FROM `product_prices`;
 INSERT INTO `product_prices` (`id`, `product_id`, `lifting_price`, `sale_price`, `online_price`, `discount`, `discount_tk`, `created_at`, `updated_at`) VALUES
-	(1, 1, 33.00, 33.00, 33.00, 0.00, 0.00, '2026-05-07 07:42:47', '2026-05-07 07:42:47');
+	(1, 1, 33.00, 33.00, 33.00, 0.00, 0.00, '2026-05-07 07:42:47', '2026-05-07 07:42:47'),
+	(2, 2, 44.00, 66.00, 77.00, 0.00, 0.00, '2026-07-23 09:34:38', '2026-07-23 09:34:58'),
+	(3, 3, 50.00, 90.00, 100.00, 0.00, 0.00, '2026-07-27 04:27:44', '2026-07-27 04:27:44');
 
 -- Dumping structure for table erp.product_skus
 DROP TABLE IF EXISTS `product_skus`;
@@ -4927,7 +5183,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.roles: ~10 rows (approximately)
+-- Dumping data for table erp.roles: ~14 rows (approximately)
 DELETE FROM `roles`;
 INSERT INTO `roles` (`id`, `company_id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 	(1, NULL, 'System Admin', 'web', '2023-10-24 06:03:09', '2023-10-24 06:03:09'),
@@ -4956,7 +5212,7 @@ CREATE TABLE IF NOT EXISTS `role_has_permissions` (
   KEY `role_has_permissions_role_id_foreign` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.role_has_permissions: ~1,464 rows (approximately)
+-- Dumping data for table erp.role_has_permissions: ~1,450 rows (approximately)
 DELETE FROM `role_has_permissions`;
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(1, 1),
@@ -5674,22 +5930,8 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(614, 10),
 	(615, 10),
 	(616, 10),
-	(617, 10),
-	(618, 10),
-	(619, 10),
 	(620, 10),
-	(621, 10),
-	(622, 10),
 	(623, 10),
-	(624, 10),
-	(625, 10),
-	(626, 10),
-	(627, 10),
-	(628, 10),
-	(629, 10),
-	(630, 10),
-	(631, 10),
-	(632, 10),
 	(633, 10),
 	(634, 10),
 	(635, 10),
@@ -5723,30 +5965,36 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(663, 10),
 	(664, 10),
 	(665, 10),
+	(667, 10),
+	(668, 10),
+	(669, 10),
+	(670, 10),
+	(671, 10),
+	(672, 10),
+	(673, 10),
+	(674, 10),
+	(675, 10),
+	(676, 10),
+	(677, 10),
+	(678, 10),
+	(679, 10),
+	(680, 10),
+	(681, 10),
+	(683, 10),
+	(684, 10),
+	(685, 10),
 	(1, 13),
 	(610, 13),
 	(612, 13),
 	(614, 13),
 	(615, 13),
 	(616, 13),
-	(617, 13),
-	(618, 13),
-	(619, 13),
 	(620, 13),
-	(621, 13),
-	(622, 13),
 	(623, 13),
-	(624, 13),
-	(625, 13),
-	(626, 13),
-	(627, 13),
-	(628, 13),
-	(629, 13),
-	(630, 13),
-	(631, 13),
-	(632, 13),
 	(633, 13),
 	(634, 13),
+	(667, 13),
+	(668, 13),
 	(1, 14),
 	(41, 14),
 	(43, 14),
@@ -6629,7 +6877,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 -- Dumping data for table erp.settings: ~0 rows (approximately)
 DELETE FROM `settings`;
 INSERT INTO `settings` (`id`, `app_name`, `title`, `primary_mobile`, `secondary_mobile`, `primary_email`, `secondary_email`, `office_time`, `address`, `description`, `meta_title`, `meta_keyword`, `meta_description`, `meta_image`, `google_map`, `favicon`, `logo`, `footer_logo`, `placeholder`, `facebook_page`, `facebook_group`, `youtube`, `twitter`, `linkedin`, `google`, `whatsapp`, `instagram`, `pinterest`, `banner_one`, `banner_one_link`, `banner_two`, `banner_two_link`, `created_at`, `updated_at`) VALUES
-	(1, 'App Pro ERP', 'App Pro ERP', '01805030076', '01805030076', 'technoparkbd@gmail.com', 'technoparkbd@gmail.com', NULL, '316/2, DIT Road, 5th Floor, East Rampura, Dhaka', NULL, NULL, '01805030076', NULL, 'media/default//2026-07-16-GaJWYbIV3ahWmswJNxG9XIXuFrdcBIAJNvTkRAoN.webp', NULL, 'media/default//2026-07-16-PHSfscLfHL6DHvFDEmCO0KkvkfnZT4sROS1B8xYM.webp', 'media/default//2026-07-16-quMsHHqJbjfK5TSq3VKy76CvqEqOqLvuEXsAkVyt.webp', 'media/default//2026-07-16-vodFHymOJWBvxcKovsAaNjV97Z6jnv9teDpXRgNi.webp', 'media/default//2026-07-16-Z8Kj4zvAn5Y3d7YCA3IMMoYkOtzkkMVaaZS5NW1r.webp', 'https://www.facebook.com/people/Saheb-Bazar/61575484293604/', NULL, '#', '#', '#', '#', 'https://whatsapp.com', NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-08 16:05:10', '2026-07-16 06:15:16');
+	(1, 'AppproERP', 'AppproERP', '01805030076', '01805030076', 'technoparkbd@gmail.com', 'technoparkbd@gmail.com', NULL, '316/2, DIT Road, 5th Floor, East Rampura, Dhaka', NULL, NULL, '01805030076', NULL, 'media/default//2026-07-16-GaJWYbIV3ahWmswJNxG9XIXuFrdcBIAJNvTkRAoN.webp', NULL, 'media/default//2026-07-16-PHSfscLfHL6DHvFDEmCO0KkvkfnZT4sROS1B8xYM.webp', 'media/default//2026-07-16-quMsHHqJbjfK5TSq3VKy76CvqEqOqLvuEXsAkVyt.webp', 'media/default//2026-07-16-vodFHymOJWBvxcKovsAaNjV97Z6jnv9teDpXRgNi.webp', 'media/default//2026-07-16-Z8Kj4zvAn5Y3d7YCA3IMMoYkOtzkkMVaaZS5NW1r.webp', 'https://www.facebook.com/people/Saheb-Bazar/61575484293604/', NULL, '#', '#', '#', '#', 'https://whatsapp.com', NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-08 16:05:10', '2026-07-21 03:18:53');
 
 -- Dumping structure for table erp.shipping_addresses
 DROP TABLE IF EXISTS `shipping_addresses`;
@@ -6812,7 +7060,7 @@ CREATE TABLE IF NOT EXISTS `stocks` (
   PRIMARY KEY (`id`),
   KEY `stocks_store_id_foreign` (`store_id`),
   KEY `stocks_product_id_foreign` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table erp.stocks: ~7 rows (approximately)
 DELETE FROM `stocks`;
@@ -6823,7 +7071,8 @@ INSERT INTO `stocks` (`id`, `date`, `store_id`, `product_id`, `qty`, `unit_price
 	(4, '2026-07-07', 2, 1, 1.00, 33.00, 'out', 'Retail Sale #RS26070001', 'Stock decreased due to retail sale', '2026-07-07 10:15:58', '2026-07-07 10:15:58'),
 	(5, '2026-07-07', 2, 1, 100.00, 33.00, 'in', 'Purchase #STL2607000001', 'Stock increased from purchase', '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
 	(6, '2026-07-13', 2, 1, 1.00, 33.00, 'out', 'Retail Sale #RS26070002', 'Stock decreased due to retail sale', '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
-	(7, '2026-07-13', 2, 1, 1.00, 33.00, 'out', 'Retail Sale #RS26070002', 'Stock decreased due to retail sale', '2026-07-13 08:26:24', '2026-07-13 08:26:24');
+	(7, '2026-07-13', 2, 1, 1.00, 33.00, 'out', 'Retail Sale #RS26070002', 'Stock decreased due to retail sale', '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
+	(8, '2026-07-27', 2, 3, 100.00, 50.00, 'in', 'Purchase #STL2607000002', 'Stock increased from purchase', '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
 -- Dumping structure for table erp.stores
 DROP TABLE IF EXISTS `stores`;
@@ -7079,12 +7328,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_user_name_unique` (`user_name`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table erp.users: ~12 rows (approximately)
+-- Dumping data for table erp.users: ~25 rows (approximately)
 DELETE FROM `users`;
 INSERT INTO `users` (`id`, `role`, `company_id`, `name`, `user_name`, `email`, `phone`, `address`, `image`, `cover_image`, `area_id`, `branch_id`, `store_id`, `status`, `is_staff`, `staff_id`, `email_verified_at`, `otp`, `otp_expire`, `password`, `remember_token`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 1, NULL, 'Admin', 'admin', 'admin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2023-11-24 11:04:22', '$2a$12$yxZO/Kv/5ANCuMMA/QJD2eVwPNj9BSyDwdTJCdzVpedljgS8qGi0e', NULL, NULL, 1, NULL, NULL, '2023-10-24 06:03:09', '2025-04-30 07:29:07'),
+	(1, 1, 1, 'Admin', 'admin', 'admin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2023-11-24 11:04:22', '$2a$12$yxZO/Kv/5ANCuMMA/QJD2eVwPNj9BSyDwdTJCdzVpedljgS8qGi0e', NULL, NULL, 1, NULL, NULL, '2023-10-24 06:03:09', '2025-04-30 07:29:07'),
 	(2, 1, 1, 'Shimul', 'Shimul', 'info@sahebbazaar.com', '01715227149', 'Rampura, Dhaka', 'backend/images/avatar/profile-DL2pMk5cc2COZI24cXBoVdmIAS5iCGVvscnsT6At.webp', 'backend/images/avatar/cover-6yCWR2Fx8T4X6b5jNClMz71AvciWD9qG3FjtgioE.jpg', NULL, '["1"]', '["2"]', 1, 1, 59, NULL, NULL, '2023-11-24 11:04:22', '$2y$10$7frEMDiVrrXW0r9mnLIkren/K4HaSlwVlR3B3dqaKqiDBY5kJt.bW', NULL, 1, 159, NULL, NULL, '2023-09-23 06:52:33', '2026-04-08 11:33:50'),
 	(159, 1, 1, 'Arnob Sur', 'Arnob', 'arnabsurarnabsur@gmail.com', '01567963270', '63 Shankhari bazar, Dhaka-1100', 'backend/images/avatar/profile-2KHPX9ecY62gPTtVTwTF1ZrTGvZWi7BEjn1bpSf3.webp', NULL, NULL, '["1"]', '["2"]', 1, 1, 60, NULL, NULL, '2025-04-27 19:04:41', '$2y$10$wo8dUR0ZfHjU.GC72.r75uBZgdXZao5ZTGO6dcNacXgGl.MeRU2GC', NULL, 2, 2, NULL, NULL, '2025-04-27 13:04:41', '2026-04-08 11:40:36'),
 	(160, 1, 1, 'Shamol Sen', 'Shamol', NULL, NULL, NULL, NULL, NULL, NULL, '["1"]', '["2"]', 1, 1, 61, NULL, NULL, '2025-04-28 17:53:20', '$2y$10$iX9c44WlIupd9VWRUIMMa.K78FdfGEqfrhg70oqPuqG.RO8QA1C1C', NULL, 1, 2, NULL, NULL, '2025-04-28 11:53:20', '2025-06-18 06:17:54'),
@@ -7106,7 +7355,9 @@ INSERT INTO `users` (`id`, `role`, `company_id`, `name`, `user_name`, `email`, `
 	(178, 1, 1, 'website', 'website', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-16 15:45:55', '$2y$10$Fc3gXSWGAJHM490VhJhW1eOJ54YMgJC8dAP6KMIWM87GKPlplCbT2', NULL, 1, NULL, NULL, NULL, '2026-07-16 09:45:55', '2026-07-16 09:45:55'),
 	(179, 1, 1, 'orders', 'orders', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-16 15:46:19', '$2y$10$E02dzM6NrKTI5Af3Zm9oa.hVjH7wXfFakyB2KvvplumqzPaTfCpf.', NULL, 1, NULL, NULL, NULL, '2026-07-16 09:46:19', '2026-07-16 09:46:19'),
 	(180, 1, 1, 'reports', 'reports', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-16 15:46:55', '$2y$10$K5f9OVrMh0yZsOKDucwxJ.orWGPA0L6tiAZxTWeISnzfDhvtG98qK', NULL, 1, NULL, NULL, NULL, '2026-07-16 09:46:55', '2026-07-16 09:46:55'),
-	(181, 1, 1, 'settings', 'settings', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-16 15:47:29', '$2y$10$9YPk05fOpDqdD/hi85UTNengxo6q1CZG7UOAIBSzySZPH4MktjZzq', NULL, 1, NULL, NULL, NULL, '2026-07-16 09:47:29', '2026-07-16 09:47:29');
+	(181, 1, 1, 'settings', 'settings', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-16 15:47:29', '$2y$10$9YPk05fOpDqdD/hi85UTNengxo6q1CZG7UOAIBSzySZPH4MktjZzq', NULL, 1, NULL, NULL, NULL, '2026-07-16 09:47:29', '2026-07-16 09:47:29'),
+	(182, 2, 1, 'fffffffff', '33333', NULL, '33333', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-21 13:18:01', '$2y$10$7FfGIcAJoirwX1Ic4KE94ukpQ0G1QVkfyErF4.teqHMNiFgtIDLd.', NULL, 1, NULL, 1, '2026-07-21 09:56:56', '2026-07-21 07:18:01', '2026-07-21 09:56:56'),
+	(185, 2, 1, 'SGS', '019215554555', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-21 16:05:00', '$2y$10$OwJTRNDR75EiXiPh2Anv2.5NJv96FyUCVp4iWCkja0zbSJOWCyKJW', NULL, 1, NULL, NULL, NULL, '2026-07-21 10:05:00', '2026-07-21 10:05:52');
 
 -- Dumping structure for table erp.vehicles
 DROP TABLE IF EXISTS `vehicles`;

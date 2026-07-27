@@ -183,7 +183,7 @@
                         <div class="col-md-6 mb-4">
 
                             <label class="text-muted">
-                                Follow Up Date
+                                Lead Date
                             </label>
 
                             <h6>

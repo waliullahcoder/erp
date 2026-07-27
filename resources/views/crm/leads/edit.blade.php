@@ -191,7 +191,7 @@
                         <div class="col-md-4">
 
                             <label class="form-label">
-                                <b>Follow-up Date</b>
+                                <b>Lead Date</b>
                             </label>
 
                             <input type="date"

@@ -190,7 +190,7 @@ $(function() {
 
            {data:'id', name:'l.id'},
            {data:'lead_no', name:'l.lead_no'},
-           {data:'created_at', name:'l.created_at'},
+           {data:'follow_up_date', name:'l.follow_up_date'},
            {data:'company_name', name:'l.company_name'},
            {data:'contact_person', name:'l.contact_person'},
            {data:'mobile', name:'l.mobile'},

@@ -41,7 +41,7 @@ class CrmReportController extends Controller
                 'l.proposal_value',
                 'l.expected_value',
                 'u.name as assigned_to',
-                'l.created_at'
+                'l.follow_up_date'
             );
 
         if(request()->filled('lead_source_id')){
@@ -53,20 +53,20 @@ class CrmReportController extends Controller
         }
 
         if(request()->filled('from_date')){
-            $model->whereDate('l.created_at','>=',request('from_date'));
+            $model->whereDate('l.follow_up_date','>=',request('from_date'));
         }
 
         if(request()->filled('to_date')){
-            $model->whereDate('l.created_at','<=',request('to_date'));
+            $model->whereDate('l.follow_up_date','<=',request('to_date'));
         }
 
         $model->orderByDesc('l.id');
 
             return DataTables::of($model)
 
-                ->editColumn('created_at', function ($row) {
-                    return $row->created_at
-                        ? date('d M, Y', strtotime($row->created_at))
+                ->editColumn('follow_up_date', function ($row) {
+                    return $row->follow_up_date
+                        ? date('d M, Y', strtotime($row->follow_up_date))
                         : '-';
                 })
                 ->editColumn('lead_status', function ($row) {
