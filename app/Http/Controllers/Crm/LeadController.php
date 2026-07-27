@@ -120,7 +120,15 @@ class LeadController extends Controller
     }
     public function dashboard()
     {
-           return view('crm.dashboard.dashboard');
+           $total_lead= DB::table('crm_leads')->count();
+           $total_proposal_value= DB::table('crm_leads')->sum('proposal_value');
+           $total_expected_value= DB::table('crm_leads')->sum('expected_value');
+           $total_confirmed_value= DB::table('crm_leads')->where('lead_status_id',10)->sum('expected_value');
+           $total_confirmed= DB::table('crm_leads')->where('lead_status_id',10)->count();
+           $total_proposal_sent= DB::table('crm_leads')->where('lead_status_id',5)->count();
+           $total_quotations= DB::table('crm_quotations')->count();
+
+           return view('crm.dashboard.dashboard',compact('total_lead','total_proposal_value','total_expected_value','total_confirmed_value','total_confirmed','total_proposal_sent','total_quotations'));
     }
     /**
      * Show create form

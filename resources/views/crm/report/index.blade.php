@@ -126,8 +126,8 @@
                     <tfoot>
                         <tr class="table-primary fw-bold">
                             <th colspan="8" class="text-end">Total :</th>
-                            <th id="total_expected_value">0.00</th>
                             <th id="total_proposal_value">0.00</th>
+                            <th id="total_expected_value">0.00</th>
                         </tr>
                     </tfoot>
                     </table>
@@ -198,8 +198,40 @@ $(function() {
            {data:'lead_status', name:'st.name'},
            {data:'proposal_value', name:'l.proposal_value'},
            {data:'expected_value', name:'l.expected_value'},
+          
 
-        ]
+        ],
+         footerCallback: function (row, data, start, end, display) {
+
+            var api = this.api();
+
+            function parseValue(value) {
+                if (typeof value === 'string') {
+                    return parseFloat(value.replace(/[^0-9.-]+/g, '')) || 0;
+                }
+                return parseFloat(value) || 0;
+            }
+
+            // Proposal Value (Column 8)
+            var proposalTotal = api
+                .column(8, { page: 'current' })
+                .data()
+                .reduce(function (a, b) {
+                    return parseValue(a) + parseValue(b);
+                }, 0);
+
+            // Expected Value (Column 9)
+            var expectedTotal = api
+                .column(9, { page: 'current' })
+                .data()
+                .reduce(function (a, b) {
+                    return parseValue(a) + parseValue(b);
+                }, 0);
+
+            $('#total_proposal_value').html(Number(proposalTotal.toLocaleString())+' Tk.');
+            $('#total_expected_value').html(Number(expectedTotal.toLocaleString())+' Tk.');
+
+        },
 
     });
 

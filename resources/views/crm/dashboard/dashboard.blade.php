@@ -116,7 +116,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-customer">
                         <div class="card-metrics">
                             <span class="metric-title">Total Lead</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-value">{{$total_lead}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-users"></i>
@@ -128,7 +128,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-sales">
                         <div class="card-metrics">
                             <span class="metric-title">Proposal Value</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳ {{$total_proposal_value}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-receipt"></i>
@@ -140,7 +140,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-cash">
                         <div class="card-metrics">
                             <span class="metric-title">Expected Value</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳ {{$total_expected_value}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fas fa-dollar-sign"></i>
@@ -152,7 +152,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-due">
                         <div class="card-metrics">
                             <span class="metric-title">Confirmed Value</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳ {{$total_confirmed_value}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-money-bill-alt"></i>
@@ -171,7 +171,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-products">
                         <div class="card-metrics">
                             <span class="metric-title">Proposal Submit</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-value">{{$total_proposal_sent}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-box-open"></i>
@@ -183,7 +183,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-stock">
                         <div class="card-metrics">
                             <span class="metric-title">Total Quotation</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-value">{{$total_quotations}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-chart-pie"></i>
@@ -195,7 +195,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-due">
                         <div class="card-metrics">
                             <span class="metric-title">Sales Pipeline</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳ {{$total_confirmed_value}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-receipt"></i>
@@ -207,13 +207,191 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-customer">
                         <div class="card-metrics">
                             <span class="metric-title">Converted Client</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-value">{{$total_confirmed}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-money-bill-alt"></i>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-12 col-sm-12">
+
+                <a href="{{ route('admin.crm-report.index') }}" class="text-decoration-none">
+
+                    <div class="report-card">
+
+                        <div class="report-content">
+
+                            <span class="report-label">
+                                CRM Reports
+                            </span>
+
+                            <h4 class="report-title">
+                                Daily & Monthly Report
+                            </h4>
+
+                            <p class="report-text mb-0">
+                                View lead performance, proposal value, expected value and business analytics.
+                            </p>
+
+                        </div>
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-chart-line"></i>
+
+                        </div>
+
+                        <div class="report-arrow">
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+            <style>
+                .report-card{
+                position:relative;
+                overflow:hidden;
+
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+
+                padding:28px 30px;
+
+                border-radius:16px;
+
+                background:linear-gradient(135deg, #059999, #00f9cb);
+
+                color:#fff;
+
+                transition:.35s ease;
+
+                box-shadow:0 10px 30px rgba(37,99,235,.25);
+
+            }
+
+            .report-card:hover{
+
+                transform:translateY(-5px);
+
+                box-shadow:0 18px 40px rgba(37,99,235,.35);
+
+            }
+
+            .report-card::before{
+
+                content:"";
+
+                position:absolute;
+
+                width:220px;
+                height:220px;
+
+                background:rgba(255,255,255,.08);
+
+                border-radius:50%;
+
+                right:-70px;
+                top:-70px;
+
+            }
+
+            .report-content{
+
+                position:relative;
+                z-index:2;
+
+            }
+
+            .report-label{
+
+                display:inline-block;
+
+                padding:5px 12px;
+
+                border-radius:30px;
+
+                background:rgba(255,255,255,.15);
+
+                font-size:13px;
+
+                margin-bottom:12px;
+
+            }
+
+            .report-title{
+
+                font-size:26px;
+
+                font-weight:700;
+
+                margin-bottom:8px;
+
+            }
+
+            .report-text{
+
+                opacity:.9;
+
+                font-size:15px;
+
+                max-width:520px;
+
+            }
+
+            .report-icon{
+
+                position:relative;
+
+                z-index:2;
+
+                width:80px;
+                height:80px;
+
+                border-radius:50%;
+
+                background:rgba(255,255,255,.15);
+
+                display:flex;
+                align-items:center;
+                justify-content:center;
+
+                font-size:34px;
+
+            }
+
+            .report-arrow{
+
+                position:absolute;
+
+                right:25px;
+                bottom:18px;
+
+                color:#fff;
+
+                opacity:.8;
+
+                font-size:20px;
+
+                transition:.3s;
+
+            }
+
+            .report-card:hover .report-arrow{
+
+                transform:translateX(8px);
+
+            }
+            </style>
+
+
 
             </div>
         </div>
