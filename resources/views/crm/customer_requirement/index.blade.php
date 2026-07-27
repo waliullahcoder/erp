@@ -13,10 +13,10 @@
                 <div class="d-flex justify-content-between">
 
                     <h6 class="mb-0 text-uppercase">
-                        Meeting Schedule
+                        Customer Requirements
                     </h6>
 
-                    <a href="{{ Route('admin.meeting-schedule.create') }}"
+                    <a href="{{ Route('admin.customer-requirement.create') }}"
                         class="btn btn-primary btn-sm">
                         Add New
                     </a>
@@ -34,13 +34,11 @@
                     <tr>
 
                         <th>ID</th>
-                        <th>Meeting Title</th>
                         <th>Lead</th>
                         <th>Meeting Type</th>
                         <th>Related Module</th>
                         <th>Date</th>
-                        <th>Start</th>
-                        <th>End</th>
+                        <th>Record Time</th>
                         <th>Status</th>
                         <th>Action</th>
 
@@ -71,7 +69,7 @@ processing:true,
 serverSide:true,
 scrollX:true,
 
-ajax:"{{ Route('admin.meeting-schedule.index') }}",
+ajax:"{{ Route('admin.customer-requirement.index') }}",
 
 columns:[
 
@@ -79,12 +77,6 @@ columns:[
 data:'id',
 name:'id'
 },
-
-{
-data:'meeting_title',
-name:'ms.meeting_title'
-},
-
 {
 data:'company_name',
 name:'l.company_name'
@@ -101,23 +93,19 @@ name:'ms.related_module'
 },
 
 {
-data:'meeting_date',
-name:'ms.meeting_date'
+data:'req_date',
+name:'ms.req_date'
 },
 
 {
-data:'start_time',
-name:'ms.start_time'
+data:'record_time',
+name:'ms.record_time'
 },
 
-{
-data:'end_time',
-name:'ms.end_time'
-},
 
 {
-data:'meeting_status',
-name:'ms.meeting_status',
+data:'requirement_status',
+name:'ms.requirement_status',
 orderable:false,
 searchable:false
 },

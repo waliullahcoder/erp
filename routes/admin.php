@@ -95,6 +95,8 @@ use App\Http\Controllers\Crm\LeadSourceController;
 use App\Http\Controllers\Crm\LeadStatusController;
 use App\Http\Controllers\Crm\MeetingController;
 use App\Http\Controllers\Crm\QuotationController;
+use App\Http\Controllers\Crm\CustomerRequirementController;
+use App\Http\Controllers\Crm\CrmReportController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -123,6 +125,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::resource('/meeting-schedule', MeetingController::class);
     Route::resource('/quotation', QuotationController::class);
+    Route::resource('/customer-requirement', CustomerRequirementController::class);
+    Route::resource('/crm-report', CrmReportController::class);
 
 });
 
