@@ -111,7 +111,7 @@
                                 <th>Lead No</th>
                                 <th>Lead Date</th>
                                 <th>Company</th>
-                                <th>Contact Person</th>
+                                <!-- <th>Contact Person</th> -->
                                 <th>Mobile</th>
                                 <th>Lead Source</th>
                                 <th>Lead Status</th>
@@ -125,7 +125,7 @@
                         <tbody></tbody>
                     <tfoot>
                         <tr class="table-primary fw-bold">
-                            <th colspan="8" class="text-end">Total :</th>
+                            <th colspan="7" class="text-end">Total :</th>
                             <th id="total_proposal_value">0.00</th>
                             <th id="total_expected_value">0.00</th>
                         </tr>
@@ -154,7 +154,9 @@ $(function() {
         serverSide: true,
         scrollX: true,
         responsive: true,
-
+	    pageLength: 60,
+	
+	    
         dom: 'Bfrtip',
 
         buttons: [
@@ -165,7 +167,7 @@ $(function() {
                 className: 'btn btn-success btn-sm',
                 title: 'CRM Lead Report',
                 exportOptions: {
-                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
                 }
             }
 
@@ -192,7 +194,7 @@ $(function() {
            {data:'lead_no', name:'l.lead_no'},
            {data:'follow_up_date', name:'l.follow_up_date'},
            {data:'company_name', name:'l.company_name'},
-           {data:'contact_person', name:'l.contact_person'},
+           // {data:'contact_person', name:'l.contact_person'},
            {data:'mobile', name:'l.mobile'},
            {data:'lead_source', name:'ls.name'},
            {data:'lead_status', name:'st.name'},
@@ -214,7 +216,7 @@ $(function() {
 
             // Proposal Value (Column 8)
             var proposalTotal = api
-                .column(8, { page: 'current' })
+                .column(7, { page: 'current' })
                 .data()
                 .reduce(function (a, b) {
                     return parseValue(a) + parseValue(b);
@@ -222,14 +224,14 @@ $(function() {
 
             // Expected Value (Column 9)
             var expectedTotal = api
-                .column(9, { page: 'current' })
+                .column(8, { page: 'current' })
                 .data()
                 .reduce(function (a, b) {
                     return parseValue(a) + parseValue(b);
                 }, 0);
 
-            $('#total_proposal_value').html(Number(proposalTotal.toLocaleString())+' Tk.');
-            $('#total_expected_value').html(Number(expectedTotal.toLocaleString())+' Tk.');
+           $('#total_proposal_value').html(proposalTotal.toLocaleString() + ' Tk.');
+		   $('#total_expected_value').html(expectedTotal.toLocaleString() + ' Tk.');
 
         },
 

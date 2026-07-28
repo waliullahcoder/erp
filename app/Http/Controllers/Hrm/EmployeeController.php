@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Hrm;
 
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
-class StaffController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class StaffController extends Controller
                 })
                 ->addColumn('status', function ($row) {
                     $status = '<div class="form-check form-switch">
-                    <input class="form-check-input change-status c-pointer" data-url="' . Route('admin.staff.edit', $row->id) . '" type="checkbox" name="status" ' . ($row->status == 1 ? 'checked' : '') . '>
+                    <input class="form-check-input change-status c-pointer" data-url="' . route('admin.employee.edit', $row->id) . '" type="checkbox" name="status" ' . ($row->status == 1 ? 'checked' : '') . '>
                     </div>';
                     return $status;
                 })
@@ -52,7 +52,7 @@ class StaffController extends Controller
         }
 
         $title = "Staff/Employee Setup";
-        return view('admin.staff.index', compact('title'));
+        return view('hrm.employee.index', compact('title'));
     }
 
     /**
@@ -68,7 +68,7 @@ class StaffController extends Controller
         $title = 'Add New Staff/Employee';
         $companies = Company::orderBy('name')->get();
         $branches = Branch::where('company_id', Auth::user()->company_id)->orderBy('name')->get();
-        return view('admin.staff.create', compact('title', 'companies', 'branches'));
+        return view('hrm.employee.create', compact('title', 'companies', 'branches'));
     }
 
     /**
@@ -110,7 +110,7 @@ class StaffController extends Controller
             'created_by' => Auth::user()->id,
         ]);
 
-        return redirect()->route('admin.staff.index')->withSuccessMessage('Created Successfully!');
+        return redirect()->route('admin.employee.index')->withSuccessMessage('Created Successfully!');
     }
 
     /**
@@ -139,10 +139,10 @@ class StaffController extends Controller
 
         $title = 'Update Staff/Employee';
         $data = Staff::findOrFail($id);
-        $link = Route('admin.staff.update', $id);
+        $link = route('admin.employee.update', $id);
         $companies = Company::orderBy('name')->get();
         $branches = Branch::where('company_id', $data->company_id)->orderBy('name')->get();
-        return view('admin.staff.edit', compact('title', 'data', 'link', 'companies', 'branches', 'id'));
+        return view('hrm.employee.edit', compact('title', 'data', 'link', 'companies', 'branches', 'id'));
     }
 
     /**
@@ -184,7 +184,7 @@ class StaffController extends Controller
             'type' => $request->type,
             'updated_by' => Auth::user()->id,
         ]);
-        return redirect()->route('admin.staff.index')->withSuccessMessage('Updated Successfully!');
+        return redirect()->route('admin.employee.index')->withSuccessMessage('Updated Successfully!');
     }
 
     /**

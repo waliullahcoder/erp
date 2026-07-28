@@ -97,6 +97,7 @@ use App\Http\Controllers\Crm\MeetingController;
 use App\Http\Controllers\Crm\QuotationController;
 use App\Http\Controllers\Crm\CustomerRequirementController;
 use App\Http\Controllers\Crm\CrmReportController;
+use App\Http\Controllers\Hrm\EmployeeController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -127,6 +128,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/quotation', QuotationController::class);
     Route::resource('/customer-requirement', CustomerRequirementController::class);
     Route::resource('/crm-report', CrmReportController::class);
+    Route::resource('/employee', EmployeeController::class);
+
+});
+
+// HRM
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/employee', EmployeeController::class);
 
 });
 

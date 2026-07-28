@@ -26,7 +26,7 @@
             </select>
         </div>
         <div class="col-lg-4 col-sm-6">
-            <label for="type" class="form-label"><b>Department <span class="text-danger">*</span></b></label>
+            <label for="type" class="form-label"><b>Department  <span class="text-danger">*</span></b></label>
             <div class="custom-select">
                 <select class="form-control custom-select__element" name="type" id="type" required>
                     <option value="general" {{ $data->type == 'general' ? 'selected' : '' }}>General</option>
