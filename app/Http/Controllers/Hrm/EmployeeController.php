@@ -9,6 +9,7 @@ use App\Models\Staff;
 use App\Services\ActionButtons\ActionButtons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
 class EmployeeController extends Controller
@@ -53,6 +54,11 @@ class EmployeeController extends Controller
 
         $title = "Staff/Employee Setup";
         return view('hrm.employee.index', compact('title'));
+    }
+
+    public function dashboard()
+    {
+           return view('hrm.dashboard.dashboard');
     }
 
     /**

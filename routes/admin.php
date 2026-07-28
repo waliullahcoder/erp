@@ -98,6 +98,7 @@ use App\Http\Controllers\Crm\QuotationController;
 use App\Http\Controllers\Crm\CustomerRequirementController;
 use App\Http\Controllers\Crm\CrmReportController;
 use App\Http\Controllers\Hrm\EmployeeController;
+use App\Http\Controllers\Hrm\EmployeeAttendanceController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -135,6 +136,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 // HRM
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('/employee', EmployeeController::class);
+    Route::get('/hrm/dashboard',[EmployeeController::class,'dashboard'])->name('hrm.dashboard');
+    Route::resource('/employee-attendance', EmployeeAttendanceController::class);
 
 });
 
