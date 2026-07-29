@@ -100,6 +100,7 @@ use App\Http\Controllers\Crm\CrmReportController;
 use App\Http\Controllers\Hrm\EmployeeController;
 use App\Http\Controllers\Hrm\EmployeeAttendanceController;
 use App\Http\Controllers\Hrm\EmployeeLeaveController;
+use App\Http\Controllers\Hrm\HolidayController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -140,6 +141,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/hrm/dashboard',[EmployeeController::class,'dashboard'])->name('hrm.dashboard');
     Route::resource('/employee-attendance', EmployeeAttendanceController::class);
     Route::resource('/employee-leave', EmployeeLeaveController::class);
+     Route::resource('/holiday', HolidayController::class);
     
 
 });
