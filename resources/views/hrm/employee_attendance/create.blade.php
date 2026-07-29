@@ -27,7 +27,8 @@
 
                         <div class="col-lg-4">
                             <label><b>Employee</b></label>
-                            <select name="employee_id" id="employee_id" class="select form-select" data-placeholder="Select Employee" required>
+                             <select name="employee_id[]" id="employee_id" class="form-select select" data-placeholder="Select Employee" multiple>
+                            <!-- <select name="employee_id" id="employee_id" class="select form-select" data-placeholder="Select Employee" required> -->
                                 @foreach($employees as $employee)
 
                                 <option value="{{ $employee->id }}">

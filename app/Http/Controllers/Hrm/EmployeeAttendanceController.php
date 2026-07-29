@@ -117,25 +117,38 @@ class EmployeeAttendanceController extends Controller
             'attendance_status' => 'required',
         ]);
 
-        DB::table('hrm_employee_attendances')->insert([
+       
 
-            'employee_id' => $request->employee_id,
-            'attendance_date' => $request->attendance_date,
-            'check_in' => $request->check_in,
-            'check_out' => $request->check_out,
-            'late_minutes' => $request->late_minutes,
-            'overtime_minutes' => $request->overtime_minutes,
-            'worked_hours' => $request->worked_hours,
-            'attendance_status' => $request->attendance_status,
-            'remarks' => $request->remarks,
-            'created_by' => auth()->id(),
-            'created_at' => now(),
-
-        ]);
-
-        return redirect()
-            ->route('admin.employee-attendance.index')
-            ->with('success','Attendance Created Successfully');
+        if(isset($request->employee_id) && count($request->employee_id)>0){
+              $attendexist= DB::table('hrm_employee_attendances')->where('attendance_date',$request->attendance_date)->whereIn('employee_id',$request->employee_id)->count();
+              if($attendexist){
+                 return redirect()->back()->withErrors('Already Exist attendance!');
+              }
+             
+           foreach ($request->employee_id as $key => $employeeId) {
+                DB::table('hrm_employee_attendances')->insert([
+                    'employee_id'       => $employeeId,
+                    'attendance_date'   => $request->attendance_date,
+                    'check_in'          => $request->check_in,
+                    'check_out'         => $request->check_out,
+                    'late_minutes'      => $request->late_minutes,
+                    'overtime_minutes'  => $request->overtime_minutes,
+                    'worked_hours'      => $request->worked_hours,
+                    'attendance_status' => $request->attendance_status,
+                    'remarks'           => $request->remarks,
+                    'created_by'        => auth()->id(),
+                    'created_at'        => now(),
+                ]);
+                }
+                
+    return redirect()
+        ->route('admin.employee-attendance.index')
+        ->with('success', 'Attendance saved successfully.');
+            }else{
+                return redirect()
+                ->route('admin.employee-attendance.create')
+                ->with('error', 'Ops! select employee');
+            }
     }
 
 
@@ -153,7 +166,7 @@ class EmployeeAttendanceController extends Controller
         return view('hrm.employee_attendance.edit', compact('data', 'employees'));
     }
 
-    
+
     public function update(Request $request, $id)
     {
         $request->validate([
