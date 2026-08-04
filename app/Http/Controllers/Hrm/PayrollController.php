@@ -222,14 +222,22 @@ class PayrollController extends Controller
     
     public function salaryGenerateStore(Request $request)
     {
-        // একই মাসে Payroll আগে Generate হয়েছে কিনা
+        $request->validate([
+            'payroll_month' => 'required',
+            'payroll_year'  => 'required',
+        ],[
+            'payroll_month.required' => 'Month selected is mandatory.',
+            'payroll_year.required'  => 'Year selected is mandatory.',
+        ]);
+
         $exists = DB::table('hrm_employee_payrolls')
             ->where('payroll_month', $request->payroll_month)
             ->where('payroll_year', $request->payroll_year)
             ->exists();
 
         if ($exists) {
-            return back()->with('error', 'Payroll already generated for this month.');
+            return redirect()->back()->withErrors('Already Paid Salary to this Month!');
+           
         }
 
         // Previous Month বের করা
