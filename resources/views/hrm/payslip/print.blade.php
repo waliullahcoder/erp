@@ -1,365 +1,453 @@
   @if($payroll)
 
-            <style>
-            @media print {
+  <style>
+@media print {
 
-                .card-header,
-                .card-body form,
-                .btn-print {
-                    display: none;
-                }
+    .card-header,
+    .card-body form,
+    .btn-print {
+        display: none;
+    }
 
-                body {
-                    background: #fff;
-                }
+    body {
+        background: #fff;
+    }
 
-            }
+}
 
-            .payslip {
+.payslip {
 
-                margin-top: 25px;
-                border: 1px solid #ccc;
-                padding: 25px;
-                background: #fff;
+    margin-top: 25px;
+    border: 1px solid #ccc;
+    padding: 25px;
+    background: #fff;
 
-            }
+}
 
-            .company-title {
+.company-title {
 
-                text-align: center;
-                border-bottom: 2px solid #0d6efd;
-                padding-bottom: 15px;
-                margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 
-            }
+}
 
-            .company-title h2 {
+.company-title h2 {
 
-                margin: 0;
-                color: #0d6efd;
+    margin: 0;
+    color: #0d6efd;
 
-            }
+}
 
-            .info-table {
+.info-table {
 
-                width: 100%;
-                border-collapse: collapse;
-                margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 
-            }
+}
 
-            .info-table td {
+.info-table td {
 
-                padding: 6px;
+    padding: 6px;
 
-            }
+}
 
-            .salary-table {
+.salary-table {
 
-                width: 100%;
-                border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 
-            }
+}
 
-            .salary-table th {
+.salary-table th {
 
-                background: #0d6efd;
-                color: #fff;
+    background: #0d6efd;
+    color: #fff;
 
-            }
+}
 
-            .salary-table th,
-            .salary-table td {
+.salary-table th,
+.salary-table td {
 
-                border: 1px solid #ccc;
-                padding: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
 
-            }
+}
 
-            .total {
+.total {
 
-                font-weight: bold;
-                background: #f5f5f5;
+    font-weight: bold;
+    background: #f5f5f5;
 
-            }
+}
 
-            .signature {
+.signature {
 
-                margin-top: 60px;
-                width: 100%;
+    margin-top: 60px;
+    width: 100%;
 
-            }
+}
 
-            .signature td {
+.signature td {
 
-                text-align: center;
+    text-align: center;
 
-            }
+}
 
-            .signature div {
+.signature div {
 
-                border-top: 1px solid #000;
-                width: 170px;
-                margin: auto;
-                padding-top: 5px;
+    border-top: 1px solid #000;
+    width: 170px;
+    margin: auto;
+    padding-top: 5px;
+
+}
+
+.company-header {
+    width: 100%;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.company-header table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company-header td {
+    border: none;
+    vertical-align: middle;
+}
+
+.company-logo {
+    width: 18%;
+}
+
+.company-logo img {
+    width: 90px;
+    height: auto;
+}
+
+.company-info {
+    width: 82%;
+    text-align: right;
+}
+
+.company-info h2 {
+    margin: 0;
+    color: #0d6efd;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.company-info p {
+    margin: 3px 0;
+    color: #555;
+    font-size: 13px;
+}
+
+.payslip-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.payslip-title h3 {
+    margin: 0;
+    color: #222;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-            }
-            .back-btn{
-                    align-items:center;
-                    gap:8px;
-                    padding:13px 18px;
-                    background:#0d6efd;
-                    color:#fff;
-                    text-decoration:none;
-                    border-radius:6px;
-                    font-size:14px;
-                    font-weight:600;
-                    transition:.3s ease;
-                    box-shadow:0 2px 8px rgba(13,110,253,.25);
-                }
+.payslip-title span {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 18px;
+    background: #0d6efd;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
 
-                .back-btn:hover{
-                    background:#0b5ed7;
-                    color:#fff;
-                    text-decoration:none;
-                    transform:translateY(-2px);
-                    box-shadow:0 4px 12px rgba(13,110,253,.35);
-                }
+.back-btn {
+    align-items: center;
+    gap: 8px;
+    padding: 13px 18px;
+    background: #0d6efd;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s ease;
+    box-shadow: 0 2px 8px rgba(13, 110, 253, .25);
+}
 
-                .back-btn i{
-                    font-size:13px;
-                }
-            </style>
+.back-btn:hover {
+    background: #0b5ed7;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, .35);
+}
 
-            <div class="card mt-3">
+.back-btn i {
+    font-size: 13px;
+}
+  </style>
 
-                <div class="card-body">
+  <div class="card mt-3">
 
-                    <div class="text-end btn-print mb-3">
+      <div class="card-body">
 
-                        <button onclick="window.print()" class="btn btn-primary back-btn">
+          <div class="text-end btn-print mb-3">
 
-                            <i class="fa fa-print"></i>
+              <button onclick="window.print()" class="btn btn-primary back-btn">
 
-                            Print Payslip
+                  <i class="fa fa-print"></i>
 
-                        </button>
-                         <a href="{{ route('admin.pay.slip') }}" class="back-btn">
-                            <i class="fas fa-arrow-left"></i> Back
-                            </a>
+                  Print Payslip
 
-                    </div>
+              </button>
+              <a href="{{ route('admin.pay.slip') }}" class="back-btn">
+                  <i class="fas fa-arrow-left"></i> Back
+              </a>
 
-                    <div class="payslip">
+          </div>
 
-                        <div class="company-title">
+          <div class="payslip">
 
-                            <img src="{{ asset($setting->logo) }}" width="90">
+              <div class="company-header">
 
-                            <h2>{{ $setting->title }}</h2>
+                  <table>
 
-                            <p>{{ $setting->address }}</p>
+                      <tr>
 
-                            <p>{{ $setting->primary_mobile }}</p>
+                          <td class="company-logo">
+                              <img src="{{ asset($setting->logo) }}" alt="Logo">
+                          </td>
 
-                            <h3>PAY SLIP</h3>
+                          <td class="company-info">
 
-                            <h5>
+                              <h2>{{ $setting->title }}</h2>
 
-                                {{ $payroll_month }}
-                                -
-                                {{ $payroll_year }}
+                              <p>{{ $setting->address }}</p>
 
-                            </h5>
+                              <p>
+                                  <strong>Mobile :</strong> {{ $setting->primary_mobile }}
+                              </p>
 
-                        </div>
+                              <p>
+                                  <strong>Email :</strong> {{ $setting->primary_email }}
+                              </p>
 
+                          </td>
 
-                        <table class="info-table">
+                      </tr>
 
-                            <tr>
+                  </table>
 
-                                <td><b>Employee ID</b></td>
+              </div>
 
-                                <td>{{ $payroll->employee_code }}</td>
+              <div class="payslip-title">
 
-                                <td><b>Name</b></td>
+                  <h3>EMPLOYEE PAY SLIP</h3>
 
-                                <td>{{ $payroll->name }}</td>
+                  <span>
+                      {{ $payroll_month }} - {{ $payroll_year }}
+                  </span>
 
-                            </tr>
+              </div>
 
-                            <tr>
 
-                                <td><b>Department</b></td>
+              <table class="info-table">
 
-                                <td>{{ $payroll->department }}</td>
+                  <tr>
 
-                                <td><b>Designation</b></td>
+                      <td><b>Employee ID</b></td>
 
-                                <td>{{ $payroll->designation }}</td>
+                      <td>{{ $payroll->employee_code }}</td>
 
-                            </tr>
+                      <td><b>Name</b></td>
 
-                        </table>
+                      <td>{{ $payroll->name }}</td>
 
+                  </tr>
 
-                        <table class="salary-table">
+                  <tr>
 
-                            <tr>
+                      <td><b>Department</b></td>
 
-                                <th>Earnings</th>
+                      <td>{{ $payroll->department }}</td>
 
-                                <th align="right">Amount</th>
+                      <td><b>Designation</b></td>
 
-                                <th>Deductions</th>
+                      <td>{{ $payroll->designation }}</td>
 
-                                <th align="right">Amount</th>
+                  </tr>
 
-                            </tr>
+              </table>
 
-                            <tr>
 
-                                <td>Basic Salary</td>
+              <table class="salary-table">
 
-                                <td align="right">{{ number_format($payroll->basic_salary,2) }}</td>
+                  <tr>
 
-                                <td>Late Deduction</td>
+                      <th>Earnings</th>
 
-                                <td align="right">{{ number_format($payroll->late_deduction,2) }}</td>
+                      <th align="right">Amount</th>
 
-                            </tr>
+                      <th>Deductions</th>
 
-                            <tr>
+                      <th align="right">Amount</th>
 
-                                <td>House Rent</td>
+                  </tr>
 
-                                <td align="right">{{ number_format($payroll->house_rent,2) }}</td>
+                  <tr>
 
-                                <td>Provident Fund</td>
+                      <td>Basic Salary</td>
 
-                                <td align="right">{{ number_format($payroll->provident_fund,2) }}</td>
+                      <td align="right">{{ number_format($payroll->basic_salary,2) }}</td>
 
-                            </tr>
+                      <td>Late Deduction</td>
 
-                            <tr>
+                      <td align="right">{{ number_format($payroll->late_deduction,2) }}</td>
 
-                                <td>Medical</td>
+                  </tr>
 
-                                <td align="right">{{ number_format($payroll->medical_allowance,2) }}</td>
+                  <tr>
 
-                                <td>Loan</td>
+                      <td>House Rent</td>
 
-                                <td align="right">{{ number_format($payroll->loan_deduction,2) }}</td>
+                      <td align="right">{{ number_format($payroll->house_rent,2) }}</td>
 
-                            </tr>
+                      <td>Provident Fund</td>
 
-                            <tr>
+                      <td align="right">{{ number_format($payroll->provident_fund,2) }}</td>
 
-                                <td>Conveyance</td>
+                  </tr>
 
-                                <td align="right">{{ number_format($payroll->conveyance_allowance,2) }}</td>
+                  <tr>
 
-                                <td>Advance</td>
+                      <td>Medical</td>
 
-                                <td align="right">{{ number_format($payroll->advance_deduction,2) }}</td>
+                      <td align="right">{{ number_format($payroll->medical_allowance,2) }}</td>
 
-                            </tr>
+                      <td>Loan</td>
 
-                            <tr>
+                      <td align="right">{{ number_format($payroll->loan_deduction,2) }}</td>
 
-                                <td>Food</td>
+                  </tr>
 
-                                <td align="right">{{ number_format($payroll->food_allowance,2) }}</td>
+                  <tr>
 
-                                <td>Tax</td>
+                      <td>Conveyance</td>
 
-                                <td align="right">{{ number_format($payroll->tax,2) }}</td>
+                      <td align="right">{{ number_format($payroll->conveyance_allowance,2) }}</td>
 
-                            </tr>
+                      <td>Advance</td>
 
-                            <tr>
+                      <td align="right">{{ number_format($payroll->advance_deduction,2) }}</td>
 
-                                <td>Other Allowance</td>
+                  </tr>
 
-                                <td align="right">{{ number_format($payroll->other_allowance,2) }}</td>
+                  <tr>
 
-                                <td>Other Deduction</td>
+                      <td>Food</td>
 
-                                <td align="right">{{ number_format($payroll->other_deduction,2) }}</td>
+                      <td align="right">{{ number_format($payroll->food_allowance,2) }}</td>
 
-                            </tr>
+                      <td>Tax</td>
 
-                            <tr class="total">
+                      <td align="right">{{ number_format($payroll->tax,2) }}</td>
 
-                                <td><b>Gross Salary</b></td>
+                  </tr>
 
-                                <td align="right">
+                  <tr>
 
-                                    <b>{{ number_format($payroll->gross_salary,2) }}</b>
+                      <td>Other Allowance</td>
 
-                                </td>
+                      <td align="right">{{ number_format($payroll->other_allowance,2) }}</td>
 
-                                <td><b>Total Deduction</b></td>
+                      <td>Other Deduction</td>
 
-                                <td align="right">
+                      <td align="right">{{ number_format($payroll->other_deduction,2) }}</td>
 
-                                    <b>{{ number_format($payroll->total_deduction,2) }}</b>
+                  </tr>
 
-                                </td>
+                  <tr class="total">
 
-                            </tr>
+                      <td><b>Gross Salary</b></td>
 
-                            <tr class="total">
+                      <td align="right">
 
-                                <td colspan="3">
+                          <b>{{ number_format($payroll->gross_salary,2) }}</b>
 
-                                    <h4>NET SALARY</h4>
+                      </td>
 
-                                </td>
+                      <td><b>Total Deduction</b></td>
 
-                                <td align="right">
+                      <td align="right">
 
-                                    <h4>{{ number_format($payroll->net_salary,2) }}</h4>
+                          <b>{{ number_format($payroll->total_deduction,2) }}</b>
 
-                                </td>
+                      </td>
 
-                            </tr>
+                  </tr>
 
-                        </table>
+                  <tr class="total">
 
-                        <table class="signature">
+                      <td colspan="3">
 
-                            <tr>
+                          <h4>NET SALARY</h4>
 
-                                <td>
+                      </td>
 
-                                    <div>
+                      <td align="right">
 
-                                        Employee Signature
+                          <h4>{{ number_format($payroll->net_salary,2) }}</h4>
 
-                                    </div>
+                      </td>
 
-                                </td>
+                  </tr>
 
-                                <td>
+              </table>
 
-                                    <div>
+              <table class="signature">
 
-                                        Authorized Signature
+                  <tr>
 
-                                    </div>
+                      <td>
 
-                                </td>
+                          <div>
 
-                            </tr>
+                              Employee Signature
 
-                        </table>
+                          </div>
 
-                    </div>
+                      </td>
 
-                </div>
+                      <td>
 
-            </div>
+                          <div>
 
-            @endif
+                              Authorized Signature
+
+                          </div>
+
+                      </td>
+
+                  </tr>
+
+              </table>
+
+          </div>
+
+      </div>
+
+  </div>
+
+  @endif

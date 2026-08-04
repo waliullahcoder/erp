@@ -326,11 +326,10 @@ INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`
 	(227, 639, 199, 'Leave Application', 'ছুটির আবেদন', 'admin.employee-leave.create', NULL, 6, 1, 1, '2026-07-16 06:47:37', '2026-07-29 06:54:41'),
 	(228, 640, 199, 'Holiday Management', 'ছুটির তালিকা', 'admin.holiday.index', NULL, 7, 1, 1, '2026-07-16 06:48:31', '2026-07-29 08:34:12'),
 	(231, 643, 199, 'Payroll Management', 'বেতন ব্যবস্থাপনা', 'admin.payroll.index', NULL, 10, 1, 1, '2026-07-16 06:51:20', '2026-07-29 09:21:59'),
-	(232, 644, 199, 'Salary Structure', 'বেতন কাঠামো', NULL, NULL, 11, 1, 1, '2026-07-16 06:51:47', '2026-07-16 06:51:47'),
-	(233, 645, 199, 'Generate Salary', 'বেতন তৈরি', NULL, NULL, 12, 1, 1, '2026-07-16 06:52:16', '2026-07-16 06:52:16'),
-	(234, 646, 199, 'Salary Sheet', 'বেতন শীট', NULL, NULL, 13, 1, 1, '2026-07-16 06:52:51', '2026-07-16 06:52:51'),
-	(235, 647, 199, 'Salary Payment', 'বেতন পরিশোধ', NULL, NULL, 14, 1, 1, '2026-07-16 06:53:16', '2026-07-16 06:53:16'),
-	(236, 648, 199, 'Payslip', 'বেতন স্লিপ', NULL, NULL, 14, 1, 1, '2026-07-16 06:54:31', '2026-07-16 06:54:31'),
+	(232, 644, 199, 'Salary Structure', 'বেতন কাঠামো', 'admin.salary.structure', NULL, 11, 1, 1, '2026-07-16 06:51:47', '2026-08-04 06:26:47'),
+	(233, 645, 199, 'Generate Salary', 'বেতন তৈরি', 'admin.salary.generate', NULL, 12, 1, 1, '2026-07-16 06:52:16', '2026-08-04 07:03:27'),
+	(234, 646, 199, 'Salary Sheet', 'বেতন শীট', 'admin.salary.generate', NULL, 13, 1, 1, '2026-07-16 06:52:51', '2026-08-04 10:08:31'),
+	(236, 648, 199, 'Payslip', 'বেতন স্লিপ', 'admin.pay.slip', NULL, 14, 1, 1, '2026-07-16 06:54:31', '2026-08-04 11:15:29'),
 	(237, 649, 199, 'Bonus Management', 'বোনাস ব্যবস্থাপনা', NULL, NULL, 15, 1, 1, '2026-07-16 06:54:57', '2026-07-16 06:54:57'),
 	(238, 650, 199, 'Increment Management', 'ইনক্রিমেন্ট ব্যবস্থাপনা', NULL, NULL, 16, 1, 1, '2026-07-16 06:55:21', '2026-07-16 06:55:21'),
 	(239, 651, 199, 'Loan Management', 'ঋণ ব্যবস্থাপনা', NULL, NULL, 17, 1, 1, '2026-07-16 06:55:46', '2026-07-16 06:55:46'),
@@ -358,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `admin_menu_actions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=439 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=441 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table technopa_crm.admin_menu_actions: ~291 rows (approximately)
 DELETE FROM `admin_menu_actions`;
@@ -660,7 +659,9 @@ INSERT INTO `admin_menu_actions` (`id`, `permission_id`, `admin_menu_id`, `name`
 	(435, 690, 225, 'edit', 'admin.employee-attendance.edit', 1, '2026-07-28 11:40:31', '2026-07-28 11:40:31'),
 	(436, 691, 226, 'edit', 'admin.employee-leave.edit', 1, '2026-07-29 06:56:42', '2026-07-29 06:56:42'),
 	(437, 692, 228, 'edit', 'admin.holiday.edit', 1, '2026-07-29 08:34:42', '2026-07-29 08:34:42'),
-	(438, 693, 231, 'edit', 'admin.payroll.edit', 1, '2026-07-29 10:10:02', '2026-07-29 10:10:02');
+	(438, 693, 231, 'edit', 'admin.payroll.edit', 1, '2026-07-29 10:10:02', '2026-07-29 10:10:02'),
+	(439, 694, 231, 'pay', 'admin.payroll.update-status', 1, '2026-08-04 04:27:47', '2026-08-04 04:27:47'),
+	(440, 695, 232, 'certificate', 'admin.salary.structure.certificate', 1, '2026-08-04 06:30:26', '2026-08-04 06:30:26');
 
 -- Dumping structure for table technopa_crm.admin_settings
 DROP TABLE IF EXISTS `admin_settings`;
@@ -2138,7 +2139,7 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_holidays` (
   KEY `idx_branch` (`branch_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_holidays: ~0 rows (approximately)
+-- Dumping data for table technopa_crm.hrm_employee_holidays: ~1 rows (approximately)
 DELETE FROM `hrm_employee_holidays`;
 INSERT INTO `hrm_employee_holidays` (`id`, `company_id`, `holiday_name`, `holiday_type`, `from_date`, `to_date`, `total_days`, `repeat_yearly`, `branch_id`, `description`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'asdasdd', 'Public Holiday', '2026-07-29', '2026-07-31', 3.00, 1, NULL, 'sadadas', 1, 1, 1, '2026-07-29 07:25:40', '2026-07-29 08:37:39');
@@ -2164,13 +2165,14 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_leaves` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_leaves: ~0 rows (approximately)
+-- Dumping data for table technopa_crm.hrm_employee_leaves: ~3 rows (approximately)
 DELETE FROM `hrm_employee_leaves`;
 INSERT INTO `hrm_employee_leaves` (`id`, `employee_id`, `leave_type`, `from_date`, `to_date`, `total_days`, `day_type`, `reason`, `attachment`, `status`, `approved_by`, `approved_at`, `remarks`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 60, 'Casual Leave', '2026-07-29', '2026-07-29', 0.50, 'First Half', 'asdasdsads', NULL, 'Pending', NULL, NULL, 'sdsad', 1, NULL, '2026-07-29 06:52:01', '2026-07-29 06:52:01'),
-	(2, 60, 'Casual Leave', '2026-07-29', '2026-07-29', 0.50, 'First Half', 'dsadsadasd', NULL, 'Rejected', NULL, NULL, 'ddasd', 1, 1, '2026-07-29 06:53:03', '2026-07-29 07:07:05');
+	(2, 60, 'Casual Leave', '2026-08-04', '2026-08-04', 0.50, 'First Half', 'dsadsadasd', NULL, 'Rejected', NULL, NULL, 'ddasd', 1, 1, '2026-07-29 06:53:03', '2026-08-04 03:52:13'),
+	(3, 60, 'Casual Leave', '2026-08-04', '2026-08-06', 2.00, 'Full Day', 'vdfvd', NULL, 'Pending', NULL, NULL, 'vdfvdf', 1, NULL, '2026-08-04 03:42:33', '2026-08-04 04:05:22');
 
 -- Dumping structure for table technopa_crm.hrm_employee_payrolls
 DROP TABLE IF EXISTS `hrm_employee_payrolls`;
@@ -2221,12 +2223,60 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_payrolls` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_payrolls: ~1 rows (approximately)
+-- Dumping data for table technopa_crm.hrm_employee_payrolls: ~48 rows (approximately)
 DELETE FROM `hrm_employee_payrolls`;
 INSERT INTO `hrm_employee_payrolls` (`id`, `employee_id`, `payroll_month`, `payroll_year`, `payment_type`, `basic_salary`, `house_rent`, `medical_allowance`, `conveyance_allowance`, `food_allowance`, `mobile_allowance`, `other_allowance`, `gross_salary`, `working_days`, `present_days`, `absent_days`, `leave_days`, `late_count`, `late_deduction`, `overtime_hours`, `overtime_amount`, `tax`, `provident_fund`, `loan_deduction`, `advance_deduction`, `attendance_deduction`, `other_deduction`, `total_deduction`, `festival_bonus`, `performance_bonus`, `commission`, `other_addition`, `total_addition`, `net_salary`, `payment_date`, `payment_method`, `bank_name`, `account_no`, `transaction_no`, `payment_status`, `remarks`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-	(1, 63, 7, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 44.00, 444.00, 44.00, 2000.00, 20976.00, 0, 0, 0, 0, 0, 44.00, 0.00, 444.00, 44.00, 44.00, 44.00, 55.00, 555.00, 410.00, 1196.00, 55.00, 55.00, 55.00, 55.00, 220.00, 20000.00, '2026-07-29', 'Cash', 'Rampura', 'AC#34334444432', 'fdfdfd', 'Pending', '5ttr', 1, 1, '2026-07-29 10:01:32', '2026-07-30 04:16:56');
+	(2, 63, 7, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'ffsdfsdfsdf', 1, NULL, '2026-08-04 04:07:22', '2026-08-04 07:12:54'),
+	(3, 62, 7, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'sdsdsds', 1, NULL, '2026-08-04 07:13:38', '2026-08-04 07:15:32'),
+	(4, 63, 7, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'asdasd', 1, 1, '2026-08-04 07:13:53', '2026-08-04 07:15:58'),
+	(5, 52, 7, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'asdasd', 1, NULL, '2026-08-04 07:14:36', '2026-08-04 07:15:52'),
+	(6, 61, 7, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'asdsad', 1, 1, '2026-08-04 07:14:48', '2026-08-04 07:15:45'),
+	(7, 59, 7, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'asdasd', 1, NULL, '2026-08-04 07:15:14', '2026-08-04 07:15:39'),
+	(8, 63, 8, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(9, 62, 8, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(10, 63, 8, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, 1, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(11, 52, 8, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(12, 61, 8, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, 1, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(13, 59, 8, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(14, 63, 9, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary', 1, NULL, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(15, 62, 9, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary', 1, NULL, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(16, 63, 9, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary', 1, 1, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(17, 52, 9, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary', 1, NULL, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(18, 61, 9, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary', 1, 1, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(19, 59, 9, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary', 1, NULL, '2026-08-04 09:10:56', '2026-08-04 09:10:56'),
+	(20, 63, 10, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(21, 62, 10, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(22, 63, 10, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(23, 52, 10, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(24, 61, 10, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(25, 59, 10, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:03', '2026-08-04 09:14:03'),
+	(26, 63, 11, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(27, 62, 11, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(28, 63, 11, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(29, 52, 11, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(30, 61, 11, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(31, 59, 11, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:14:52', '2026-08-04 09:14:52'),
+	(32, 63, 12, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'dsfsfsfsdf', 1, NULL, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(33, 62, 12, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'dsfsfsfsdf', 1, NULL, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(34, 63, 12, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'dsfsfsfsdf', 1, 1, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(35, 52, 12, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'dsfsfsfsdf', 1, NULL, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(36, 61, 12, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'dsfsfsfsdf', 1, 1, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(37, 59, 12, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'dsfsfsfsdf', 1, NULL, '2026-08-04 09:16:12', '2026-08-04 09:16:12'),
+	(38, 63, 1, '2027', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(39, 62, 1, '2027', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(40, 63, 1, '2027', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(41, 52, 1, '2027', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(42, 61, 1, '2027', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, 1, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(43, 59, 1, '2027', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 09:16:39', '2026-08-04 09:16:39'),
+	(44, 63, 2, '2027', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(45, 62, 2, '2027', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(46, 63, 2, '2027', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, 1, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(47, 52, 2, '2027', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(48, 61, 2, '2027', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, 1, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(49, 59, 2, '2027', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
+	(50, 60, 7, '2026', 'Monthly', 44444.00, 555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 45609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 45609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 11:14:20', '2026-08-04 11:14:33');
 
 -- Dumping structure for table technopa_crm.investors
 DROP TABLE IF EXISTS `investors`;
@@ -4215,7 +4265,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=694 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=696 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table technopa_crm.permissions: ~479 rows (approximately)
 DELETE FROM `permissions`;
@@ -4658,7 +4708,6 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(644, 'Salary Structure', 'web', '2026-07-16 06:51:46', '2026-07-16 06:51:46'),
 	(645, 'Generate Salary', 'web', '2026-07-16 06:52:15', '2026-07-16 06:52:15'),
 	(646, 'Salary Sheet', 'web', '2026-07-16 06:52:51', '2026-07-16 06:52:51'),
-	(647, 'Salary Payment', 'web', '2026-07-16 06:53:15', '2026-07-16 06:53:15'),
 	(648, 'Payslip', 'web', '2026-07-16 06:54:29', '2026-07-16 06:54:29'),
 	(649, 'Bonus Management', 'web', '2026-07-16 06:54:56', '2026-07-16 06:54:56'),
 	(650, 'Increment Management', 'web', '2026-07-16 06:55:20', '2026-07-16 06:55:20'),
@@ -4697,7 +4746,9 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(690, 'admin.employee-attendance.edit', 'web', '2026-07-28 11:40:31', '2026-07-28 11:40:31'),
 	(691, 'admin.employee-leave.edit', 'web', '2026-07-29 06:56:41', '2026-07-29 06:56:41'),
 	(692, 'admin.holiday.edit', 'web', '2026-07-29 08:34:41', '2026-07-29 08:34:41'),
-	(693, 'admin.payroll.edit', 'web', '2026-07-29 10:10:02', '2026-07-29 10:10:02');
+	(693, 'admin.payroll.edit', 'web', '2026-07-29 10:10:02', '2026-07-29 10:10:02'),
+	(694, 'admin.payroll.update-status', 'web', '2026-08-04 04:27:47', '2026-08-04 04:27:47'),
+	(695, 'admin.salary.structure.certificate', 'web', '2026-08-04 06:30:26', '2026-08-04 06:30:26');
 
 -- Dumping structure for table technopa_crm.personal_access_tokens
 DROP TABLE IF EXISTS `personal_access_tokens`;
@@ -6091,7 +6142,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(644, 10),
 	(645, 10),
 	(646, 10),
-	(647, 10),
 	(648, 10),
 	(649, 10),
 	(650, 10),
@@ -6131,6 +6181,8 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(691, 10),
 	(692, 10),
 	(693, 10),
+	(694, 10),
+	(695, 10),
 	(1, 13),
 	(610, 13),
 	(612, 13),
@@ -6638,7 +6690,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(644, 19),
 	(645, 19),
 	(646, 19),
-	(647, 19),
 	(648, 19),
 	(649, 19),
 	(650, 19),
@@ -7145,6 +7196,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   `increment_percent` double DEFAULT '0',
   `increment_amount` double DEFAULT '0',
   `total_salary` double DEFAULT '0',
+  `leave_balance` double DEFAULT '0',
   `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint NOT NULL DEFAULT '1',
   `created_by` bigint unsigned DEFAULT NULL,
@@ -7156,15 +7208,15 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.staff: ~5 rows (approximately)
+-- Dumping data for table technopa_crm.staff: ~6 rows (approximately)
 DELETE FROM `staff`;
-INSERT INTO `staff` (`id`, `company_id`, `branch_id`, `code`, `name`, `short_name`, `designation`, `phone`, `address`, `email`, `national_id`, `joining_date`, `ac_no`, `ac_branch`, `basic_salary`, `house_rent`, `medical_allowance`, `others`, `deducted`, `increment_percent`, `increment_amount`, `total_salary`, `type`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(52, 1, 1, '10013', 'Office Sale', 'Office Sale', NULL, '017', NULL, NULL, NULL, '2024-02-03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sales', 1, 2, 2, 1, '2025-04-28 09:53:34', '2024-02-03 11:09:05', '2025-04-28 09:53:34'),
-	(59, 1, 1, 'Shimul', 'Shimul', 'Shimul', 'Sr. HR', '01303740757', '316/2, Rampura Dhaka', 'nijer.bazar@gmail.com', '333333333333333333333', '2025-04-28', 'AC#34334444432', 'Rampura', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'general', 1, 1, 1, NULL, NULL, '2025-04-28 08:36:01', '2026-07-28 03:54:04'),
-	(60, 1, 1, 'Arnob Sur', 'Arnob Sur', 'Arnob Sur', NULL, NULL, NULL, NULL, NULL, '2025-04-28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sales', 1, 1, 2, NULL, NULL, '2025-04-28 08:36:32', '2025-06-16 13:33:55'),
-	(61, 1, 1, 'C100', 'Shamol', 'Shamol', 'Sales Office', NULL, NULL, NULL, NULL, '2025-04-28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sales', 1, 1, 2, NULL, NULL, '2025-04-28 11:31:36', '2025-06-16 13:33:37'),
-	(62, 1, 1, 'Dipu', 'Dipu', 'Dipu', NULL, NULL, NULL, NULL, NULL, '2025-05-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sales', 1, 159, NULL, NULL, NULL, '2025-05-10 12:24:46', '2025-05-10 12:24:46'),
-	(63, 1, 1, 'digt233', 'Mozammel', 'Mozammel', 'DME', '01303740757', '316/2, Rampura Dhaka', 'nijer.bazar@gmail.com', NULL, '2026-05-01', 'AC#34334444432', 'Rampura', 10000, 5000, 3000, 2000, NULL, NULL, 0, 20000, 'digital', 1, 1, NULL, NULL, NULL, '2026-07-28 05:24:07', '2026-07-28 05:24:07');
+INSERT INTO `staff` (`id`, `company_id`, `branch_id`, `code`, `name`, `short_name`, `designation`, `phone`, `address`, `email`, `national_id`, `joining_date`, `ac_no`, `ac_branch`, `basic_salary`, `house_rent`, `medical_allowance`, `others`, `deducted`, `increment_percent`, `increment_amount`, `total_salary`, `leave_balance`, `type`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
+	(52, 1, 1, '10013', 'Office Sale', 'Office Sale', NULL, '017', NULL, NULL, NULL, '2024-02-03', NULL, NULL, 55555, 5555, 55, 55, NULL, NULL, NULL, 6666, 0, 'sales', 1, 2, 2, 1, '2025-04-28 09:53:34', '2024-02-03 11:09:05', '2025-04-28 09:53:34'),
+	(59, 1, 1, 'Shimul', 'Shimul', 'Shimul', 'Sr. HR', '01303740757', '316/2, Rampura Dhaka', 'nijer.bazar@gmail.com', '333333333333333333333', '2025-04-28', 'AC#34334444432', 'Rampura', 5555, 5555, 555, 55, NULL, NULL, NULL, 77777, 0, 'general', 1, 1, 1, NULL, NULL, '2025-04-28 08:36:01', '2026-07-28 03:54:04'),
+	(60, 1, 1, 'Arnob Sur', 'Arnob Sur', 'Arnob Sur', NULL, NULL, NULL, NULL, NULL, '2025-04-28', NULL, NULL, 44444, 555, 555, 55, NULL, NULL, 0, 8888, 3, 'sales', 1, 1, 1, NULL, NULL, '2025-04-28 08:36:32', '2026-08-04 03:29:48'),
+	(61, 1, 1, 'C100', 'Shamol', 'Shamol', 'Sales Office', NULL, NULL, NULL, NULL, '2025-04-28', NULL, NULL, 33333, 555, 55, 55, NULL, NULL, NULL, 88888, 0, 'sales', 1, 1, 2, NULL, NULL, '2025-04-28 11:31:36', '2025-06-16 13:33:37'),
+	(62, 1, 1, 'Dipu', 'Dipu', 'Dipu', NULL, NULL, NULL, NULL, NULL, '2025-05-10', NULL, NULL, 44444, 5555, 555, 55, NULL, NULL, NULL, 88888, 0, 'sales', 1, 159, NULL, NULL, NULL, '2025-05-10 12:24:46', '2025-05-10 12:24:46'),
+	(63, 1, 1, 'digt233', 'Mozammel', 'Mozammel', 'DME', '01303740757', '316/2, Rampura Dhaka', 'nijer.bazar@gmail.com', NULL, '2026-05-01', 'AC#34334444432', 'Rampura', 10000, 5000, 3000, 2000, NULL, NULL, 0, 20000, 0, 'digital', 1, 1, NULL, NULL, NULL, '2026-07-28 05:24:07', '2026-07-28 05:24:07');
 
 -- Dumping structure for table technopa_crm.static_site_items
 DROP TABLE IF EXISTS `static_site_items`;
