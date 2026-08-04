@@ -283,6 +283,37 @@ class PayrollController extends Controller
             ->withSuccessMessage('Salary generated successfully '.'for '.$monthName.'-'.$request->payroll_year );
     }
 
+    public function salarySheet(Request $request)
+    {
+        $current = \Carbon\Carbon::create(
+            $request->payroll_year,
+            $request->payroll_month,
+            1
+        );
+
+        $previous = $current->copy()->subMonth();
+
+        $payrolls = DB::table('hrm_employee_payrolls as p')
+            ->join('staff as s','s.id','=','p.employee_id')
+            ->where('p.payroll_month',$previous->month)
+            ->where('p.payroll_year',$previous->year)
+            ->select(
+                'p.*',
+                's.code as employee_code',
+                's.name'
+            )
+            ->get();
+
+        return view(
+            'hrm.salary_sheet.index',
+            compact(
+                'payrolls',
+                'request',
+                'previous'
+            )
+        );
+    }
+
     public function updateStatus(Request $request, $id)
     {
         DB::table('hrm_employee_payrolls')

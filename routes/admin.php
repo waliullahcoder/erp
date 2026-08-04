@@ -150,6 +150,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::get('/salary-generate',[PayrollController::class,'salaryGenerate'])->name('salary.generate');
     Route::post('/salary-generate/store',[PayrollController::class,'salaryGenerateStore'])->name('salary.generate.store');
+    Route::get('/salary-sheet',[PayrollController::class,'salarySheet'])->name('salary.sheet');
 
 });
 

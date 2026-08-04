@@ -27,20 +27,23 @@
                     <div class="row g-3">
                         <div class="col-lg-4">
                                 <label><b>Payroll Month</b></label>
+
                                 <select name="payroll_month" class="form-control" required>
                                     @for($i=1;$i<=12;$i++)
-                                        <option value="{{ $i }}" {{ $i==date('n')?'selected':'' }}>
+                                        <option value="{{ $i }}"
+                                            {{ request('payroll_month', date('n')) == $i ? 'selected' : '' }}>
                                             {{ date('F', mktime(0,0,0,$i,1)) }}
                                         </option>
                                     @endfor
                                 </select>
                             </div>
-
                             <div class="col-lg-4">
                                 <label><b>Payroll Year</b></label>
+
                                 <select name="payroll_year" class="form-control">
                                     @for($i=date('Y')-2;$i<=date('Y')+2;$i++)
-                                        <option value="{{ $i }}" {{ $i==date('Y')?'selected':'' }}>
+                                        <option value="{{ $i }}"
+                                            {{ request('payroll_year', date('Y')) == $i ? 'selected' : '' }}>
                                             {{ $i }}
                                         </option>
                                     @endfor
@@ -152,6 +155,15 @@
                             Salary Generate Confirm
 
                         </button>
+                        <a href="{{ route('admin.salary.sheet',[
+                            'payroll_month'=>request('payroll_month'),
+                            'payroll_year'=>request('payroll_year')
+                        ]) }}"
+                        class="btn btn-primary"
+                        target="_blank">
+                            <i class="fas fa-print"></i>
+                            Print Salary Sheet
+                        </a>
 
                     </form>
 
