@@ -97,6 +97,7 @@ class StaffController extends Controller
             'national_id' => $request->national_id,
             'ac_no' => $request->ac_no,
             'ac_branch' => $request->ac_branch,
+            'leave_balance' => $request->leave_balance,
             'address' => $request->address,
             'basic_salary' => $request->basic_salary,
             'house_rent' => $request->house_rent,
@@ -181,6 +182,7 @@ class StaffController extends Controller
             'increment_percent' => $request->increment_percent,
             'increment_amount' => $request->increment_amount,
             'total_salary' => $request->total_salary,
+            'leave_balance' => $request->leave_balance,
             'type' => $request->type,
             'updated_by' => Auth::user()->id,
         ]);

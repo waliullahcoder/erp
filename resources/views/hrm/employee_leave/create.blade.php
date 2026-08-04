@@ -44,15 +44,15 @@
                         <div class="col-md-3">
                             <label class="form-label"><b>Employee</b></label>
 
-                            <select name="employee_id"
+                           <select name="employee_id"
+                                    id="employee_id"
                                     class="form-select select"
                                     required>
                                 @foreach($employees as $employee)
-
-                                    <option value="{{ $employee->id }}">
+                                    <option value="{{ $employee->id }}"
+                                            data-balance="{{ $employee->leave_balance }}">
                                         {{ $employee->id }} - {{ $employee->name }}
                                     </option>
-
                                 @endforeach
 
                             </select>
@@ -130,7 +130,7 @@
 
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
 
                             <label class="form-label">
                                 <b>To Date</b>
@@ -143,7 +143,7 @@
                                 required>
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-2">
 
                             <label class="form-label">
                                 <b>Total Days</b>
@@ -156,6 +156,15 @@
                                 step="0.5"
                                 readonly>
 
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">
+                                <b>Leave Balance</b>
+                            </label>
+                            <input type="text"
+                                id="leave_balance"
+                                class="form-control"
+                                readonly>
                         </div>
 
                         <div class="col-md-3">
@@ -216,7 +225,7 @@
 
                 <div class="card-footer text-end">
 
-                    <button class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-primary btn-sm">
                         Save
                     </button>
 
@@ -234,45 +243,75 @@
 @push('js')
 <script>
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     calculateDays();
+    getLeaveBalance();
 
-    $('#from_date,#to_date,#day_type').on('change',function(){
-
-        calculateDays();
-
+    $('#employee_id').on('change', function () {
+        getLeaveBalance();
+        validateLeave();
     });
 
-    function calculateDays(){
+    $('#from_date,#to_date,#day_type').on('change', function () {
+        calculateDays();
+    });
+
+    function getLeaveBalance() {
+
+        let balance = $('#employee_id option:selected').data('balance') || 0;
+
+        $('#leave_balance').val(balance);
+
+        validateLeave();
+    }
+
+    function calculateDays() {
 
         let from = $('#from_date').val();
-        let to   = $('#to_date').val();
+        let to = $('#to_date').val();
         let type = $('#day_type').val();
 
-        if(from != '' && to != ''){
+        if (from && to) {
 
             let start = new Date(from);
-            let end   = new Date(to);
+            let end = new Date(to);
 
-            let diff = Math.floor((end - start) / (1000*60*60*24)) + 1;
+            let diff = Math.floor((end - start) / (1000 * 60 * 60 * 24)) + 1;
 
-            if(diff < 0){
-                diff = 0;
-            }
+            if (diff < 0) diff = 0;
 
-            if(type == 'First Half' || type == 'Second Half'){
-                diff = diff - 0.5;
+            if (type == 'First Half' || type == 'Second Half') {
+                diff -= 0.5;
             }
 
             $('#total_days').val(diff);
 
-        }else{
+            validateLeave();
+
+        } else {
 
             $('#total_days').val('');
 
         }
 
+    }
+
+   function validateLeave() {
+
+    let balance = parseFloat($('#leave_balance').val()) || 0;
+    let days = parseFloat($('#total_days').val()) || 0;
+
+    if (days > balance) {
+
+        alert('Leave balance is only ' + balance + ' day(s).');
+
+        $('#to_date').val('');
+        $('#total_days').val('');
+
+        $('#to_date').focus();
+
+         }
     }
 
 });

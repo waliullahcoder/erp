@@ -81,10 +81,15 @@
             <input type="text" class="form-control" id="designation" name="designation"
                 value="{{ old('designation') }}" placeholder="Designation">
         </div>
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-2 col-sm-6">
             <label for="joining_date" class="form-label"><b>Joining Date <span class="text-danger">*</span></b></label>
             <input type="text" class="form-control date_picker" id="joining_date" name="joining_date"
                 required value="{{ date('d-m-Y', strtotime(old('joining_date'))) }}" placeholder="Joining Date">
+        </div>
+         <div class="col-lg-2 col-sm-6">
+            <label for="leave_balance" class="form-label"><b>Leave Balance <span class="text-danger">*</span></b></label>
+            <input type="number" class="form-control" id="leave_balance" name="leave_balance"
+                required value="0">
         </div>
         <div class="col-lg-4 col-sm-6">
             <label for="email" class="form-label"><b>Email</b></label>
