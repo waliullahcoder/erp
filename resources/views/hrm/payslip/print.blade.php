@@ -104,6 +104,31 @@
                 padding-top: 5px;
 
             }
+            .back-btn{
+                    align-items:center;
+                    gap:8px;
+                    padding:13px 18px;
+                    background:#0d6efd;
+                    color:#fff;
+                    text-decoration:none;
+                    border-radius:6px;
+                    font-size:14px;
+                    font-weight:600;
+                    transition:.3s ease;
+                    box-shadow:0 2px 8px rgba(13,110,253,.25);
+                }
+
+                .back-btn:hover{
+                    background:#0b5ed7;
+                    color:#fff;
+                    text-decoration:none;
+                    transform:translateY(-2px);
+                    box-shadow:0 4px 12px rgba(13,110,253,.35);
+                }
+
+                .back-btn i{
+                    font-size:13px;
+                }
             </style>
 
             <div class="card mt-3">
@@ -112,7 +137,7 @@
 
                     <div class="text-end btn-print mb-3">
 
-                        <button onclick="window.print()" class="btn btn-primary">
+                        <button onclick="window.print()" class="btn btn-primary back-btn">
 
                             <i class="fa fa-print"></i>
 
