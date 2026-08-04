@@ -145,6 +145,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/holiday', HolidayController::class);
     Route::resource('/payroll', PayrollController::class);
     Route::post('payroll/update-status/{id}',[PayrollController::class,'updateStatus'])->name('payroll.update-status');
+    Route::get('/salary-structure',[PayrollController::class,'salaryStructure'])->name('salary.structure');
+     Route::get('/salary/certificate/{id}',[PayrollController::class,'salaryCertificate'])->name('salary.structure.certificate');
     
 
 });

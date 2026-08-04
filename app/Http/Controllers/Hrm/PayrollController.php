@@ -93,14 +93,19 @@ class PayrollController extends Controller
                         </a>';
                     }
                  if(auth()->user()->can('admin.payroll.update-status')){
+                        if($row->payment_status !='Paid'){
                         $btn .= '<button type="button"
                                 class="btn btn-sm btn-primary btn-payroll"
                                 data-id="'.$row->id.'"
                                 data-status="'.$row->payment_status.'"
                                 data-note="'.$row->remarks.'"
+                                data-gross-salary="'.$row->gross_salary.'"
+                                data-deduction="'.$row->total_deduction.'"
+                                data-net-salary="'.$row->net_salary.'"
                                 title="Update Payroll">
                                 <i class="fas fa-dollar-sign"> Pay</i>
                             </button>';
+                        }
                     }
                     if(auth()->user()->can('admin.payroll.edit')){
                         $btn .= '<a href="'.route('admin.payroll.edit',$row->id).'"
@@ -142,6 +147,45 @@ class PayrollController extends Controller
         $employee = DB::table('staff')->where('id',$request->employee_id)->first()??[];
 
         return view('hrm.payroll.create',compact('employees','employee'));
+    }
+
+    public function salaryStructure(Request $request){
+
+        if (request()->ajax()) {
+
+                $model = DB::table('staff')->orderByDesc('id');
+
+                return DataTables::of($model)
+
+                    ->addColumn('actions', function ($row) {
+
+                        $btn = '';
+
+                        if(auth()->user()->can('admin.salary.structure.certificate')){
+                            $btn .= '<a href="'.route('admin.salary.structure.certificate',$row->id).'"
+                                class="btn btn-sm btn-primary">
+                                <i class="fas fa-print"></i> Certificate
+                            </a>';
+                        }
+
+                        
+
+                        return '<div class="btn-group">'.$btn.'</div>';
+                    })
+
+                    ->rawColumns([
+                        'actions'
+                    ])
+
+                    ->make(true);
+            }
+
+            return view('hrm.salary_structure.index');
+
+    }
+    public function salaryCertificate($id){
+           $employee= DB::table('staff')->find($id);
+            return view('hrm.salary_structure.certificate',compact('id','employee'));
     }
 
     public function updateStatus(Request $request, $id)

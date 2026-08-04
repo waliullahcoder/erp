@@ -72,7 +72,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Update Payroll Status</h5>
+                    <h5 class="modal-title">Pay Sallary </h5>
 
                     <button type="button"
                             class="btn-close"
@@ -109,6 +109,12 @@
                                   rows="4"></textarea>
 
                     </div>
+                    <div class="mb-3">
+                         <b>Gross Salary</b> : <span id="gross-salary"></span> Tk.<br>
+                         <b>Deduction</b> : <span id="deduction"></span> Tk.<br>
+                         <hr>
+                         <b>Net Salary</b> : <span id="net-salary"></span> Tk.
+                    </div>
 
                 </div>
 
@@ -117,7 +123,7 @@
                     <button class="btn btn-primary"
                             id="savePayroll"
                             type="submit">
-                        Update
+                        Pay Confirm
                     </button>
 
                 </div>
@@ -216,6 +222,9 @@ $(document).on('click','.btn-payroll',function(){
     $('#payroll_id').val($(this).data('id'));
     $('#payment_status').val($(this).data('status'));
     $('#note').val($(this).data('note'));
+    $('#gross-salary').html($(this).data('gross-salary'));
+    $('#deduction').html($(this).data('deduction'));
+    $('#net-salary').html($(this).data('net-salary'));
 
     $('#payrollModal').modal('show');
 
