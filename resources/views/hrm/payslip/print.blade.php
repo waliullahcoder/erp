@@ -127,7 +127,7 @@
 }
 
 .company-logo img {
-    width: 90px;
+    width: 258px;
     height: auto;
 }
 
