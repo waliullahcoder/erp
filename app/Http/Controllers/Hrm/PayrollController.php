@@ -188,6 +188,101 @@ class PayrollController extends Controller
             return view('hrm.salary_structure.certificate',compact('id','employee'));
     }
 
+    
+    public function salaryGenerate(Request $request){
+
+           $payrollscount= DB::table('hrm_employee_payrolls')->where('payroll_month',$request->payroll_month)->where('payroll_year',$request->payroll_year)->count();
+           if($payrollscount){
+            return redirect()->back()->withErrors('Already Paid Salary to this Month!');
+           }
+           $current = Carbon::createFromDate(
+                $request->payroll_year,
+                $request->payroll_month,
+                1
+            );
+
+            $previous = $current->copy()->subMonth();
+
+            $previousMonth = $previous->month;
+            $previousYear  = $previous->year;
+            $payrolls = DB::table('hrm_employee_payrolls as p')
+            ->join('staff as s','s.id','=','p.employee_id')
+            ->where('p.payroll_month',$previousMonth)
+            ->where('p.payroll_year',$previousYear)
+            ->select(
+                'p.*',
+                's.code as employee_code',
+                's.name'
+            )
+            ->get();
+            
+        return view('hrm.salary_generate.index',compact('payrolls','previousMonth','previousYear'));
+    }
+
+    
+    public function salaryGenerateStore(Request $request)
+    {
+        // একই মাসে Payroll আগে Generate হয়েছে কিনা
+        $exists = DB::table('hrm_employee_payrolls')
+            ->where('payroll_month', $request->payroll_month)
+            ->where('payroll_year', $request->payroll_year)
+            ->exists();
+
+        if ($exists) {
+            return back()->with('error', 'Payroll already generated for this month.');
+        }
+
+        // Previous Month বের করা
+        $current = Carbon::create(
+            $request->payroll_year,
+            $request->payroll_month,
+            1
+        );
+
+        $previous = $current->copy()->subMonth();
+
+        // Previous Month Payroll
+        $previousPayrolls = DB::table('hrm_employee_payrolls')
+            ->where('payroll_month', $previous->month)
+            ->where('payroll_year', $previous->year)
+            ->get();
+
+        if ($previousPayrolls->isEmpty()) {
+            return back()->with('error', 'Previous month payroll not found.');
+        }
+
+        $insertData = [];
+
+        foreach ($previousPayrolls as $row) {
+
+            $data = (array) $row;
+
+            // Auto Increment ID remove
+            unset($data['id']);
+
+            // Previous Month replace
+            $data['payroll_month'] = $request->payroll_month;
+            $data['payroll_year']  = $request->payroll_year;
+
+            // Reset Payment Info
+            $data['payment_status'] = 'Paid';
+            $data['payment_date']   = date('Y-m-d');
+            $data['remarks']        = $request->remarks;
+
+            // Timestamp
+            $data['created_at'] = now();
+            $data['updated_at'] = now();
+
+            $insertData[] = $data;
+        }
+
+        DB::table('hrm_employee_payrolls')->insert($insertData);
+        $monthName = date('F', mktime(0, 0, 0, $request->payroll_month, 1));
+        return redirect()
+            ->route('admin.payroll.index')
+            ->withSuccessMessage('Salary generated successfully '.'for '.$monthName.'-'.$request->payroll_year );
+    }
+
     public function updateStatus(Request $request, $id)
     {
         DB::table('hrm_employee_payrolls')

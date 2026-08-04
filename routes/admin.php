@@ -147,7 +147,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('payroll/update-status/{id}',[PayrollController::class,'updateStatus'])->name('payroll.update-status');
     Route::get('/salary-structure',[PayrollController::class,'salaryStructure'])->name('salary.structure');
      Route::get('/salary/certificate/{id}',[PayrollController::class,'salaryCertificate'])->name('salary.structure.certificate');
-    
+
+    Route::get('/salary-generate',[PayrollController::class,'salaryGenerate'])->name('salary.generate');
+    Route::post('/salary-generate/store',[PayrollController::class,'salaryGenerateStore'])->name('salary.generate.store');
 
 });
 
