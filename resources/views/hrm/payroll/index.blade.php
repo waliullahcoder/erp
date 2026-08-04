@@ -177,7 +177,7 @@ $(function(){
 
             {data:'id',name:'p.id'},
 
-            {data:'employee_code',name:'s.employee_id'},
+            {data:'employee_code',name:'s.code'},
 
             {data:'employee_name',name:'s.name'},
 

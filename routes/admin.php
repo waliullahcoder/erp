@@ -151,6 +151,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/salary-generate',[PayrollController::class,'salaryGenerate'])->name('salary.generate');
     Route::post('/salary-generate/store',[PayrollController::class,'salaryGenerateStore'])->name('salary.generate.store');
     Route::get('/salary-sheet',[PayrollController::class,'salarySheet'])->name('salary.sheet');
+    Route::get('/payslip',[PayrollController::class,'paySlip'])->name('pay.slip');
+    Route::get('/payslip/print',[PayrollController::class,'paySlipPrint'])->name('pay.slip.print');
 
 });
 

@@ -25,7 +25,7 @@
                 <form action="{{ route('admin.salary.generate') }}" method="GET">
                     @csrf
                     <div class="row g-3">
-                        <div class="col-lg-4">
+                            <div class="col-lg-4">
                                 <label><b>Payroll Month</b></label>
 
                                 <select name="payroll_month" class="form-control" required>

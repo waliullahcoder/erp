@@ -220,14 +220,65 @@ class PayrollController extends Controller
     }
 
     
+    public function paySlip(Request $request)
+    {
+        $employees = DB::table('staff')
+            ->where('status',1)
+            ->orderBy('name')
+            ->get();
+
+        return view('hrm.payslip.index',compact('employees'));
+    }
+    public function paySlipPrint(Request $request)
+    {
+       
+        $request->validate([
+            'payroll_month' => 'required',
+            'payroll_year'  => 'required',
+        ],[
+            'payroll_month.required' => 'Unpaid Month selected is mandatory.',
+            'payroll_year.required'  => 'Unpaid Year selected is mandatory.',
+        ]);
+        $payroll = null;
+
+        if($request->filled('employee_id') && $request->filled('payroll_month') && $request->filled('payroll_year'))
+        {
+           
+            $payroll = DB::table('hrm_employee_payrolls as p')
+                ->join('staff as s','s.id','=','p.employee_id')
+                ->where('p.employee_id',$request->employee_id)
+                ->where('p.payroll_month',$request->payroll_month)
+                ->where('p.payroll_year',$request->payroll_year)
+                ->select(
+                    'p.*',
+                    's.name',
+                    's.code as employee_code',
+                    's.designation',
+                    's.type as department'
+                )
+                ->first();
+        }
+           if($payroll==null){
+            return redirect()->back()->withErrors('Not found any data selected to this Month!');
+           }
+        $payroll_month = date('F',mktime(0,0,0,$request->payroll_month,1))??'-';
+        $payroll_year = $request->payroll_year??'-';
+
+        return view('hrm.payslip.print',compact(
+            'payroll',
+            'payroll_month',
+            'payroll_year'
+        ));
+    }
+    
     public function salaryGenerateStore(Request $request)
     {
         $request->validate([
             'payroll_month' => 'required',
             'payroll_year'  => 'required',
         ],[
-            'payroll_month.required' => 'Month selected is mandatory.',
-            'payroll_year.required'  => 'Year selected is mandatory.',
+            'payroll_month.required' => 'Unpaid Month selected is mandatory.',
+            'payroll_year.required'  => 'Unpaid Year selected is mandatory.',
         ]);
 
         $exists = DB::table('hrm_employee_payrolls')
