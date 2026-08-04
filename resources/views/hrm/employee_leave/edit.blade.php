@@ -168,7 +168,7 @@
                             </label>
                             <input type="text"
                                 id="leave_balance"
-                                class="form-control"
+                                class="form-control" value="{{\App\Models\Staff::find($leave->employee_id)->leave_balance}}"
                                 readonly>
                         </div>
 

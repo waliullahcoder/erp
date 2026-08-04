@@ -144,6 +144,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/employee-leave', EmployeeLeaveController::class);
     Route::resource('/holiday', HolidayController::class);
     Route::resource('/payroll', PayrollController::class);
+    Route::post('payroll/update-status/{id}',[PayrollController::class,'updateStatus'])->name('payroll.update-status');
     
 
 });

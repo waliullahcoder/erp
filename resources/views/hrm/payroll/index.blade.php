@@ -61,6 +61,73 @@
     </div>
 
 </div>
+<!-- Pay Salary modal-->
+ <div class="modal fade" id="payrollModal" tabindex="-1">
+    <div class="modal-dialog">
+        <form id="payrollForm">
+            @csrf
+
+            <input type="hidden" id="payroll_id">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Payroll Status</h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            <b>Payment Status</b>
+                        </label>
+
+                        <select class="form-select"
+                                id="payment_status">
+
+                            <option value="Pending">Pending</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Cancelled">Cancelled</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            <b>Note</b>
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="note"
+                                  rows="4"></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary"
+                            id="savePayroll"
+                            type="submit">
+                        Update
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+<!-- Pay Salary modal end-->
 
 @endsection
 
@@ -142,6 +209,51 @@ $(function(){
 
 });
 
+
+//Pay salary modal
+$(document).on('click','.btn-payroll',function(){
+
+    $('#payroll_id').val($(this).data('id'));
+    $('#payment_status').val($(this).data('status'));
+    $('#note').val($(this).data('note'));
+
+    $('#payrollModal').modal('show');
+
+});
+
+$('#payrollForm').submit(function(e){
+
+    e.preventDefault();
+
+    $.ajax({
+
+        url:"{{ url('admin/payroll/update-status') }}/"+$('#payroll_id').val(),
+
+        type:"POST",
+
+        data:{
+            _token:"{{ csrf_token() }}",
+            payment_status:$('#payment_status').val(),
+            note:$('#note').val()
+        },
+
+        success:function(res){
+
+            $('#payrollModal').modal('hide');
+
+            $('.dataTable').DataTable().ajax.reload(null,false);
+
+            Swal.fire(
+                'Success',
+                'Payroll updated successfully.',
+                'success'
+            );
+
+        }
+
+    });
+
+});
 </script>
 
 @endpush

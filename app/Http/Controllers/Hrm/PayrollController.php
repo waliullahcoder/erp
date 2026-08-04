@@ -36,7 +36,8 @@ class PayrollController extends Controller
                     'p.total_deduction',
                     'p.net_salary',
                     'p.payment_date',
-                    'p.payment_status'
+                    'p.payment_status',
+                    'p.remarks'
                 )
                 ->orderByDesc('p.id');
 
@@ -91,7 +92,16 @@ class PayrollController extends Controller
                             <i class="fas fa-eye"></i>
                         </a>';
                     }
-
+                 if(auth()->user()->can('admin.payroll.update-status')){
+                        $btn .= '<button type="button"
+                                class="btn btn-sm btn-primary btn-payroll"
+                                data-id="'.$row->id.'"
+                                data-status="'.$row->payment_status.'"
+                                data-note="'.$row->remarks.'"
+                                title="Update Payroll">
+                                <i class="fas fa-dollar-sign"> Pay</i>
+                            </button>';
+                    }
                     if(auth()->user()->can('admin.payroll.edit')){
                         $btn .= '<a href="'.route('admin.payroll.edit',$row->id).'"
                             class="btn btn-sm btn-warning">
@@ -133,6 +143,26 @@ class PayrollController extends Controller
 
         return view('hrm.payroll.create',compact('employees','employee'));
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        DB::table('hrm_employee_payrolls')
+            ->where('id', $id)
+            ->update([
+                'payment_status' => $request->payment_status,
+                'remarks'           => $request->note,
+                'payment_date'   => $request->payment_status == 'Paid'
+                                    ? now()->toDateString()
+                                    : null,
+                'updated_at'     => now(),
+            ]);
+
+        return response()->json([
+            'status'  => true,
+            'message' => 'Payroll updated successfully.'
+        ]);
+    }
+
 
     public function store(Request $request)
     {
