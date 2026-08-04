@@ -1,258 +1,258 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<title>Salary Sheet</title>
+    <title>Salary Sheet</title>
 
-<style>
+    <style>
+    body {
 
-body{
-
-    font-family:Arial;
-    font-size:13px;
-    color:#222;
-
-}
-
-.header{
-
-    text-align:center;
-    margin-bottom:20px;
-
-}
-
-.header h2{
-
-    margin:0;
-
-}
-
-.header h4{
-
-    margin:5px 0;
-
-}
-
-table{
-
-    width:100%;
-    border-collapse:collapse;
-
-}
-
-table th,
-table td{
-
-    border:1px solid #000;
-    padding:6px;
-
-}
-
-table th{
-
-    background:#efefef;
-
-}
-
-tfoot th{
-
-    background:#ddd;
-
-}
-
-.text-right{
-
-    text-align:right;
-
-}
-
-.print{
-
-    text-align:center;
-    margin:20px;
-
-}
-
-@media print{
-
-    .print{
-
-        display:none;
+        font-family: Arial;
+        font-size: 13px;
+        color: #222;
 
     }
 
-}
+    .header {
 
-</style>
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
+
+    .header h2 {
+
+        margin: 0;
+
+    }
+
+    .header h4 {
+
+        margin: 5px 0;
+
+    }
+
+    table {
+
+        width: 100%;
+        border-collapse: collapse;
+
+    }
+
+    table th,
+    table td {
+
+        border: 1px solid #000;
+        padding: 6px;
+
+    }
+
+    table th {
+
+        background: #efefef;
+
+    }
+
+    tfoot th {
+
+        background: #ddd;
+
+    }
+
+    .text-right {
+
+        text-align: right;
+
+    }
+
+    .print {
+
+        text-align: center;
+        margin: 20px;
+
+    }
+
+    @media print {
+
+        .print {
+
+            display: none;
+
+        }
+
+    }
+    </style>
 
 </head>
 
 <body>
 
-<div class="print">
+    <div class="print">
 
-<button onclick="window.print()">
+        <button onclick="window.print()">
 
-Print
+            Print
 
-</button>
+        </button>
 
-</div>
+    </div>
 
-<div class="header">
+    <div class="header">
+        <img src="{{asset($setting->logo)}}" style="width:20%;">
+        <h1>{{$setting->title}}</h1>
+        {{$setting->address}}
+        {{$setting->primary_mobile}}, {{$setting->primary_email}}
+        <h2>Salary Sheet</h2>
 
-<h2>Techno Park Bangladesh</h2>
+        <h4>
+            For
+            {{ date('F',mktime(0,0,0,$request->payroll_month,1)) }}
+            -
+            {{ $request->payroll_year }}
+        </h4>
 
-<h4>Salary Sheet</h4>
+    </div>
 
-<h4>
-For
-{{ date('F',mktime(0,0,0,$request->payroll_month,1)) }}
--
-{{ $request->payroll_year }}
-</h4>
+    <table>
 
-</div>
+        <thead>
 
-<table>
+            <tr>
 
-<thead>
+                <th>SL</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Basic</th>
+                <th>House Rent</th>
+                <th>Medical</th>
+                <th>Other</th>
+                <th>Deduction</th>
+                <th>Net Salary</th>
 
-<tr>
+            </tr>
 
-<th>SL</th>
-<th>Employee ID</th>
-<th>Name</th>
-<th>Basic</th>
-<th>House Rent</th>
-<th>Medical</th>
-<th>Other</th>
-<th>Deduction</th>
-<th>Net Salary</th>
+        </thead>
 
-</tr>
+        <tbody>
 
-</thead>
+            @foreach($payrolls as $row)
 
-<tbody>
+            <tr>
 
-@foreach($payrolls as $row)
+                <td>{{ $loop->iteration }}</td>
 
-<tr>
+                <td>{{ $row->employee_code }}</td>
 
-<td>{{ $loop->iteration }}</td>
+                <td>{{ $row->name }}</td>
 
-<td>{{ $row->employee_code }}</td>
+                <td class="text-right">{{ number_format($row->basic_salary,2) }}</td>
 
-<td>{{ $row->name }}</td>
+                <td class="text-right">{{ number_format($row->house_rent,2) }}</td>
 
-<td class="text-right">{{ number_format($row->basic_salary,2) }}</td>
+                <td class="text-right">{{ number_format($row->medical_allowance,2) }}</td>
 
-<td class="text-right">{{ number_format($row->house_rent,2) }}</td>
+                <td class="text-right">{{ number_format($row->other_allowance,2) }}</td>
 
-<td class="text-right">{{ number_format($row->medical_allowance,2) }}</td>
+                <td class="text-right">{{ number_format($row->total_deduction,2) }}</td>
 
-<td class="text-right">{{ number_format($row->other_allowance,2) }}</td>
+                <td class="text-right">
+                    <b>{{ number_format($row->net_salary,2) }}</b>
+                </td>
 
-<td class="text-right">{{ number_format($row->total_deduction,2) }}</td>
+            </tr>
 
-<td class="text-right">
-<b>{{ number_format($row->net_salary,2) }}</b>
-</td>
+            @endforeach
 
-</tr>
+        </tbody>
 
-@endforeach
+        <tfoot>
 
-</tbody>
+            <tr>
 
-<tfoot>
+                <th colspan="3">
 
-<tr>
+                    Grand Total
 
-<th colspan="3">
+                </th>
 
-Grand Total
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('basic_salary'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('basic_salary'),2) }}
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('house_rent'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('house_rent'),2) }}
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('medical_allowance'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('medical_allowance'),2) }}
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('other_allowance'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('other_allowance'),2) }}
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('total_deduction'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('total_deduction'),2) }}
+                <th class="text-right">
 
-</th>
+                    {{ number_format($payrolls->sum('net_salary'),2) }}
 
-<th class="text-right">
+                </th>
 
-{{ number_format($payrolls->sum('net_salary'),2) }}
+            </tr>
 
-</th>
+        </tfoot>
 
-</tr>
+    </table>
 
-</tfoot>
+    <br><br><br>
 
-</table>
+    <table style="border:none">
 
-<br><br><br>
+        <tr style="border:none">
 
-<table style="border:none">
+            <td style="border:none;text-align:center">
 
-<tr style="border:none">
+                _____________________<br>
 
-<td style="border:none;text-align:center">
+                Prepared By
 
-_____________________<br>
+            </td>
 
-Prepared By
+            <td style="border:none;text-align:center">
 
-</td>
+                _____________________<br>
 
-<td style="border:none;text-align:center">
+                Checked By
 
-_____________________<br>
+            </td>
 
-Checked By
+            <td style="border:none;text-align:center">
 
-</td>
+                _____________________<br>
 
-<td style="border:none;text-align:center">
+                Approved By
 
-_____________________<br>
+            </td>
 
-Approved By
+        </tr>
 
-</td>
-
-</tr>
-
-</table>
+    </table>
 
 </body>
 
