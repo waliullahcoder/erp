@@ -65,7 +65,7 @@ $('.dataTable').DataTable({
                 extend: 'excelHtml5',
                 text: '<i class="fas fa-file-excel"></i> Excel',
                 className: 'btn btn-success btn-sm',
-                title: 'Lead List',
+                title: 'Bonus List',
                 exportOptions: {
                     columns: [0,1,2,3,4,5,6,7,8,9]
                 }
