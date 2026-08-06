@@ -103,6 +103,8 @@ use App\Http\Controllers\Hrm\EmployeeLeaveController;
 use App\Http\Controllers\Hrm\HolidayController;
 use App\Http\Controllers\Hrm\PayrollController;
 use App\Http\Controllers\Hrm\BonusManagementController;
+use App\Http\Controllers\Hrm\IncrementController;
+use App\Http\Controllers\Hrm\LoanController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -155,6 +157,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/payslip',[PayrollController::class,'paySlip'])->name('pay.slip');
     Route::get('/payslip/print',[PayrollController::class,'paySlipPrint'])->name('pay.slip.print');
     Route::resource('/employee-bonus',BonusManagementController::class);
+    Route::resource('/employee-increment',IncrementController::class);
+    Route::resource('/employee-loan',LoanController::class);
     
 
 });

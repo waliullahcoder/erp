@@ -34,6 +34,7 @@ class CrmReportController extends Controller
                 'l.company_name',
                 'l.contact_person',
                 'l.mobile',
+                'l.updated_at',
                 'ls.name as lead_source',
                 'st.id as lead_status_id',
                 'st.name as lead_status',
@@ -69,6 +70,11 @@ class CrmReportController extends Controller
                         ? date('d M, Y', strtotime($row->follow_up_date))
                         : '-';
                 })
+                 ->editColumn('updated_at', function ($row) {
+                        return $row->updated_at
+                            ? date('F j, Y g:i A', strtotime($row->updated_at))
+                            : '-';
+                    })
                 ->editColumn('lead_status', function ($row) {
 
                     return '<span class="badge"

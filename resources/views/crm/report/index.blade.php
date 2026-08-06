@@ -101,7 +101,7 @@
 
                 <div class="table-responsive">
 
-                    <table class="table table-bordered table-striped table-hover dataTable align-middle w-100">
+                     <table class="table dataTable align-middle" style="width:100%">
 
                         <thead class="table-dark text-nowrap">
 
@@ -111,23 +111,25 @@
                                 <th>Lead No</th>
                                 <th>Lead Date</th>
                                 <th>Company</th>
-                                <!-- <th>Contact Person</th> -->
                                 <th>Mobile</th>
                                 <th>Lead Source</th>
                                 <th>Lead Status</th>
                                 <th>Proposal(Tk.)</th>
                                 <th>Expected(Tk.)</th>
+                                <th style="width:20%">Remarks</th>
+                                <th>Remark(Updated)</th>
 
                             </tr>
 
                         </thead>
 
-                        <tbody></tbody>
+                        <tbody style="width:100%"></tbody>
                     <tfoot>
-                        <tr class="table-primary fw-bold">
+                        <tr class="table-primary fw-bold" style="width:100%">
                             <th colspan="7" class="text-end">Total :</th>
                             <th id="total_proposal_value">0.00</th>
                             <th id="total_expected_value">0.00</th>
+                            <th colspan="2" class="text-end"></th>
                         </tr>
                     </tfoot>
                     </table>
@@ -154,7 +156,6 @@ $(function() {
         serverSide: true,
         scrollX: true,
         responsive: true,
-	    pageLength: 60,
 	
 	    
         dom: 'Bfrtip',
@@ -167,7 +168,7 @@ $(function() {
                 className: 'btn btn-success btn-sm',
                 title: 'CRM Lead Report',
                 exportOptions: {
-                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8,9,10]
                 }
             }
 
@@ -194,12 +195,13 @@ $(function() {
            {data:'lead_no', name:'l.lead_no'},
            {data:'follow_up_date', name:'l.follow_up_date'},
            {data:'company_name', name:'l.company_name'},
-           // {data:'contact_person', name:'l.contact_person'},
            {data:'mobile', name:'l.mobile'},
            {data:'lead_source', name:'ls.name'},
            {data:'lead_status', name:'st.name'},
            {data:'proposal_value', name:'l.proposal_value'},
            {data:'expected_value', name:'l.expected_value'},
+           {data:'remarks', name:'l.remarks'},
+           {data:'updated_at', name:'l.updated_at'},
           
 
         ],

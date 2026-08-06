@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
-class BonusManagementController extends Controller
+class IncrementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,13 +24,13 @@ class BonusManagementController extends Controller
     {
 
         if (request()->ajax()) {
-            $model = DB::table('hrm_employee_bonuses as eb')
+            $model = DB::table('hrm_employee_increment as eb')
                 ->leftJoin('staff as e', 'e.id', '=', 'eb.employee_id')
                 ->select(
                     'eb.id',
                     'e.code as employee_code',
                     'e.name',
-                    'eb.bonus_type',
+                    'eb.increment_type',
                     'eb.payroll_month',
                     'eb.payroll_year',
                     'eb.amount',
@@ -68,24 +68,24 @@ class BonusManagementController extends Controller
                 ->addColumn('actions', function ($row) {
                     $btn = '';
 
-                    if(auth()->user()->can('admin.employee-bonus.show')){
-                        $btn .= '<a href="'.route('admin.employee-bonus.show',$row->id).'"
+                    if(auth()->user()->can('admin.employee-increment.show')){
+                        $btn .= '<a href="'.route('admin.employee-increment.show',$row->id).'"
                             class="btn btn-sm btn-primary">
                             <i class="fas fa-eye"></i>
                         </a>';
                     }
 
-                    if(auth()->user()->can('admin.employee-bonus.edit')){
-                        $btn .= '<a href="'.route('admin.employee-bonus.edit',$row->id).'"
+                    if(auth()->user()->can('admin.employee-increment.edit')){
+                        $btn .= '<a href="'.route('admin.employee-increment.edit',$row->id).'"
                             class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i>
                         </a>';
                     }
 
-                    if(auth()->user()->can('admin.employee-bonus.destroy')){
+                    if(auth()->user()->can('admin.employee-increment.destroy')){
                         $btn .= '<button
                             class="btn btn-sm btn-danger link-delete"
-                            data-url="'.route('admin.employee-bonus.destroy',$row->id).'">
+                            data-url="'.route('admin.employee-increment.destroy',$row->id).'">
                             <i class="fas fa-trash"></i>
                         </button>';
                     }
@@ -101,7 +101,7 @@ class BonusManagementController extends Controller
                 ->make(true);
         }
 
-        return view('hrm.employee_bonus.index');
+        return view('hrm.employee_increment.index');
     }
 
   public function create()
@@ -111,7 +111,7 @@ class BonusManagementController extends Controller
             ->orderBy('name')
             ->get();
 
-        return view('hrm.employee_bonus.create', compact('employees'));
+        return view('hrm.employee_increment.create', compact('employees'));
     }
 
 
@@ -119,7 +119,7 @@ class BonusManagementController extends Controller
     {
         $request->validate([
             'employee_id'    => 'required|exists:staff,id',
-            'bonus_type'     => 'required',
+            'increment_type'     => 'required',
             'payroll_month'  => 'required|integer|between:1,12',
             'payroll_year'   => 'required|digits:4',
             'amount'         => 'required|numeric|min:0',
@@ -128,9 +128,9 @@ class BonusManagementController extends Controller
             'remarks'        => 'nullable|string',
         ]);
 
-        DB::table('hrm_employee_bonuses')->insert([
+        DB::table('hrm_employee_increment')->insert([
             'employee_id'   => $request->employee_id,
-            'bonus_type'    => $request->bonus_type,
+            'increment_type'    => $request->increment_type,
             'payroll_month' => $request->payroll_month,
             'payroll_year'  => $request->payroll_year,
             'amount'        => $request->amount,
@@ -143,27 +143,27 @@ class BonusManagementController extends Controller
         ]);
 
         return redirect()
-            ->route('admin.employee-bonus.index')
-            ->withSuccessMessage('Employee bonus added successfully.');
+            ->route('admin.employee-increment.index')
+            ->withSuccessMessage('Employee increment added successfully.');
     }
 
     public function edit($id)
     {
-        $bonus = DB::table('hrm_employee_bonuses')->find($id);
+        $increment = DB::table('hrm_employee_increment')->find($id);
 
         $employees = DB::table('staff')
             ->where('status', 1)
             ->orderBy('name')
             ->get();
 
-        return view('hrm.employee_bonus.edit', compact('bonus', 'employees'));
+        return view('hrm.employee_increment.edit', compact('increment', 'employees'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             'employee_id'   => 'required|exists:staff,id',
-            'bonus_type'    => 'required|in:Festival,Performance,Yearly,Eid,Puja,Other',
+            'increment_type'    => 'required|in:Festival,Performance,Yearly,Eid,Puja,Other',
             'payroll_month' => 'required|integer|between:1,12',
             'payroll_year'  => 'required|digits:4',
             'amount'        => 'required|numeric|min:0',
@@ -172,11 +172,11 @@ class BonusManagementController extends Controller
             'remarks'       => 'nullable|string|max:1000',
         ]);
 
-        DB::table('hrm_employee_bonuses')
+        DB::table('hrm_employee_increment')
             ->where('id', $id)
             ->update([
                 'employee_id'   => $request->employee_id,
-                'bonus_type'    => $request->bonus_type,
+                'increment_type'    => $request->increment_type,
                 'payroll_month' => $request->payroll_month,
                 'payroll_year'  => $request->payroll_year,
                 'amount'        => $request->amount,
@@ -188,8 +188,8 @@ class BonusManagementController extends Controller
             ]);
 
         return redirect()
-            ->route('admin.employee-bonus.index')
-            ->withSuccessMessage('Employee bonus updated successfully.');
+            ->route('admin.employee-increment.index')
+            ->withSuccessMessage('Employee increment updated successfully.');
     }
 
     
