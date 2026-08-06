@@ -102,6 +102,7 @@ use App\Http\Controllers\Hrm\EmployeeAttendanceController;
 use App\Http\Controllers\Hrm\EmployeeLeaveController;
 use App\Http\Controllers\Hrm\HolidayController;
 use App\Http\Controllers\Hrm\PayrollController;
+use App\Http\Controllers\Hrm\BonusManagementController;
 
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
@@ -153,6 +154,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/salary-sheet',[PayrollController::class,'salarySheet'])->name('salary.sheet');
     Route::get('/payslip',[PayrollController::class,'paySlip'])->name('pay.slip');
     Route::get('/payslip/print',[PayrollController::class,'paySlipPrint'])->name('pay.slip.print');
+    Route::resource('/employee-bonus',BonusManagementController::class);
+    
 
 });
 
