@@ -106,7 +106,6 @@
                         <thead class="table-dark text-nowrap">
 
                             <tr>
-
                                 <th>SL</th>
                                 <th>Lead No</th>
                                 <th>Lead Date</th>
@@ -118,9 +117,7 @@
                                 <th>Expected(Tk.)</th>
                                 <th style="width:20%">Remarks</th>
                                 <th>Remark(Updated)</th>
-
                             </tr>
-
                         </thead>
 
                         <tbody style="width:100%"></tbody>

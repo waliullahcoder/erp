@@ -39,7 +39,7 @@ class LoanController extends Controller
                     'el.total_installments',
                     'el.loan_date',
                     'el.status'
-                );
+                )->orderBy('id','desc');
 
             return DataTables::of($model)
     
@@ -183,8 +183,8 @@ class LoanController extends Controller
             'status'        => 'required|in:Pending,Approved,Paid',
             'remarks'       => 'nullable|string|max:1000',
         ]);
-       if($id){
-            $prev_total_instll=DB::table('hrm_employee_loan')->where('employee_id',$id)->sum('total_installments');
+       if($request->employee_id){
+            $prev_total_instll=DB::table('hrm_employee_loan')->where('employee_id',$request->employee_id)->sum('total_installments');
             $total_instll_amount= ($prev_total_instll+$request->installment_amount);
         }
         DB::table('hrm_employee_loan')
