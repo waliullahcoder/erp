@@ -59,7 +59,7 @@
                            required>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Appraisal Period (months) <span class="text-danger">*</span></label>
+                    <label class="form-label">Appraisal Period (months-max 100) <span class="text-danger">*</span></label>
 
                     <input type="number"
                            name="appraisal_period"
@@ -94,7 +94,7 @@
                     </select>
                 </div>
 
-                <div class="col-md-6 mb-3">
+                <div class="col-md-12 mb-3">
                     <label class="form-label">Appraisal Summary</label>
                     <textarea name="summary"
                               rows="1"
