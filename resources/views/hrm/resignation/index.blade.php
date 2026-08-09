@@ -29,7 +29,7 @@
                     <th width="50">SL</th>
                     <th>Employee ID</th>
                     <th>Employee</th>
-                    <th>Notice Period</th>
+                    <th>Notice Period (Months)</th>
                     <th>Resignation Date</th>
                     <th>Last Working Date</th>
                     <th>Status</th>
