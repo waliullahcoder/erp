@@ -108,7 +108,7 @@ use App\Http\Controllers\Hrm\LoanController;
 use App\Http\Controllers\Hrm\OverTimeController;
 use App\Http\Controllers\Hrm\ExpenseController;
 use App\Http\Controllers\Hrm\DocumentController;
-
+use App\Http\Controllers\Hrm\ResignationController;
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
     Route::post('/login', [AdminController::class, 'login'])->name('login');
@@ -165,6 +165,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/employee-overtime',OverTimeController::class);
     Route::resource('/expense',ExpenseController::class);
     Route::resource('/documents',DocumentController::class);
+    Route::resource('/resignation',ResignationController::class);
     
 
 });
