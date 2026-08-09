@@ -54,6 +54,14 @@ class DocumentController extends Controller
                     return '<span class="badge bg-success">Submitted</span>';
                 })
 
+                    ->editColumn('document_link', function ($row) {
+                        return '<a href="' . $row->document_link . '" 
+                                    target="_blank" 
+                                    class="badge bg-success">
+                                    Document Link
+                                </a>';
+                    })
+
                 ->addColumn('actions', function ($row) {
                     $btn = '';
 
@@ -83,6 +91,7 @@ class DocumentController extends Controller
                 })
 
                 ->rawColumns([
+                    'document_link',
                     'status',
                     'actions'
                 ])

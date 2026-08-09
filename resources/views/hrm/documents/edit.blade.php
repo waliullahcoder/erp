@@ -54,6 +54,10 @@
                     </label>
 
                     <select name="document_type" class="form-select" required>
+                            <option value="ALL"
+                                {{ old('document_type', $document->document_type) == 'ALL' ? 'selected' : '' }}>
+                                ALL
+                            </option>
                             <option value="NID"
                                 {{ old('document_type', $document->document_type) == 'NID' ? 'selected' : '' }}>
                                 NID

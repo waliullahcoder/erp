@@ -40,6 +40,7 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label">Document Type <span class="text-danger">*</span></label>
                     <select name="document_type" class="form-select" required>
+                        <option value="ALL">ALL</option>
                         <option value="NID">NID</option>
                         <option value="Passport">Passport</option>
                         <option value="Birth Certificate">Birth Certificate</option>
