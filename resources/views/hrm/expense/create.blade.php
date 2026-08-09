@@ -8,7 +8,7 @@
 
         <h5 class="mb-0">
             <i class="fas fa-gift text-success"></i>
-            Add Employee Expense
+            Add Expense
         </h5>
 
         <a href="{{ route('admin.expense.index') }}" class="btn btn-secondary">

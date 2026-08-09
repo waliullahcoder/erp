@@ -8,7 +8,7 @@
 
         <h5 class="mb-0">
             <i class="fas fa-edit text-warning"></i>
-            Edit Employee Expense
+            Edit Expense
         </h5>
 
         <a href="{{ route('admin.expense.index') }}" class="btn btn-secondary">
