@@ -14,13 +14,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+USE `technopa_proerp`;
 
--- Dumping database structure for technopa_crm
-DROP DATABASE IF EXISTS `technopa_crm`;
-CREATE DATABASE IF NOT EXISTS `technopa_crm` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `technopa_crm`;
-
--- Dumping structure for table technopa_crm.abouts
+-- Dumping structure for table technopa_proerp.abouts
 DROP TABLE IF EXISTS `abouts`;
 CREATE TABLE IF NOT EXISTS `abouts` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -40,12 +36,12 @@ CREATE TABLE IF NOT EXISTS `abouts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.abouts: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.abouts: ~1 rows (approximately)
 DELETE FROM `abouts`;
 INSERT INTO `abouts` (`id`, `title`, `description`, `faq_title`, `white_faq_name`, `white_faq_description`, `black_faq_name`, `black_faq_description`, `social_work_heading`, `social_work_title`, `social_work_description`, `link`, `created_at`, `updated_at`) VALUES
 	(1, 'A Brief on Nijer Bazar', '<div>Nijer Bazar</div>', 'From The History Since 2024', 'OUR VISION', 'Being a leader in the cable industry of Bangladesh and a<br> global player our vision is to ensure to be constant in<br>  extending the dimensions of our business through transparent <br> business practices and striving towards new heights of excellence<br>  in service along with providing opportunities for growth and <br> enrichment to our employees, our business partners and the<br>  communities which we operate in. Besides of making sure of the<br>  best use of world-class performance of manpower, assets and<br>  investments, we are one of the privileged companies to be focusing <br> on a whole range of energy saving electrical protective devices.', 'OUR MISSION', '<table><tbody><tr><td class="line-content">We are looking forward to continue the practice of <span class="html-tag"><br></span> providing the guaranteed quality products and efficient  <span class="html-tag"><br></span> service experience, which have made us the name that <span class="html-tag"><br></span>  people can rely. Being a self-propelled organization we  <span class="html-tag"><br></span> are not just about to carry our environment friendly steps <span class="html-tag"><br></span>  but the best interest of our stakeholders and customers <span class="html-tag"><br></span>  and their safety as well. We rely on world-class technology  <span class="html-tag"><br></span> while pursuing continuous innovation to ensure the best  <span class="html-tag"><br></span> possible solution practically for any cable need across the  <span class="html-tag"><br></span> world and bring glory to our nation. </td></tr><tr><td class="line-number" value="632"></td><td class="line-content"></td></tr></tbody></table>', 'SOCIAL WORKING', 'COMPANY - ALWAYS, CLOSE TO YOU.', '<div>We are proud to sponsor the Fundación Franlanqui, a non-profit organization founded more than 5 years ago, made up of a group of people dedicated to help other people who have become homeless or low-income people, by the donation of clothes, medicines, food, water or even economic resources needed to handle health issues. You can be a part of this!, Join us!</div><div><br></div>', 'https://nijerbazarbd.com/collections', '2023-10-04 03:28:29', '2024-10-12 11:12:44');
 
--- Dumping structure for table technopa_crm.access_logs
+-- Dumping structure for table technopa_proerp.access_logs
 DROP TABLE IF EXISTS `access_logs`;
 CREATE TABLE IF NOT EXISTS `access_logs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -59,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `access_logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.access_logs: ~7 rows (approximately)
+-- Dumping data for table technopa_proerp.access_logs: ~7 rows (approximately)
 DELETE FROM `access_logs`;
 INSERT INTO `access_logs` (`id`, `date_time`, `page`, `action`, `description`, `user_id`, `created_at`, `updated_at`) VALUES
 	(1, '2026-05-07 09:50:05', 'Purchase', 'Add', 'Create a new purhcase with purchase no STL2605000001 to Shankhari Bazar products  Test 10 KG  on credit', 1, '2026-05-07 09:50:05', '2026-05-07 09:50:05'),
@@ -70,7 +66,7 @@ INSERT INTO `access_logs` (`id`, `date_time`, `page`, `action`, `description`, `
 	(6, '2026-07-13 08:42:31', 'Sales', 'Add', 'Create a new sales with invoice no STS2607000001 to client Wali from store Shankhari Bazar sales amount is 33 sales discount 3 products  Test Quanity : 1 KG on credit sale', 1, '2026-07-13 08:42:31', '2026-07-13 08:42:31'),
 	(7, '2026-07-27 04:28:42', 'Purchase', 'Add', 'Create a new purhcase with purchase no STL2607000002 to Shankhari Bazar products  Hair Oil 100ml 100 Gm  on credit', 1, '2026-07-27 04:28:42', '2026-07-27 04:28:42');
 
--- Dumping structure for table technopa_crm.account_transactions
+-- Dumping structure for table technopa_proerp.account_transactions
 DROP TABLE IF EXISTS `account_transactions`;
 CREATE TABLE IF NOT EXISTS `account_transactions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -98,10 +94,10 @@ CREATE TABLE IF NOT EXISTS `account_transactions` (
   CONSTRAINT `account_transactions_account_transaction_auto_id_foreign` FOREIGN KEY (`account_transaction_auto_id`) REFERENCES `account_transaction_autos` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.account_transactions: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.account_transactions: ~0 rows (approximately)
 DELETE FROM `account_transactions`;
 
--- Dumping structure for table technopa_crm.account_transaction_autos
+-- Dumping structure for table technopa_proerp.account_transaction_autos
 DROP TABLE IF EXISTS `account_transaction_autos`;
 CREATE TABLE IF NOT EXISTS `account_transaction_autos` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -126,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `account_transaction_autos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.account_transaction_autos: ~14 rows (approximately)
+-- Dumping data for table technopa_proerp.account_transaction_autos: ~14 rows (approximately)
 DELETE FROM `account_transaction_autos`;
 INSERT INTO `account_transaction_autos` (`id`, `company_id`, `voucher_no`, `voucher_type`, `voucher_date`, `coa_setup_id`, `coa_head_code`, `narration`, `debit_amount`, `credit_amount`, `posted`, `approve`, `approve_by`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'STL2605000001', 'Product Purchase', '2026-05-07', 127, 40201, 'Product Purchase Against Purchase No - STL2605000001', 330.00, 0.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-05-07 09:50:05', '2026-05-07 09:50:05'),
@@ -144,7 +140,7 @@ INSERT INTO `account_transaction_autos` (`id`, `company_id`, `voucher_no`, `vouc
 	(13, 1, 'STL2607000002', 'Product Purchase', '2026-07-27', 127, 40201, 'Product Purchase Against Purchase No - STL2607000002', 5000.00, 0.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41'),
 	(14, 1, 'STL2607000002', 'Product Purchase', '2026-07-27', 166, 20101, 'Product Purchase Against Purchase No - STL2607000002', 0.00, 5000.00, 0, 0, NULL, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
--- Dumping structure for table technopa_crm.admin_menus
+-- Dumping structure for table technopa_proerp.admin_menus
 DROP TABLE IF EXISTS `admin_menus`;
 CREATE TABLE IF NOT EXISTS `admin_menus` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -162,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `admin_menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.admin_menus: ~188 rows (approximately)
+-- Dumping data for table technopa_proerp.admin_menus: ~177 rows (approximately)
 DELETE FROM `admin_menus`;
 INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`, `route`, `icon`, `order`, `status`, `delete`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, 'Dashboard', 'ড্যাশবোর্ড', 'admin.dashboard', '<i class="fad fa-tachometer-alt-fastest"></i>', 1, 1, 1, '2023-09-19 09:04:28', '2026-07-16 03:36:40'),
@@ -330,22 +326,20 @@ INSERT INTO `admin_menus` (`id`, `permission_id`, `parent_id`, `name`, `name_bn`
 	(233, 645, 199, 'Generate Salary', 'বেতন তৈরি', 'admin.salary.generate', NULL, 12, 1, 1, '2026-07-16 06:52:16', '2026-08-04 07:03:27'),
 	(234, 646, 199, 'Salary Sheet', 'বেতন শীট', 'admin.salary.generate', NULL, 13, 1, 1, '2026-07-16 06:52:51', '2026-08-04 10:08:31'),
 	(236, 648, 199, 'Payslip', 'বেতন স্লিপ', 'admin.pay.slip', NULL, 14, 1, 1, '2026-07-16 06:54:31', '2026-08-04 11:15:29'),
-	(237, 649, 199, 'Bonus Management', 'বোনাস ব্যবস্থাপনা', NULL, NULL, 15, 1, 1, '2026-07-16 06:54:57', '2026-07-16 06:54:57'),
-	(238, 650, 199, 'Increment Management', 'ইনক্রিমেন্ট ব্যবস্থাপনা', NULL, NULL, 16, 1, 1, '2026-07-16 06:55:21', '2026-07-16 06:55:21'),
-	(239, 651, 199, 'Loan Management', 'ঋণ ব্যবস্থাপনা', NULL, NULL, 17, 1, 1, '2026-07-16 06:55:46', '2026-07-16 06:55:46'),
-	(240, 652, 199, 'Advance Salary', 'অগ্রিম বেতন', NULL, NULL, 17, 1, 1, '2026-07-16 06:56:10', '2026-07-16 06:56:10'),
-	(241, 653, 199, 'Overtime Management', 'ওভারটাইম ব্যবস্থাপনা', NULL, NULL, 18, 1, 1, '2026-07-16 06:56:34', '2026-07-16 06:56:34'),
-	(242, 654, 199, 'Expense Claim', 'ব্যয় দাবি', NULL, NULL, 18, 1, 1, '2026-07-16 06:57:08', '2026-07-16 06:57:08'),
-	(243, 655, 199, 'Employee Documents', 'কর্মচারীর ডকুমেন্ট', NULL, NULL, 19, 1, 1, '2026-07-16 06:57:39', '2026-07-16 06:57:39'),
-	(244, 656, 199, 'Resignation', 'পদত্যাগ', NULL, NULL, 22, 1, 1, '2026-07-16 08:43:30', '2026-07-16 08:43:30'),
-	(245, 657, 199, 'Termination', 'চাকরি সমাপ্তি', NULL, NULL, 23, 1, 1, '2026-07-16 08:44:10', '2026-07-16 08:44:10'),
-	(249, 661, 199, 'Performance Appraisal', 'কর্মদক্ষতা মূল্যায়ন', NULL, NULL, 27, 1, 1, '2026-07-16 08:45:44', '2026-07-16 08:45:44'),
+	(237, 649, 199, 'Bonus Management', 'বোনাস ব্যবস্থাপনা', 'admin.employee-bonus.index', NULL, 15, 1, 1, '2026-07-16 06:54:57', '2026-08-06 04:41:11'),
+	(238, 650, 199, 'Increment Management', 'ইনক্রিমেন্ট ব্যবস্থাপনা', 'admin.employee-increment.index', NULL, 16, 1, 1, '2026-07-16 06:55:21', '2026-08-06 06:03:46'),
+	(239, 651, 199, 'Loan Management', 'ঋণ ব্যবস্থাপনা', 'admin.employee-loan.index', NULL, 17, 1, 1, '2026-07-16 06:55:46', '2026-08-06 06:25:18'),
+	(241, 653, 199, 'Overtime Management', 'ওভারটাইম ব্যবস্থাপনা', 'admin.employee-overtime.index', NULL, 18, 1, 1, '2026-07-16 06:56:34', '2026-08-09 04:55:23'),
+	(242, 654, 199, 'Expense Management', 'ব্যয় ব্যবস্থাপনা', 'admin.expense.index', NULL, 18, 1, 1, '2026-07-16 06:57:08', '2026-08-09 06:08:53'),
+	(243, 655, 199, 'Employee Documents', 'কর্মচারীর ডকুমেন্ট', 'admin.documents.index', NULL, 19, 1, 1, '2026-07-16 06:57:39', '2026-08-09 06:53:45'),
+	(244, 656, 199, 'Resignation', 'পদত্যাগ', 'admin.resignation.index', NULL, 22, 1, 1, '2026-07-16 08:43:30', '2026-08-09 09:12:34'),
+	(245, 657, 199, 'Termination', 'চাকরি সমাপ্তি', 'admin.termination.index', NULL, 23, 1, 1, '2026-07-16 08:44:10', '2026-08-09 09:29:00'),
+	(249, 661, 199, 'Performance Appraisal', 'কর্মদক্ষতা মূল্যায়ন', 'admin.appraisal.index', NULL, 27, 1, 1, '2026-07-16 08:45:44', '2026-08-09 10:26:27'),
 	(251, 663, 199, 'HR Dashboard', 'এইচআর ড্যাশবোর্ড', 'admin.hrm.dashboard', NULL, 1, 1, 1, '2026-07-16 08:46:26', '2026-07-28 06:15:04'),
-	(252, 664, 199, 'HR Reports', 'এইচআর প্রতিবেদন', NULL, NULL, 30, 1, 1, '2026-07-16 08:46:46', '2026-07-16 08:46:46'),
-	(253, 665, 199, 'Payroll Reports', 'বেতন প্রতিবেদন', NULL, NULL, 31, 1, 1, '2026-07-16 08:47:09', '2026-07-16 08:47:09'),
+	(252, 664, 199, 'HR Reports', 'এইচআর প্রতিবেদন', 'admin.hrm.report', NULL, 30, 1, 1, '2026-07-16 08:46:46', '2026-08-10 10:13:52'),
 	(254, 676, 198, 'Customer Requirements', 'কাস্টমার চাহিদা', 'admin.customer-requirement.index', NULL, 10, 1, 1, '2026-07-21 05:08:08', '2026-07-27 05:37:04');
 
--- Dumping structure for table technopa_crm.admin_menu_actions
+-- Dumping structure for table technopa_proerp.admin_menu_actions
 DROP TABLE IF EXISTS `admin_menu_actions`;
 CREATE TABLE IF NOT EXISTS `admin_menu_actions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -357,9 +351,9 @@ CREATE TABLE IF NOT EXISTS `admin_menu_actions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=441 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=459 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.admin_menu_actions: ~291 rows (approximately)
+-- Dumping data for table technopa_proerp.admin_menu_actions: ~318 rows (approximately)
 DELETE FROM `admin_menu_actions`;
 INSERT INTO `admin_menu_actions` (`id`, `permission_id`, `admin_menu_id`, `name`, `route`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 8, 7, 'Create', 'admin.admin-menu.create', 1, '2023-09-19 09:16:56', '2023-09-19 09:16:56'),
@@ -661,9 +655,27 @@ INSERT INTO `admin_menu_actions` (`id`, `permission_id`, `admin_menu_id`, `name`
 	(437, 692, 228, 'edit', 'admin.holiday.edit', 1, '2026-07-29 08:34:42', '2026-07-29 08:34:42'),
 	(438, 693, 231, 'edit', 'admin.payroll.edit', 1, '2026-07-29 10:10:02', '2026-07-29 10:10:02'),
 	(439, 694, 231, 'pay', 'admin.payroll.update-status', 1, '2026-08-04 04:27:47', '2026-08-04 04:27:47'),
-	(440, 695, 232, 'certificate', 'admin.salary.structure.certificate', 1, '2026-08-04 06:30:26', '2026-08-04 06:30:26');
+	(440, 695, 232, 'certificate', 'admin.salary.structure.certificate', 1, '2026-08-04 06:30:26', '2026-08-04 06:30:26'),
+	(441, 696, 237, 'create', 'admin.employee-bonus.create', 1, '2026-08-06 04:54:43', '2026-08-06 04:54:43'),
+	(442, 697, 237, 'edit', 'admin.employee-bonus.edit', 1, '2026-08-06 05:44:17', '2026-08-06 05:44:17'),
+	(443, 698, 238, 'create', 'admin.employee-increment.create', 1, '2026-08-06 06:04:15', '2026-08-06 06:04:15'),
+	(444, 699, 238, 'edit', 'admin.employee-increment.edit', 1, '2026-08-06 06:04:28', '2026-08-06 06:04:28'),
+	(445, 700, 239, 'create', 'admin.employee-loan.create', 1, '2026-08-06 06:36:45', '2026-08-06 06:36:45'),
+	(446, 701, 239, 'edit', 'admin.employee-loan.edit', 1, '2026-08-06 06:36:55', '2026-08-06 06:36:55'),
+	(447, 702, 241, 'create', 'admin.employee-overtime.create', 1, '2026-08-09 04:55:52', '2026-08-09 04:55:52'),
+	(448, 703, 241, 'edit', 'admin.employee-overtime.edit', 1, '2026-08-09 04:56:03', '2026-08-09 04:56:03'),
+	(449, 704, 242, 'create', 'admin.expense.create', 1, '2026-08-09 06:09:36', '2026-08-09 06:09:36'),
+	(450, 705, 242, 'edit', 'admin.expense.edit', 1, '2026-08-09 06:09:48', '2026-08-09 06:09:48'),
+	(451, 706, 243, 'create', 'admin.documents.create', 1, '2026-08-09 06:54:09', '2026-08-09 06:54:09'),
+	(452, 707, 243, 'edit', 'admin.documents.edit', 1, '2026-08-09 06:54:20', '2026-08-09 06:54:20'),
+	(453, 708, 244, 'create', 'admin.resignation.create', 1, '2026-08-09 09:13:01', '2026-08-09 09:13:01'),
+	(454, 709, 244, 'edit', 'admin.resignation.edit', 1, '2026-08-09 09:13:12', '2026-08-09 09:13:12'),
+	(455, 710, 245, 'create', 'admin.termination.create', 1, '2026-08-09 09:29:25', '2026-08-09 09:29:25'),
+	(456, 711, 245, 'edit', 'admin.termination.edit', 1, '2026-08-09 09:29:37', '2026-08-09 09:29:37'),
+	(457, 712, 249, 'create', 'admin.appraisal.create', 1, '2026-08-09 10:26:53', '2026-08-09 10:26:53'),
+	(458, 713, 249, 'edit', 'admin.appraisal.edit', 1, '2026-08-09 10:27:06', '2026-08-09 10:27:06');
 
--- Dumping structure for table technopa_crm.admin_settings
+-- Dumping structure for table technopa_proerp.admin_settings
 DROP TABLE IF EXISTS `admin_settings`;
 CREATE TABLE IF NOT EXISTS `admin_settings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -686,12 +698,12 @@ CREATE TABLE IF NOT EXISTS `admin_settings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.admin_settings: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.admin_settings: ~1 rows (approximately)
 DELETE FROM `admin_settings`;
 INSERT INTO `admin_settings` (`id`, `logo`, `favicon`, `title`, `footer_text`, `secondary_color`, `primary_color`, `accounting`, `invest_value`, `store_id`, `facebook`, `twitter`, `linkedin`, `whatsapp`, `google`, `created_at`, `updated_at`) VALUES
 	(1, 'media/admin-setting//2026-07-15-ABhLVxbUicCewF4lf9izApmOuLIkjhJ3CIqsXenI.webp', 'media/admin-setting//2026-07-15-vbvTfL6D5b73pcbmXUwv1M8lPsiwQAny8u2BU0yA.webp', 'AppproERP', '© 2025 Developed by <a target="_blank" href="http://www.technoparkbd.com/">Techno Park Bangladesh</a>', '#ff6505', '#198754', 1, 50000, 2, NULL, NULL, NULL, NULL, NULL, '2023-09-19 09:03:18', '2026-07-21 03:19:20');
 
--- Dumping structure for table technopa_crm.areas
+-- Dumping structure for table technopa_proerp.areas
 DROP TABLE IF EXISTS `areas`;
 CREATE TABLE IF NOT EXISTS `areas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -714,7 +726,7 @@ CREATE TABLE IF NOT EXISTS `areas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.areas: ~50 rows (approximately)
+-- Dumping data for table technopa_proerp.areas: ~50 rows (approximately)
 DELETE FROM `areas`;
 INSERT INTO `areas` (`id`, `company_id`, `region_id`, `code`, `name`, `incharge_name`, `phone`, `email`, `address`, `shipping_charge`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(17, 1, 13, 'PF', 'Area One', NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 2, '2024-09-08 07:16:59', '2024-07-13 12:44:28', '2024-09-08 07:16:59'),
@@ -768,7 +780,7 @@ INSERT INTO `areas` (`id`, `company_id`, `region_id`, `code`, `name`, `incharge_
 	(65, 1, 13, '11', 'English Road - Babu Bazar', NULL, NULL, NULL, NULL, NULL, 1, 2, 2, NULL, NULL, '2024-09-24 06:43:04', '2024-09-24 06:45:50'),
 	(66, 1, 13, '66', 'Azimpur- Lalbag', NULL, NULL, NULL, NULL, 80, 1, 2, NULL, NULL, NULL, '2024-09-27 06:10:50', '2024-09-27 06:10:50');
 
--- Dumping structure for table technopa_crm.attributes
+-- Dumping structure for table technopa_proerp.attributes
 DROP TABLE IF EXISTS `attributes`;
 CREATE TABLE IF NOT EXISTS `attributes` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -785,14 +797,14 @@ CREATE TABLE IF NOT EXISTS `attributes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.attributes: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.attributes: ~3 rows (approximately)
 DELETE FROM `attributes`;
 INSERT INTO `attributes` (`id`, `company_id`, `name`, `type`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(2, 1, 'Pcs', 'Consumer', 1, 1, NULL, NULL, NULL, '2023-09-29 03:29:41', '2023-09-29 03:29:41'),
 	(11, 1, 'KG', 'Consumer', 1, 2, 159, NULL, NULL, '2024-07-25 05:18:31', '2025-05-23 09:47:32'),
 	(12, 1, 'Gm', 'Consumer', 1, 159, 159, NULL, NULL, '2025-05-23 09:49:12', '2025-05-23 09:49:20');
 
--- Dumping structure for table technopa_crm.attribute_values
+-- Dumping structure for table technopa_proerp.attribute_values
 DROP TABLE IF EXISTS `attribute_values`;
 CREATE TABLE IF NOT EXISTS `attribute_values` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -804,10 +816,10 @@ CREATE TABLE IF NOT EXISTS `attribute_values` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.attribute_values: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.attribute_values: ~0 rows (approximately)
 DELETE FROM `attribute_values`;
 
--- Dumping structure for table technopa_crm.branches
+-- Dumping structure for table technopa_proerp.branches
 DROP TABLE IF EXISTS `branches`;
 CREATE TABLE IF NOT EXISTS `branches` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -833,12 +845,12 @@ CREATE TABLE IF NOT EXISTS `branches` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.branches: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.branches: ~1 rows (approximately)
 DELETE FROM `branches`;
 INSERT INTO `branches` (`id`, `company_id`, `prefix`, `name`, `contact_person`, `email`, `phone`, `fax`, `website`, `vat`, `tin`, `trade_license`, `address`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'AHQ', 'Shankhari Bazar', 'Mamunur Rashid', 'sales@salestrackerbd.com', '01844000103', NULL, 'https://sahebbazaar.com/', NULL, NULL, 'zz', 'Dhaka', 1, 1, 1, 1, NULL, '2023-09-23 06:52:33', '2025-04-28 11:50:47');
 
--- Dumping structure for table technopa_crm.bulk_collections
+-- Dumping structure for table technopa_proerp.bulk_collections
 DROP TABLE IF EXISTS `bulk_collections`;
 CREATE TABLE IF NOT EXISTS `bulk_collections` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -858,10 +870,10 @@ CREATE TABLE IF NOT EXISTS `bulk_collections` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.bulk_collections: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.bulk_collections: ~0 rows (approximately)
 DELETE FROM `bulk_collections`;
 
--- Dumping structure for table technopa_crm.bulk_collection_lists
+-- Dumping structure for table technopa_proerp.bulk_collection_lists
 DROP TABLE IF EXISTS `bulk_collection_lists`;
 CREATE TABLE IF NOT EXISTS `bulk_collection_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -879,10 +891,10 @@ CREATE TABLE IF NOT EXISTS `bulk_collection_lists` (
   CONSTRAINT `bulk_collection_lists_bulk_collection_id_foreign` FOREIGN KEY (`bulk_collection_id`) REFERENCES `bulk_collections` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.bulk_collection_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.bulk_collection_lists: ~0 rows (approximately)
 DELETE FROM `bulk_collection_lists`;
 
--- Dumping structure for table technopa_crm.categories
+-- Dumping structure for table technopa_proerp.categories
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -907,7 +919,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.categories: ~171 rows (approximately)
+-- Dumping data for table technopa_proerp.categories: ~171 rows (approximately)
 DELETE FROM `categories`;
 INSERT INTO `categories` (`id`, `company_id`, `parent_id`, `name`, `slug`, `image`, `meta_title`, `meta_keyword`, `meta_description`, `featured`, `order`, `status`, `show_frontend`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(31, 1, NULL, 'Chicken Item', 'chicken-item', NULL, 'Poultry', NULL, NULL, 0, 0, 1, 1, 1, 1, 2, '2025-04-27 12:15:44', '2024-07-07 11:44:44', '2025-04-27 12:15:44'),
@@ -1082,7 +1094,7 @@ INSERT INTO `categories` (`id`, `company_id`, `parent_id`, `name`, `slug`, `imag
 	(212, 1, 193, 'Designer Things', 'designer-things', NULL, 'Designer Things', NULL, NULL, 0, 0, 1, 0, 159, 159, NULL, NULL, '2026-03-10 08:28:46', '2026-04-08 09:16:23'),
 	(213, 1, 104, 'Hair Oil', 'hair-oil', NULL, NULL, NULL, NULL, 0, 0, 1, 0, 1, NULL, NULL, NULL, '2026-07-27 04:25:07', '2026-07-27 04:25:07');
 
--- Dumping structure for table technopa_crm.category_vendors
+-- Dumping structure for table technopa_proerp.category_vendors
 DROP TABLE IF EXISTS `category_vendors`;
 CREATE TABLE IF NOT EXISTS `category_vendors` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1093,7 +1105,7 @@ CREATE TABLE IF NOT EXISTS `category_vendors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.category_vendors: ~33 rows (approximately)
+-- Dumping data for table technopa_proerp.category_vendors: ~33 rows (approximately)
 DELETE FROM `category_vendors`;
 INSERT INTO `category_vendors` (`id`, `category_id`, `vendor_id`, `created_at`, `updated_at`) VALUES
 	(26, 9, 1, '2023-10-19 06:38:23', '2023-10-19 06:38:23'),
@@ -1130,7 +1142,7 @@ INSERT INTO `category_vendors` (`id`, `category_id`, `vendor_id`, `created_at`, 
 	(117, 58, 3, '2026-02-23 15:09:23', '2026-02-23 15:09:23'),
 	(118, 213, 1, '2026-07-27 04:25:07', '2026-07-27 04:25:07');
 
--- Dumping structure for table technopa_crm.chain_clients
+-- Dumping structure for table technopa_proerp.chain_clients
 DROP TABLE IF EXISTS `chain_clients`;
 CREATE TABLE IF NOT EXISTS `chain_clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1150,10 +1162,10 @@ CREATE TABLE IF NOT EXISTS `chain_clients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.chain_clients: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.chain_clients: ~0 rows (approximately)
 DELETE FROM `chain_clients`;
 
--- Dumping structure for table technopa_crm.clients
+-- Dumping structure for table technopa_proerp.clients
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1186,7 +1198,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3037 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.clients: ~4 rows (approximately)
+-- Dumping data for table technopa_proerp.clients: ~4 rows (approximately)
 DELETE FROM `clients`;
 INSERT INTO `clients` (`id`, `company_id`, `user_id`, `coa_setup_id`, `reference_by`, `client_category_id`, `area_id`, `territory_id`, `code`, `name`, `contact_person`, `phone`, `email`, `address`, `credit_limit`, `bin_no`, `chain_client_id`, `discount`, `status`, `is_chain`, `is_vat`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(3032, 1, 147, 130, 52, NULL, 19, 58, 1, 'Frozen Foodi', NULL, '1111111111', NULL, NULL, 1000000.00, NULL, NULL, 0.00, 1, 0, 0, 1, 2, 1, '2025-04-30 08:08:20', '2024-10-13 17:27:48', '2025-04-30 08:08:20'),
@@ -1194,7 +1206,7 @@ INSERT INTO `clients` (`id`, `company_id`, `user_id`, `coa_setup_id`, `reference
 	(3034, 1, 182, NULL, 60, NULL, 19, 58, 3, 'fffffffff', NULL, '33333', NULL, NULL, NULL, NULL, NULL, 0.00, 1, 0, 0, 1, NULL, 1, '2026-07-21 09:56:56', '2026-07-21 07:18:01', '2026-07-21 09:56:56'),
 	(3036, 1, 185, NULL, 60, NULL, 19, 58, 3, 'SGS', 'Techno Park', '019215554555', 'technoparkbd@gmail.com', 'aas', 0.00, 0, NULL, 0.00, 1, 0, 0, 1, 1, NULL, NULL, '2026-07-21 10:05:00', '2026-07-21 10:05:52');
 
--- Dumping structure for table technopa_crm.client_categories
+-- Dumping structure for table technopa_proerp.client_categories
 DROP TABLE IF EXISTS `client_categories`;
 CREATE TABLE IF NOT EXISTS `client_categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1210,7 +1222,7 @@ CREATE TABLE IF NOT EXISTS `client_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.client_categories: ~9 rows (approximately)
+-- Dumping data for table technopa_proerp.client_categories: ~9 rows (approximately)
 DELETE FROM `client_categories`;
 INSERT INTO `client_categories` (`id`, `company_id`, `name`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'RETAILER', 1, 1, NULL, 2, '2024-05-12 04:55:39', '2023-09-23 15:05:44', '2024-05-12 04:55:39'),
@@ -1223,7 +1235,7 @@ INSERT INTO `client_categories` (`id`, `company_id`, `name`, `status`, `created_
 	(8, 1, 'Club', 1, 2, NULL, 2, '2024-05-12 04:55:39', '2023-11-13 04:32:44', '2024-05-12 04:55:39'),
 	(9, 1, 'Super Shop', 1, 2, NULL, 2, '2024-05-12 04:55:39', '2023-12-27 18:39:54', '2024-05-12 04:55:39');
 
--- Dumping structure for table technopa_crm.client_messages
+-- Dumping structure for table technopa_proerp.client_messages
 DROP TABLE IF EXISTS `client_messages`;
 CREATE TABLE IF NOT EXISTS `client_messages` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1239,7 +1251,7 @@ CREATE TABLE IF NOT EXISTS `client_messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.client_messages: ~14 rows (approximately)
+-- Dumping data for table technopa_proerp.client_messages: ~14 rows (approximately)
 DELETE FROM `client_messages`;
 INSERT INTO `client_messages` (`id`, `product_id`, `name`, `email`, `phone`, `address`, `message`, `status`, `created_at`, `updated_at`) VALUES
 	(1, NULL, 'Daniel Edwards', 'danieledwards.web@gmail.com', '8453630323', 'New York . United States 10018', 'Hello,\r\n\r\nWe got your website information from the network administrator, and after testing it to ensure everything was functioning smoothly, we identified several SEO (Search Engine Optimization) related shortcomings. These are preventing your website from appearing on major search engines like Google, Bing, and Yahoo. Fixing these issues is both simple and crucial for increasing  your online   visibility.                                     \r\n                                                                                                                                                   \r\nPlease reply with your phone  number ,  time  zone, and  availability for a quick call so we can resolve this at the earliest for you.\r\n\r\nBest Regards,\r\nDaniel Edwards', 1, '2025-04-28 14:03:02', '2025-04-28 14:03:02'),
@@ -1257,7 +1269,7 @@ INSERT INTO `client_messages` (`id`, `product_id`, `name`, `email`, `phone`, `ad
 	(13, NULL, 'Margaret Julia', 'yiyayova@gmail.com', '6143240224', '4164 Bates Brothers Road', 'Hello,\r\n\r\nWe have a special opportunity that could significantly boost traffic and visibility for your website sahebbazaar.com.\r\n\r\nWhat if you could drive real, targeted website traffic automatically using AI — without paid ads, complicated setups, or ongoing management?\r\n\r\nThat’s exactly what AI Traffic Whale delivers.\r\n\r\nAI Traffic Whale uses advanced AI technology to generate consistent, high-quality traffic from multiple sources, helping websites increase exposure, improve engagement, and grow faster — all on autopilot. No technical skills required, no monthly ad spend, and no complex tools to manage.\r\n\r\nYou set it up once, and the AI does the work for you.\r\n\r\n👉 See how it works here: https://traffic.vinhgrowth.com\r\n\r\nYou are receiving this message because we believe this offer may be relevant to your website.\r\n\r\nIf you do not wish to receive further communications from us, please click here to UNSUBSCRIBE:\r\n\r\nhttps://vinhgrowth.com/unsubscribe?domain=sahebbazaar.com\r\n\r\nAddress: 60 Crown Street, London\r\n\r\nLooking out for you,\r\n\r\nMargaret Julia', 1, '2026-02-02 09:23:37', '2026-02-02 09:23:37'),
 	(14, NULL, 'Marcos Healy', 'marcos.healy85@hotmail.com', '126693043', '55 Place Du Jeu De Paume', 'Hi from DreamProxies.com\r\n\r\nGreat proxies news: high-quality, fast and reliable private proxies now even cheaper!\r\n50% Cheaper - for all private proxies:\r\n\r\nhttps://tiny.cc/dreamproxies-coupons\r\n\r\nBrowse key features and benefits:\r\nFully Private, Premium Quality, Blazing Speed, Unlimited Bandwidth, Reliable Servers, Low Prices, Additional Offers and much more\r\n\r\n50% Sales for all proxy packs - at DreamProxies.com', 1, '2026-03-19 06:42:24', '2026-03-19 06:42:24');
 
--- Dumping structure for table technopa_crm.client_prices
+-- Dumping structure for table technopa_proerp.client_prices
 DROP TABLE IF EXISTS `client_prices`;
 CREATE TABLE IF NOT EXISTS `client_prices` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1279,10 +1291,10 @@ CREATE TABLE IF NOT EXISTS `client_prices` (
   CONSTRAINT `client_prices_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.client_prices: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.client_prices: ~0 rows (approximately)
 DELETE FROM `client_prices`;
 
--- Dumping structure for table technopa_crm.coa_setups
+-- Dumping structure for table technopa_proerp.coa_setups
 DROP TABLE IF EXISTS `coa_setups`;
 CREATE TABLE IF NOT EXISTS `coa_setups` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1302,9 +1314,9 @@ CREATE TABLE IF NOT EXISTS `coa_setups` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=312 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.coa_setups: ~185 rows (approximately)
+-- Dumping data for table technopa_proerp.coa_setups: ~186 rows (approximately)
 DELETE FROM `coa_setups`;
 INSERT INTO `coa_setups` (`id`, `company_id`, `parent_id`, `head_code`, `head_name`, `transaction`, `general`, `head_type`, `status`, `updateable`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, 1, 'Assets', 0, 0, 'A', 1, 0, 1, NULL, NULL, NULL, '2023-12-07 07:14:30', '2023-12-07 07:14:30'),
@@ -1491,9 +1503,10 @@ INSERT INTO `coa_setups` (`id`, `company_id`, `parent_id`, `head_code`, `head_na
 	(308, 1, 297, 40306, 'Shymol Sen', 1, 0, 'E', 1, 1, 159, NULL, NULL, NULL, '2026-03-18 17:03:14', '2026-03-18 17:03:14'),
 	(309, 1, 30, 201130, 'M/S Hasan Brothers Corp', 1, 0, 'L', 1, 1, 159, NULL, NULL, NULL, '2026-04-11 07:42:57', '2026-04-11 07:42:57'),
 	(310, 1, 297, 40307, 'Arko Ghosh', 1, 0, 'E', 1, 1, 159, 159, NULL, NULL, '2026-04-23 09:26:42', '2026-04-23 16:13:42'),
-	(311, 1, 297, 40308, 'Bishwajit Barmon', 1, 0, 'E', 1, 1, 159, NULL, NULL, NULL, '2026-04-23 09:29:14', '2026-04-23 09:29:14');
+	(311, 1, 297, 40308, 'Bishwajit Barmon', 1, 0, 'E', 1, 1, 159, NULL, NULL, NULL, '2026-04-23 09:29:14', '2026-04-23 09:29:14'),
+	(312, 1, 4, 404, 'Salary Expenses', 1, 1, 'E', 1, 1, 1, NULL, NULL, NULL, '2026-08-09 06:17:41', '2026-08-09 06:17:41');
 
--- Dumping structure for table technopa_crm.collections
+-- Dumping structure for table technopa_proerp.collections
 DROP TABLE IF EXISTS `collections`;
 CREATE TABLE IF NOT EXISTS `collections` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1519,10 +1532,10 @@ CREATE TABLE IF NOT EXISTS `collections` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.collections: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.collections: ~0 rows (approximately)
 DELETE FROM `collections`;
 
--- Dumping structure for table technopa_crm.collection_data
+-- Dumping structure for table technopa_proerp.collection_data
 DROP TABLE IF EXISTS `collection_data`;
 CREATE TABLE IF NOT EXISTS `collection_data` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1536,10 +1549,10 @@ CREATE TABLE IF NOT EXISTS `collection_data` (
   CONSTRAINT `collection_data_collection_id_foreign` FOREIGN KEY (`collection_id`) REFERENCES `collections` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.collection_data: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.collection_data: ~0 rows (approximately)
 DELETE FROM `collection_data`;
 
--- Dumping structure for table technopa_crm.companies
+-- Dumping structure for table technopa_proerp.companies
 DROP TABLE IF EXISTS `companies`;
 CREATE TABLE IF NOT EXISTS `companies` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1564,12 +1577,12 @@ CREATE TABLE IF NOT EXISTS `companies` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.companies: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.companies: ~1 rows (approximately)
 DELETE FROM `companies`;
 INSERT INTO `companies` (`id`, `prefix`, `name`, `username`, `email`, `phone`, `fax`, `website`, `vat`, `tin`, `trade_license`, `address`, `logo`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 'ERP', 'App Pro ERP', 'sahebbazaar', 'info@technoparkbd.com', '01552344239', '01552344239', 'Website: www.technoparkbd.com', '5', NULL, NULL, 'House # 10/B Road No 6, Dhaka 1205', 'media/company//2026-07-23-YzSlNBtshZ2ucbW5wSG5Sps3ZFtnjR91rbTqsl0Y.webp', 1, 1, NULL, NULL, '2023-09-23 06:52:33', '2026-07-23 09:53:37');
 
--- Dumping structure for table technopa_crm.contacts
+-- Dumping structure for table technopa_proerp.contacts
 DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1587,12 +1600,12 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.contacts: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.contacts: ~1 rows (approximately)
 DELETE FROM `contacts`;
 INSERT INTO `contacts` (`id`, `heading`, `title`, `address`, `work_time`, `primary_mobile`, `primary_email`, `secondary_mobile`, `secondary_email`, `map_url`, `created_at`, `updated_at`) VALUES
 	(1, 'GET IN TOUCH', 'Don’t hesitate to contact us directly so that we can think together about a solution.', '<p style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, " segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="">৩১৬/২, ৬-বি, ডিআইটি রোড,  পূর্ব রামপুরা, ঢাকা-১২১৯।<br></p>', '<span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">Monday to Friday</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">7 a.m. 12 p.m. – 1 p.m. 4 p.m.</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">Saturday</span><br segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: currentcolor; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;"><span segoe="" ui",="" roboto,="" "helvetica="" neue",="" arial,="" "noto="" sans",="" sans-serif,="" "apple="" color="" emoji",="" "segoe="" ui="" symbol",="" emoji";="" font-size:="" medium;"="" style="border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(71, 85, 105); font-family: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: medium;">8 a.m. 2 p.m.</span>', '01716918884', 'info@nijerbazarbd.com', NULL, 'sales@nijerbazarbd.com', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.6713598084884!2d90.41308638555972!3d23.759096033445807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8792521cc35%3A0xd5aaf741fec33d8e!2s316%2C%206%20DIT%20Rd%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1722152464023!5m2!1sen!2sbd', '2024-02-27 09:09:56', '2024-10-12 11:13:49');
 
--- Dumping structure for table technopa_crm.crm_customer_requirements
+-- Dumping structure for table technopa_proerp.crm_customer_requirements
 DROP TABLE IF EXISTS `crm_customer_requirements`;
 CREATE TABLE IF NOT EXISTS `crm_customer_requirements` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1610,13 +1623,13 @@ CREATE TABLE IF NOT EXISTS `crm_customer_requirements` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_customer_requirements: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_customer_requirements: ~2 rows (approximately)
 DELETE FROM `crm_customer_requirements`;
 INSERT INTO `crm_customer_requirements` (`id`, `lead_id`, `meeting_type`, `related_module`, `requirement_details`, `req_date`, `record_time`, `requirement_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 3, 'Online', 'Support', 'csadsada', '2026-07-22', '12:22:00', 2, 1, 1, '2026-07-22 09:55:07', '2026-07-27 06:26:55'),
 	(2, 1, 'Online', 'Production', '<p><br></p><table class="table table-bordered"><tbody><tr><td>adasd</td><td>sadas</td><td>dsad</td><td>sadas</td><td><br></td></tr><tr><td><br></td><td>dsads</td><td>dasd</td><td><br></td><td>asdasas</td></tr><tr><td>sadasds</td><td>dasda</td><td>sdas</td><td>asdad</td><td><br></td></tr><tr><td><br></td><td>dasd</td><td><br></td><td><br></td><td><br></td></tr><tr><td><br></td><td><br></td><td>dasdas</td><td><br></td><td><br></td></tr><tr><td><br></td><td>dasd</td><td><br></td><td><br></td><td><br></td></tr></tbody></table><p><br></p>', '2026-07-27', '00:45:00', 1, 1, 1, '2026-07-27 06:48:31', '2026-07-27 06:52:08');
 
--- Dumping structure for table technopa_crm.crm_leads
+-- Dumping structure for table technopa_proerp.crm_leads
 DROP TABLE IF EXISTS `crm_leads`;
 CREATE TABLE IF NOT EXISTS `crm_leads` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1651,15 +1664,15 @@ CREATE TABLE IF NOT EXISTS `crm_leads` (
   CONSTRAINT `fk_lead_status` FOREIGN KEY (`lead_status_id`) REFERENCES `crm_lead_statuses` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_leads: ~4 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_leads: ~4 rows (approximately)
 DELETE FROM `crm_leads`;
 INSERT INTO `crm_leads` (`id`, `lead_no`, `company_name`, `contact_person`, `mobile`, `email`, `website`, `lead_source_id`, `lead_status_id`, `assigned_to`, `proposal_value`, `expected_value`, `priority`, `follow_up_date`, `next_follow_up`, `address`, `city`, `district`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 'LEAD000001', 'SKCK Company', 'Masud', '019215555555', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 2, 1, 55, 55.00, 'Low', '2026-07-20', '2026-07-21 00:00:00', 'gdfgd', NULL, NULL, 'ddfd', 1, 1, 1, '2026-07-20 10:37:25', '2026-07-20 11:16:56'),
 	(2, 'LEAD000002', 'Vanila', 'Techno Park', '019215555556', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 4, 1, 44, 33.00, 'Low', '2026-07-20', '2026-07-20 00:00:00', 'fvd', NULL, NULL, 'dgdf', 1, 1, NULL, '2026-07-20 11:14:48', '2026-07-20 12:05:14'),
 	(3, 'LEAD000003', 'SGS', 'Techno Park', '019215554555', 'technoparkbd@gmail.com', 'dfsdfsdf', 1, 10, 1, 55, 55.00, 'Low', '2026-07-20', '2026-07-20 00:00:00', 'aas', NULL, NULL, 'adasd', 1, 1, NULL, '2026-07-20 11:25:19', '2026-07-21 10:05:00'),
-	(4, 'LEAD000004', 'GGG', 'Techno Park', '019215555555', 'nijer.bazar@gmail.com', 'www.salestracker.com', 1, 5, 1, 444, 44.00, 'Low', '2026-07-27', '2026-07-27 00:00:00', '316/2, Rampura Dhaka', NULL, NULL, 'dsfdf', 1, 1, NULL, '2026-07-27 08:49:22', '2026-07-27 09:43:40');
+	(4, 'LEAD000004', 'GGG', 'Techno Park', '019215555555', 'nijer.bazar@gmail.com', 'www.salestracker.com', 1, 5, 1, 444, 44.00, 'Low', '2026-07-27', NULL, '316/2, Rampura Dhaka', NULL, NULL, 'Lead Medical Assistants perform administrative and certain clinical duties', 1, 1, 1, '2026-07-27 08:49:22', '2026-08-06 10:13:43');
 
--- Dumping structure for table technopa_crm.crm_lead_sources
+-- Dumping structure for table technopa_proerp.crm_lead_sources
 DROP TABLE IF EXISTS `crm_lead_sources`;
 CREATE TABLE IF NOT EXISTS `crm_lead_sources` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1675,7 +1688,7 @@ CREATE TABLE IF NOT EXISTS `crm_lead_sources` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_lead_sources: ~12 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_lead_sources: ~12 rows (approximately)
 DELETE FROM `crm_lead_sources`;
 INSERT INTO `crm_lead_sources` (`id`, `code`, `name`, `name_bn`, `description`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
 	(1, 'FB', 'Facebook', 'ফেসবুক', NULL, 1, NULL, NULL, NULL, NULL),
@@ -1691,7 +1704,7 @@ INSERT INTO `crm_lead_sources` (`id`, `code`, `name`, `name_bn`, `description`, 
 	(11, 'Offcode33', 'Offline Marketing', NULL, 'hhhhhhh', 0, '2026-07-19 10:54:56', '2026-07-20 07:25:12', 1, 1),
 	(12, 'Offcode335', 'Offline Marketing5', NULL, 'xfdgdfgdfg', 0, '2026-07-19 10:57:46', '2026-07-19 12:02:03', 1, 1);
 
--- Dumping structure for table technopa_crm.crm_lead_statuses
+-- Dumping structure for table technopa_proerp.crm_lead_statuses
 DROP TABLE IF EXISTS `crm_lead_statuses`;
 CREATE TABLE IF NOT EXISTS `crm_lead_statuses` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1709,7 +1722,7 @@ CREATE TABLE IF NOT EXISTS `crm_lead_statuses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_lead_statuses: ~10 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_lead_statuses: ~10 rows (approximately)
 DELETE FROM `crm_lead_statuses`;
 INSERT INTO `crm_lead_statuses` (`id`, `code`, `name`, `name_bn`, `color`, `sort_order`, `description`, `status`, `created_at`, `updated_at`, `updated_by`, `created_by`) VALUES
 	(1, 'NEW', 'New', 'নতুন', '#007bff', 1, NULL, 1, NULL, NULL, NULL, NULL),
@@ -1723,7 +1736,7 @@ INSERT INTO `crm_lead_statuses` (`id`, `code`, `name`, `name_bn`, `color`, `sort
 	(9, 'HOLD', 'Hold', 'স্থগিত', '#6c757d', 9, NULL, 1, NULL, NULL, NULL, NULL),
 	(10, 'CONVERTED', 'Converted', 'গ্রাহকে রূপান্তরিত', '#198754', 10, 'sdsd', 1, NULL, '2026-07-20 09:17:09', 1, NULL);
 
--- Dumping structure for table technopa_crm.crm_meeting_schedules
+-- Dumping structure for table technopa_proerp.crm_meeting_schedules
 DROP TABLE IF EXISTS `crm_meeting_schedules`;
 CREATE TABLE IF NOT EXISTS `crm_meeting_schedules` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1745,12 +1758,12 @@ CREATE TABLE IF NOT EXISTS `crm_meeting_schedules` (
   CONSTRAINT `fk_meeting_lead` FOREIGN KEY (`lead_id`) REFERENCES `crm_leads` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_meeting_schedules: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_meeting_schedules: ~1 rows (approximately)
 DELETE FROM `crm_meeting_schedules`;
 INSERT INTO `crm_meeting_schedules` (`id`, `meeting_title`, `lead_id`, `meeting_type`, `related_module`, `meeting_details`, `meeting_date`, `start_time`, `end_time`, `meeting_status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 'Demo meeting', 3, 'Online', 'Customer', 'csadsada', '2026-07-22', '12:22:00', '14:22:00', 2, 1, 1, '2026-07-22 09:55:07', '2026-07-22 10:02:43');
 
--- Dumping structure for table technopa_crm.crm_quotations
+-- Dumping structure for table technopa_proerp.crm_quotations
 DROP TABLE IF EXISTS `crm_quotations`;
 CREATE TABLE IF NOT EXISTS `crm_quotations` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1784,13 +1797,13 @@ CREATE TABLE IF NOT EXISTS `crm_quotations` (
   KEY `idx_status` (`status`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_quotations: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_quotations: ~2 rows (approximately)
 DELETE FROM `crm_quotations`;
 INSERT INTO `crm_quotations` (`id`, `company_id`, `product_type`, `store_id`, `staff_id`, `client_id`, `note`, `quotation`, `date`, `quotation_type`, `total_amount`, `discount`, `total_paid`, `status`, `created_by`, `updated_by`, `deleted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(4, 1, 1, 2, 59, 1, NULL, 'QUOT2607000001', '2026-07-23', NULL, 33.00, 0.00, 0.00, 1, 1, 1, NULL, '2026-07-23 06:26:21', '2026-07-23 11:13:42', NULL),
 	(5, 1, 1, 2, 59, 1, 'This is your demo', 'QUOT2607000002', '2026-07-23', NULL, 18381.00, 9.00, 0.00, 1, 1, 1, NULL, '2026-07-23 06:55:18', '2026-07-23 11:06:32', NULL);
 
--- Dumping structure for table technopa_crm.crm_quotation_details
+-- Dumping structure for table technopa_proerp.crm_quotation_details
 DROP TABLE IF EXISTS `crm_quotation_details`;
 CREATE TABLE IF NOT EXISTS `crm_quotation_details` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1821,14 +1834,14 @@ CREATE TABLE IF NOT EXISTS `crm_quotation_details` (
   CONSTRAINT `fk_quotation_details_quotation` FOREIGN KEY (`quotation_id`) REFERENCES `crm_quotations` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.crm_quotation_details: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.crm_quotation_details: ~3 rows (approximately)
 DELETE FROM `crm_quotation_details`;
 INSERT INTO `crm_quotation_details` (`id`, `company_id`, `product_type`, `quotation_id`, `store_id`, `client_id`, `product_id`, `variant_id`, `order_product_id`, `rate`, `qty`, `amount`, `discount`, `returned_qty`, `returned_amount`, `is_return`, `delivery_status`, `created_at`, `updated_at`) VALUES
 	(10, 1, 1, 5, 2, 1, 2, NULL, NULL, 66.00, 1.00, 66.00, 0.03, 0.00, 0.00, 0, 0, '2026-07-23 11:06:32', '2026-07-23 11:06:32'),
 	(11, 1, 1, 5, 2, 1, 1, NULL, NULL, 33.00, 555.00, 18315.00, 8.97, 0.00, 0.00, 0, 0, '2026-07-23 11:06:32', '2026-07-23 11:06:32'),
 	(13, 1, 1, 4, 2, 1, 1, NULL, NULL, 33.00, 1.00, 33.00, 0.00, 0.00, 0.00, 0, 0, '2026-07-23 11:13:42', '2026-07-23 11:13:42');
 
--- Dumping structure for table technopa_crm.deliveries
+-- Dumping structure for table technopa_proerp.deliveries
 DROP TABLE IF EXISTS `deliveries`;
 CREATE TABLE IF NOT EXISTS `deliveries` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1851,10 +1864,10 @@ CREATE TABLE IF NOT EXISTS `deliveries` (
   UNIQUE KEY `deliveries_serial_no_unique` (`serial_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.deliveries: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.deliveries: ~0 rows (approximately)
 DELETE FROM `deliveries`;
 
--- Dumping structure for table technopa_crm.delivery_charges
+-- Dumping structure for table technopa_proerp.delivery_charges
 DROP TABLE IF EXISTS `delivery_charges`;
 CREATE TABLE IF NOT EXISTS `delivery_charges` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1867,12 +1880,12 @@ CREATE TABLE IF NOT EXISTS `delivery_charges` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.delivery_charges: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.delivery_charges: ~1 rows (approximately)
 DELETE FROM `delivery_charges`;
 INSERT INTO `delivery_charges` (`id`, `inside_charge`, `outside_charge`, `upto`, `charge_for_extra`, `created_at`, `updated_at`) VALUES
 	(1, 80.00, 150.00, 0.00, 0.00, '2023-11-18 04:06:32', '2024-10-26 09:53:28');
 
--- Dumping structure for table technopa_crm.delivery_lists
+-- Dumping structure for table technopa_proerp.delivery_lists
 DROP TABLE IF EXISTS `delivery_lists`;
 CREATE TABLE IF NOT EXISTS `delivery_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1891,10 +1904,10 @@ CREATE TABLE IF NOT EXISTS `delivery_lists` (
   CONSTRAINT `delivery_lists_delivery_id_foreign` FOREIGN KEY (`delivery_id`) REFERENCES `deliveries` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.delivery_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.delivery_lists: ~0 rows (approximately)
 DELETE FROM `delivery_lists`;
 
--- Dumping structure for table technopa_crm.delivery_men
+-- Dumping structure for table technopa_proerp.delivery_men
 DROP TABLE IF EXISTS `delivery_men`;
 CREATE TABLE IF NOT EXISTS `delivery_men` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1916,7 +1929,7 @@ CREATE TABLE IF NOT EXISTS `delivery_men` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.delivery_men: ~5 rows (approximately)
+-- Dumping data for table technopa_proerp.delivery_men: ~5 rows (approximately)
 DELETE FROM `delivery_men`;
 INSERT INTO `delivery_men` (`id`, `company_id`, `store_id`, `code`, `name`, `phone`, `address`, `email`, `national_id`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 2, '1', 'Rampura Office Delivery', NULL, NULL, NULL, NULL, 1, 2, NULL, NULL, NULL, '2024-10-25 08:41:58', '2024-10-25 08:41:58'),
@@ -1925,7 +1938,7 @@ INSERT INTO `delivery_men` (`id`, `company_id`, `store_id`, `code`, `name`, `pho
 	(4, 1, 2, '4', 'showkot', '01812313265', NULL, NULL, NULL, 1, 152, NULL, NULL, NULL, '2024-12-03 10:57:42', '2024-12-03 10:57:42'),
 	(5, 1, 2, '5', 'siam', '01614681945', NULL, NULL, NULL, 1, 152, NULL, NULL, NULL, '2024-12-03 10:58:40', '2024-12-03 10:58:40');
 
--- Dumping structure for table technopa_crm.details_cards
+-- Dumping structure for table technopa_proerp.details_cards
 DROP TABLE IF EXISTS `details_cards`;
 CREATE TABLE IF NOT EXISTS `details_cards` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1938,10 +1951,10 @@ CREATE TABLE IF NOT EXISTS `details_cards` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.details_cards: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.details_cards: ~0 rows (approximately)
 DELETE FROM `details_cards`;
 
--- Dumping structure for table technopa_crm.failed_jobs
+-- Dumping structure for table technopa_proerp.failed_jobs
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1955,10 +1968,10 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.failed_jobs: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.failed_jobs: ~0 rows (approximately)
 DELETE FROM `failed_jobs`;
 
--- Dumping structure for table technopa_crm.groups
+-- Dumping structure for table technopa_proerp.groups
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1975,10 +1988,10 @@ CREATE TABLE IF NOT EXISTS `groups` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.groups: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.groups: ~0 rows (approximately)
 DELETE FROM `groups`;
 
--- Dumping structure for table technopa_crm.group_members
+-- Dumping structure for table technopa_proerp.group_members
 DROP TABLE IF EXISTS `group_members`;
 CREATE TABLE IF NOT EXISTS `group_members` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -1991,10 +2004,10 @@ CREATE TABLE IF NOT EXISTS `group_members` (
   CONSTRAINT `group_members_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.group_members: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.group_members: ~0 rows (approximately)
 DELETE FROM `group_members`;
 
--- Dumping structure for table technopa_crm.group_sales_targets
+-- Dumping structure for table technopa_proerp.group_sales_targets
 DROP TABLE IF EXISTS `group_sales_targets`;
 CREATE TABLE IF NOT EXISTS `group_sales_targets` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2018,10 +2031,10 @@ CREATE TABLE IF NOT EXISTS `group_sales_targets` (
   CONSTRAINT `group_sales_targets_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.group_sales_targets: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.group_sales_targets: ~0 rows (approximately)
 DELETE FROM `group_sales_targets`;
 
--- Dumping structure for table technopa_crm.group_sales_target_categories
+-- Dumping structure for table technopa_proerp.group_sales_target_categories
 DROP TABLE IF EXISTS `group_sales_target_categories`;
 CREATE TABLE IF NOT EXISTS `group_sales_target_categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2036,10 +2049,10 @@ CREATE TABLE IF NOT EXISTS `group_sales_target_categories` (
   CONSTRAINT `group_sales_target_categories_group_sales_target_id_foreign` FOREIGN KEY (`group_sales_target_id`) REFERENCES `group_sales_targets` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.group_sales_target_categories: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.group_sales_target_categories: ~0 rows (approximately)
 DELETE FROM `group_sales_target_categories`;
 
--- Dumping structure for table technopa_crm.home_sections
+-- Dumping structure for table technopa_proerp.home_sections
 DROP TABLE IF EXISTS `home_sections`;
 CREATE TABLE IF NOT EXISTS `home_sections` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2053,7 +2066,7 @@ CREATE TABLE IF NOT EXISTS `home_sections` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.home_sections: ~4 rows (approximately)
+-- Dumping data for table technopa_proerp.home_sections: ~4 rows (approximately)
 DELETE FROM `home_sections`;
 INSERT INTO `home_sections` (`id`, `category_id`, `banner`, `banner_link`, `order`, `status`, `created_at`, `updated_at`) VALUES
 	(8, 44, NULL, NULL, 2, 0, '2024-07-25 06:58:39', '2025-05-03 13:02:39'),
@@ -2061,7 +2074,7 @@ INSERT INTO `home_sections` (`id`, `category_id`, `banner`, `banner_link`, `orde
 	(10, 65, NULL, NULL, 4, 0, '2025-05-03 10:54:50', '2025-05-03 13:02:42'),
 	(11, 57, NULL, NULL, 5, 0, '2025-05-03 12:42:19', '2025-05-09 11:18:19');
 
--- Dumping structure for table technopa_crm.home_section_sub_categories
+-- Dumping structure for table technopa_proerp.home_section_sub_categories
 DROP TABLE IF EXISTS `home_section_sub_categories`;
 CREATE TABLE IF NOT EXISTS `home_section_sub_categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2074,14 +2087,40 @@ CREATE TABLE IF NOT EXISTS `home_section_sub_categories` (
   CONSTRAINT `home_section_sub_categories_home_section_id_foreign` FOREIGN KEY (`home_section_id`) REFERENCES `home_sections` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.home_section_sub_categories: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.home_section_sub_categories: ~3 rows (approximately)
 DELETE FROM `home_section_sub_categories`;
 INSERT INTO `home_section_sub_categories` (`id`, `home_section_id`, `category_id`, `created_at`, `updated_at`) VALUES
 	(20, 10, 66, '2025-05-03 10:54:50', '2025-05-03 10:54:50'),
 	(24, 11, 84, '2025-05-03 16:16:05', '2025-05-03 16:16:05'),
 	(25, 11, 81, '2025-05-03 16:16:05', '2025-05-03 16:16:05');
 
--- Dumping structure for table technopa_crm.hrm_employee_attendances
+-- Dumping structure for table technopa_proerp.hrm_employee_appraisal
+DROP TABLE IF EXISTS `hrm_employee_appraisal`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_appraisal` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `overall_rating` varchar(255) DEFAULT '0',
+  `appraisal_period` varchar(255) DEFAULT '',
+  `appraisal_date` date NOT NULL,
+  `summary` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_appraisal: ~3 rows (approximately)
+DELETE FROM `hrm_employee_appraisal`;
+INSERT INTO `hrm_employee_appraisal` (`id`, `employee_id`, `overall_rating`, `appraisal_period`, `appraisal_date`, `summary`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 62, '5', '6', '2026-08-09', 'FDSFS', 'Approved', 1, 1, '2026-08-09 10:49:58', '2026-08-09 10:58:15'),
+	(3, 63, '45', '5', '2026-08-09', 'dfgdfgfd', 'Pending', 1, NULL, '2026-08-09 10:53:40', '2026-08-09 10:53:40'),
+	(5, 52, '33', '33', '2026-08-09', '33', 'Pending', 1, NULL, '2026-08-09 10:58:06', '2026-08-09 10:58:06');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_attendances
 DROP TABLE IF EXISTS `hrm_employee_attendances`;
 CREATE TABLE IF NOT EXISTS `hrm_employee_attendances` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2104,7 +2143,7 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_attendances` (
   KEY `idx_status` (`attendance_status`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_attendances: ~7 rows (approximately)
+-- Dumping data for table technopa_proerp.hrm_employee_attendances: ~8 rows (approximately)
 DELETE FROM `hrm_employee_attendances`;
 INSERT INTO `hrm_employee_attendances` (`id`, `employee_id`, `attendance_date`, `check_in`, `check_out`, `late_minutes`, `overtime_minutes`, `worked_hours`, `attendance_status`, `remarks`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 60, '2026-07-28', '09:06:00', '23:18:00', 6, 318, 14.20, 'Present', 'this is', 1, 1, '2026-07-28 11:01:54', '2026-07-28 11:43:28'),
@@ -2113,10 +2152,65 @@ INSERT INTO `hrm_employee_attendances` (`id`, `employee_id`, `attendance_date`, 
 	(4, 62, '2026-07-29', '10:15:00', '22:15:00', 75, 255, 12.00, 'Present', NULL, 1, NULL, '2026-07-29 04:15:18', '2026-07-29 04:15:18'),
 	(5, 62, '2026-07-29', '10:16:00', '22:16:00', 76, 256, 12.00, 'Present', 'ssaa', 1, NULL, '2026-07-29 04:16:27', '2026-07-29 04:16:27'),
 	(6, 62, '2026-07-29', '10:17:00', '22:17:00', 77, 257, 12.00, 'Present', 'aS', 1, NULL, '2026-07-29 04:17:09', '2026-07-29 04:17:09'),
-	(7, 61, '2026-07-29', '11:47:00', '23:48:00', 167, 348, 12.02, 'Present', 'ssaa', 1, NULL, '2026-07-29 06:01:35', '2026-07-29 06:01:35'),
-	(8, 59, '2026-07-29', '11:47:00', '23:48:00', 167, 348, 12.02, 'Present', 'ssaa', 1, NULL, '2026-07-29 06:01:37', '2026-07-29 06:01:37');
+	(7, 61, '2026-07-29', '11:47:00', '23:48:00', 167, 348, 12.02, 'Leave', 'ssaa', 1, 1, '2026-07-29 06:01:35', '2026-08-04 11:52:21'),
+	(8, 59, '2026-07-29', '11:47:00', '23:48:00', 167, 348, 12.02, 'Absent', 'ssaa', 1, 1, '2026-07-29 06:01:37', '2026-08-04 11:52:06');
 
--- Dumping structure for table technopa_crm.hrm_employee_holidays
+-- Dumping structure for table technopa_proerp.hrm_employee_bonuses
+DROP TABLE IF EXISTS `hrm_employee_bonuses`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_bonuses` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `bonus_type` varchar(255) DEFAULT NULL,
+  `payroll_month` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payroll_year` varchar(255) DEFAULT NULL,
+  `amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `payment_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `payroll_month` (`payroll_month`),
+  KEY `payroll_year` (`payroll_year`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_bonuses: ~1 rows (approximately)
+DELETE FROM `hrm_employee_bonuses`;
+INSERT INTO `hrm_employee_bonuses` (`id`, `employee_id`, `bonus_type`, `payroll_month`, `payroll_year`, `amount`, `payment_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 63, 'Yearly', '1', '2026', 347.00, '2026-08-06', 'dsfsdfdf', 'Approved', 1, 1, '2026-08-06 05:01:56', '2026-08-06 05:46:46');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_documents
+DROP TABLE IF EXISTS `hrm_employee_documents`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_documents` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `document_type` varchar(255) DEFAULT NULL,
+  `document_name` varchar(255) DEFAULT NULL,
+  `document_link` varchar(255) DEFAULT NULL,
+  `submit_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_documents: ~3 rows (approximately)
+DELETE FROM `hrm_employee_documents`;
+INSERT INTO `hrm_employee_documents` (`id`, `employee_id`, `document_type`, `document_name`, `document_link`, `submit_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 60, 'Birth Certificate', 'sdfsd', 'https://technoparkbd.com/', '2026-08-09', 'ggggg', 'Pending', 1, 1, '2026-08-09 06:58:27', '2026-08-09 07:14:35'),
+	(3, 60, 'NID', 'asdsad', 'https://technoparkbd.com/', '2026-08-09', 'asdasda', 'Submitted', 1, 1, '2026-08-09 07:01:37', '2026-08-09 07:14:13'),
+	(4, 60, 'ALL', 'sdsds', 'https://technoparkbd.com/', '2026-08-09', 'fsfasf', 'Pending', 1, NULL, '2026-08-09 07:17:01', '2026-08-09 07:17:01');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_holidays
 DROP TABLE IF EXISTS `hrm_employee_holidays`;
 CREATE TABLE IF NOT EXISTS `hrm_employee_holidays` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2139,12 +2233,41 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_holidays` (
   KEY `idx_branch` (`branch_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_holidays: ~1 rows (approximately)
+-- Dumping data for table technopa_proerp.hrm_employee_holidays: ~1 rows (approximately)
 DELETE FROM `hrm_employee_holidays`;
 INSERT INTO `hrm_employee_holidays` (`id`, `company_id`, `holiday_name`, `holiday_type`, `from_date`, `to_date`, `total_days`, `repeat_yearly`, `branch_id`, `description`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'asdasdd', 'Public Holiday', '2026-07-29', '2026-07-31', 3.00, 1, NULL, 'sadadas', 1, 1, 1, '2026-07-29 07:25:40', '2026-07-29 08:37:39');
 
--- Dumping structure for table technopa_crm.hrm_employee_leaves
+-- Dumping structure for table technopa_proerp.hrm_employee_increment
+DROP TABLE IF EXISTS `hrm_employee_increment`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_increment` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `increment_type` varchar(255) DEFAULT NULL,
+  `payroll_month` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payroll_year` varchar(255) DEFAULT NULL,
+  `amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `payment_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `payroll_month` (`payroll_month`),
+  KEY `payroll_year` (`payroll_year`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_increment: ~2 rows (approximately)
+DELETE FROM `hrm_employee_increment`;
+INSERT INTO `hrm_employee_increment` (`id`, `employee_id`, `increment_type`, `payroll_month`, `payroll_year`, `amount`, `payment_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(1, 63, 'Yearly', '1', '2026', 347.00, '2026-08-06', 'dsfsdfdf', 'Pending', 1, 1, '2026-08-06 05:01:56', '2026-08-06 06:20:32'),
+	(2, 62, 'Festival', '1', '2026', 3444.00, '2026-08-06', 'xzcxcx', 'Approved', 1, NULL, '2026-08-06 06:05:16', '2026-08-06 06:05:16');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_leaves
 DROP TABLE IF EXISTS `hrm_employee_leaves`;
 CREATE TABLE IF NOT EXISTS `hrm_employee_leaves` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2167,14 +2290,78 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_leaves` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_leaves: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.hrm_employee_leaves: ~3 rows (approximately)
 DELETE FROM `hrm_employee_leaves`;
 INSERT INTO `hrm_employee_leaves` (`id`, `employee_id`, `leave_type`, `from_date`, `to_date`, `total_days`, `day_type`, `reason`, `attachment`, `status`, `approved_by`, `approved_at`, `remarks`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(1, 60, 'Casual Leave', '2026-07-29', '2026-07-29', 0.50, 'First Half', 'asdasdsads', NULL, 'Pending', NULL, NULL, 'sdsad', 1, NULL, '2026-07-29 06:52:01', '2026-07-29 06:52:01'),
 	(2, 60, 'Casual Leave', '2026-08-04', '2026-08-04', 0.50, 'First Half', 'dsadsadasd', NULL, 'Rejected', NULL, NULL, 'ddasd', 1, 1, '2026-07-29 06:53:03', '2026-08-04 03:52:13'),
 	(3, 60, 'Casual Leave', '2026-08-04', '2026-08-06', 2.00, 'Full Day', 'vdfvd', NULL, 'Pending', NULL, NULL, 'vdfvdf', 1, NULL, '2026-08-04 03:42:33', '2026-08-04 04:05:22');
 
--- Dumping structure for table technopa_crm.hrm_employee_payrolls
+-- Dumping structure for table technopa_proerp.hrm_employee_loan
+DROP TABLE IF EXISTS `hrm_employee_loan`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_loan` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `loan_type` varchar(255) DEFAULT NULL,
+  `payroll_month` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payroll_year` varchar(255) DEFAULT NULL,
+  `loan_amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `installment_amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `total_installments` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `loan_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `payroll_month` (`payroll_month`),
+  KEY `payroll_year` (`payroll_year`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_loan: ~5 rows (approximately)
+DELETE FROM `hrm_employee_loan`;
+INSERT INTO `hrm_employee_loan` (`id`, `employee_id`, `loan_type`, `payroll_month`, `payroll_year`, `loan_amount`, `installment_amount`, `total_installments`, `loan_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 63, 'Personal Loan', '1', '2026', 555.00, 6.00, 350.00, '2026-08-06', 'fgdfd', 'Pending', 1, 1, '2026-08-06 06:37:19', '2026-08-06 10:47:22'),
+	(3, 63, 'Personal Loan', '1', '2026', 444.00, 8.00, 0.00, '2026-08-06', 'sdfsdf', 'Approved', 1, 1, '2026-08-06 06:43:34', '2026-08-10 05:54:20'),
+	(4, 60, 'Personal Loan', '1', '2026', 333.00, 33.00, 33.00, '2026-08-06', 'fdsfsdfs', 'Pending', 1, 1, '2026-08-06 07:01:16', '2026-08-06 07:01:43'),
+	(5, 63, 'Personal Loan', '4', '2026', 30.00, 10.00, 360.00, '2026-08-06', 'ddd', 'Approved', 1, NULL, '2026-08-06 10:48:13', '2026-08-10 05:54:32'),
+	(6, 60, 'Salary Advance', '1', '2026', 55.00, 34.00, 67.00, '2026-08-09', NULL, 'Pending', 1, NULL, '2026-08-09 04:14:38', '2026-08-09 04:14:38');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_overtime
+DROP TABLE IF EXISTS `hrm_employee_overtime`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_overtime` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `overtime_type` varchar(255) DEFAULT NULL,
+  `payroll_month` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payroll_year` varchar(255) DEFAULT NULL,
+  `overtime_hour` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `overtime_rate` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `overtime_amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `overtime_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `payroll_month` (`payroll_month`),
+  KEY `payroll_year` (`payroll_year`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_overtime: ~1 rows (approximately)
+DELETE FROM `hrm_employee_overtime`;
+INSERT INTO `hrm_employee_overtime` (`id`, `employee_id`, `overtime_type`, `payroll_month`, `payroll_year`, `overtime_hour`, `overtime_rate`, `overtime_amount`, `overtime_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 63, 'Regular Overtime', '1', '2026', 33.00, 6.00, 198.00, '2026-08-09', 'sdsds', 'Pending', 1, 1, '2026-08-09 05:02:00', '2026-08-09 05:04:41');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_payrolls
 DROP TABLE IF EXISTS `hrm_employee_payrolls`;
 CREATE TABLE IF NOT EXISTS `hrm_employee_payrolls` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2225,7 +2412,7 @@ CREATE TABLE IF NOT EXISTS `hrm_employee_payrolls` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.hrm_employee_payrolls: ~48 rows (approximately)
+-- Dumping data for table technopa_proerp.hrm_employee_payrolls: ~49 rows (approximately)
 DELETE FROM `hrm_employee_payrolls`;
 INSERT INTO `hrm_employee_payrolls` (`id`, `employee_id`, `payroll_month`, `payroll_year`, `payment_type`, `basic_salary`, `house_rent`, `medical_allowance`, `conveyance_allowance`, `food_allowance`, `mobile_allowance`, `other_allowance`, `gross_salary`, `working_days`, `present_days`, `absent_days`, `leave_days`, `late_count`, `late_deduction`, `overtime_hours`, `overtime_amount`, `tax`, `provident_fund`, `loan_deduction`, `advance_deduction`, `attendance_deduction`, `other_deduction`, `total_deduction`, `festival_bonus`, `performance_bonus`, `commission`, `other_addition`, `total_addition`, `net_salary`, `payment_date`, `payment_method`, `bank_name`, `account_no`, `transaction_no`, `payment_status`, `remarks`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
 	(2, 63, 7, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'ffsdfsdfsdf', 1, NULL, '2026-08-04 04:07:22', '2026-08-04 07:12:54'),
@@ -2236,7 +2423,7 @@ INSERT INTO `hrm_employee_payrolls` (`id`, `employee_id`, `payroll_month`, `payr
 	(7, 59, 7, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'asdasd', 1, NULL, '2026-08-04 07:15:14', '2026-08-04 07:15:39'),
 	(8, 63, 8, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
 	(9, 62, 8, '2026', 'Monthly', 44444.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 50609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 50609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
-	(10, 63, 8, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, 1, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
+	(10, 63, 8, '2026', 'Monthly', 10000.00, 5000.00, 3000.00, 0.00, 0.00, 0.00, 2000.00, 20000.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 20000.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Pending', 'Salary pay kora hoise sobar', 1, 1, '2026-08-04 09:08:37', '2026-08-10 09:57:48'),
 	(11, 52, 8, '2026', 'Monthly', 55555.00, 5555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 61220.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 61220.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
 	(12, 61, 8, '2026', 'Monthly', 33333.00, 555.00, 55.00, 0.00, 0.00, 0.00, 55.00, 33998.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 33998.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', 'Salary pay kora hoise sobar', 1, 1, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
 	(13, 59, 8, '2026', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', 'Salary pay kora hoise sobar', 1, NULL, '2026-08-04 09:08:37', '2026-08-04 09:08:37'),
@@ -2278,7 +2465,82 @@ INSERT INTO `hrm_employee_payrolls` (`id`, `employee_id`, `payroll_month`, `payr
 	(49, 59, 2, '2027', 'Monthly', 5555.00, 5555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 11720.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 11720.00, '2026-08-04', 'Cash', 'Rampura', 'AC#34334444432', NULL, 'Paid', NULL, 1, NULL, '2026-08-04 10:17:49', '2026-08-04 10:17:49'),
 	(50, 60, 7, '2026', 'Monthly', 44444.00, 555.00, 555.00, 0.00, 0.00, 0.00, 55.00, 45609.00, 0, 0, 0, 0, 0, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 45609.00, '2026-08-04', 'Cash', NULL, NULL, NULL, 'Paid', NULL, 1, NULL, '2026-08-04 11:14:20', '2026-08-04 11:14:33');
 
--- Dumping structure for table technopa_crm.investors
+-- Dumping structure for table technopa_proerp.hrm_employee_resignation
+DROP TABLE IF EXISTS `hrm_employee_resignation`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_resignation` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `notice_period` varchar(255) DEFAULT NULL,
+  `resignation_date` date NOT NULL,
+  `last_working_date` date NOT NULL,
+  `reason` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_resignation: ~1 rows (approximately)
+DELETE FROM `hrm_employee_resignation`;
+INSERT INTO `hrm_employee_resignation` (`id`, `employee_id`, `notice_period`, `resignation_date`, `last_working_date`, `reason`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 60, '33', '2026-08-09', '2026-08-09', 'dfdfdf', 'Approved', 1, 1, '2026-08-09 09:14:27', '2026-08-09 09:16:30');
+
+-- Dumping structure for table technopa_proerp.hrm_employee_termination
+DROP TABLE IF EXISTS `hrm_employee_termination`;
+CREATE TABLE IF NOT EXISTS `hrm_employee_termination` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` bigint unsigned NOT NULL,
+  `notice_period` varchar(255) DEFAULT NULL,
+  `termination_date` date NOT NULL,
+  `last_working_date` date DEFAULT NULL,
+  `reason` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `employee_id` (`employee_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_employee_termination: ~1 rows (approximately)
+DELETE FROM `hrm_employee_termination`;
+INSERT INTO `hrm_employee_termination` (`id`, `employee_id`, `notice_period`, `termination_date`, `last_working_date`, `reason`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 63, '5', '2026-08-09', '2026-08-09', 'gggg', 'Approved', 1, 1, '2026-08-09 09:30:02', '2026-08-09 09:32:05');
+
+-- Dumping structure for table technopa_proerp.hrm_expense
+DROP TABLE IF EXISTS `hrm_expense`;
+CREATE TABLE IF NOT EXISTS `hrm_expense` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `expense_head_id` bigint unsigned NOT NULL,
+  `expense_month` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `expense_year` varchar(255) DEFAULT NULL,
+  `expense_amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  `expense_date` date NOT NULL,
+  `remarks` text,
+  `status` varchar(255) DEFAULT 'Pending',
+  `created_by` int DEFAULT NULL,
+  `updated_by` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `expense_head_id` (`expense_head_id`),
+  KEY `expense_month` (`expense_month`),
+  KEY `expense_year` (`expense_year`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table technopa_proerp.hrm_expense: ~1 rows (approximately)
+DELETE FROM `hrm_expense`;
+INSERT INTO `hrm_expense` (`id`, `expense_head_id`, `expense_month`, `expense_year`, `expense_amount`, `expense_date`, `remarks`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
+	(2, 126, '1', '2026', 66.00, '2026-08-09', 'sdasdasd', 'Approved', 1, 1, '2026-08-09 06:10:19', '2026-08-09 06:15:38');
+
+-- Dumping structure for table technopa_proerp.investors
 DROP TABLE IF EXISTS `investors`;
 CREATE TABLE IF NOT EXISTS `investors` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2311,10 +2573,10 @@ CREATE TABLE IF NOT EXISTS `investors` (
   CONSTRAINT `investors_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.investors: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.investors: ~0 rows (approximately)
 DELETE FROM `investors`;
 
--- Dumping structure for table technopa_crm.investor_payments
+-- Dumping structure for table technopa_proerp.investor_payments
 DROP TABLE IF EXISTS `investor_payments`;
 CREATE TABLE IF NOT EXISTS `investor_payments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2342,10 +2604,10 @@ CREATE TABLE IF NOT EXISTS `investor_payments` (
   CONSTRAINT `investor_payments_investor_id_foreign` FOREIGN KEY (`investor_id`) REFERENCES `investors` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.investor_payments: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.investor_payments: ~0 rows (approximately)
 DELETE FROM `investor_payments`;
 
--- Dumping structure for table technopa_crm.investor_profits
+-- Dumping structure for table technopa_proerp.investor_profits
 DROP TABLE IF EXISTS `investor_profits`;
 CREATE TABLE IF NOT EXISTS `investor_profits` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2367,10 +2629,10 @@ CREATE TABLE IF NOT EXISTS `investor_profits` (
   UNIQUE KEY `investor_profits_serial_no_unique` (`serial_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.investor_profits: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.investor_profits: ~0 rows (approximately)
 DELETE FROM `investor_profits`;
 
--- Dumping structure for table technopa_crm.investor_profit_lists
+-- Dumping structure for table technopa_proerp.investor_profit_lists
 DROP TABLE IF EXISTS `investor_profit_lists`;
 CREATE TABLE IF NOT EXISTS `investor_profit_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2390,10 +2652,10 @@ CREATE TABLE IF NOT EXISTS `investor_profit_lists` (
   CONSTRAINT `investor_profit_lists_investor_profit_id_foreign` FOREIGN KEY (`investor_profit_id`) REFERENCES `investor_profits` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.investor_profit_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.investor_profit_lists: ~0 rows (approximately)
 DELETE FROM `investor_profit_lists`;
 
--- Dumping structure for table technopa_crm.invests
+-- Dumping structure for table technopa_proerp.invests
 DROP TABLE IF EXISTS `invests`;
 CREATE TABLE IF NOT EXISTS `invests` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2424,10 +2686,10 @@ CREATE TABLE IF NOT EXISTS `invests` (
   CONSTRAINT `invests_investor_id_foreign` FOREIGN KEY (`investor_id`) REFERENCES `investors` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.invests: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.invests: ~0 rows (approximately)
 DELETE FROM `invests`;
 
--- Dumping structure for table technopa_crm.jobs
+-- Dumping structure for table technopa_proerp.jobs
 DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE IF NOT EXISTS `jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2441,10 +2703,10 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   KEY `jobs_queue_index` (`queue`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.jobs: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.jobs: ~0 rows (approximately)
 DELETE FROM `jobs`;
 
--- Dumping structure for table technopa_crm.liftings
+-- Dumping structure for table technopa_proerp.liftings
 DROP TABLE IF EXISTS `liftings`;
 CREATE TABLE IF NOT EXISTS `liftings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2475,14 +2737,14 @@ CREATE TABLE IF NOT EXISTS `liftings` (
   CONSTRAINT `liftings_company_id_foreign` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.liftings: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.liftings: ~3 rows (approximately)
 DELETE FROM `liftings`;
 INSERT INTO `liftings` (`id`, `company_id`, `product_type`, `store_id`, `vendor_id`, `coa_setup_id`, `lifting_no`, `payment_type`, `voucher_no`, `lifting_date`, `total_cost`, `discount`, `net_amount`, `total_paid`, `return_amount`, `return_paid`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', 2, 1, NULL, 'STL2605000001', 'credit', NULL, '2026-05-07', 330.00, 0.00, 330.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-05-07 09:50:04', '2026-05-07 09:50:04'),
 	(2, 1, 'Consumer', 2, 66, NULL, 'STL2607000001', 'credit', NULL, '2026-07-07', 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
 	(3, 1, 'Consumer', 2, 1, NULL, 'STL2607000002', 'credit', '22', '2026-07-27', 5000.00, 0.00, 5000.00, 0.00, 0.00, 0.00, 1, 1, NULL, NULL, NULL, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
--- Dumping structure for table technopa_crm.lifting_documents
+-- Dumping structure for table technopa_proerp.lifting_documents
 DROP TABLE IF EXISTS `lifting_documents`;
 CREATE TABLE IF NOT EXISTS `lifting_documents` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2495,10 +2757,10 @@ CREATE TABLE IF NOT EXISTS `lifting_documents` (
   CONSTRAINT `lifting_documents_lifting_id_foreign` FOREIGN KEY (`lifting_id`) REFERENCES `liftings` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.lifting_documents: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.lifting_documents: ~0 rows (approximately)
 DELETE FROM `lifting_documents`;
 
--- Dumping structure for table technopa_crm.lifting_products
+-- Dumping structure for table technopa_proerp.lifting_products
 DROP TABLE IF EXISTS `lifting_products`;
 CREATE TABLE IF NOT EXISTS `lifting_products` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2527,14 +2789,14 @@ CREATE TABLE IF NOT EXISTS `lifting_products` (
   CONSTRAINT `lifting_products_lifting_id_foreign` FOREIGN KEY (`lifting_id`) REFERENCES `liftings` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.lifting_products: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.lifting_products: ~3 rows (approximately)
 DELETE FROM `lifting_products`;
 INSERT INTO `lifting_products` (`id`, `lifting_id`, `company_id`, `store_id`, `vendor_id`, `product_id`, `variant_id`, `product_type`, `lifting_price`, `expiry_date`, `qty`, `total_amount`, `discount`, `net_amount`, `total_paid`, `return_qty`, `return_amount`, `status`, `created_by`, `created_at`, `updated_at`) VALUES
 	(1, 1, 1, 2, 1, 1, NULL, 'Consumer', 33.00, NULL, 10.00, 330.00, 0.00, 330.00, 0.00, 0.00, 0.00, 1, 1, '2026-05-07 09:50:04', '2026-05-07 09:50:04'),
 	(2, 2, 1, 2, 66, 1, NULL, 'Consumer', 33.00, NULL, 100.00, 3300.00, 0.00, 3300.00, 0.00, 0.00, 0.00, 1, 1, '2026-07-07 10:16:51', '2026-07-07 10:16:51'),
 	(3, 3, 1, 2, 1, 3, NULL, 'Consumer', 50.00, NULL, 100.00, 5000.00, 0.00, 5000.00, 0.00, 0.00, 0.00, 1, 1, '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
--- Dumping structure for table technopa_crm.lifting_returns
+-- Dumping structure for table technopa_proerp.lifting_returns
 DROP TABLE IF EXISTS `lifting_returns`;
 CREATE TABLE IF NOT EXISTS `lifting_returns` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2555,7 +2817,7 @@ CREATE TABLE IF NOT EXISTS `lifting_returns` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.lifting_returns: ~169 rows (approximately)
+-- Dumping data for table technopa_proerp.lifting_returns: ~169 rows (approximately)
 DELETE FROM `lifting_returns`;
 INSERT INTO `lifting_returns` (`id`, `company_id`, `product_type`, `vendor_id`, `store_id`, `return_no`, `date`, `amount`, `remarks`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(3, 1, 'Consumer', 15, 2, 'STR2506000001', '2025-06-15', 1140.00, 'Cash Purchase', 159, NULL, NULL, NULL, '2025-06-15 08:28:30', '2025-06-15 08:28:30'),
@@ -2728,7 +2990,7 @@ INSERT INTO `lifting_returns` (`id`, `company_id`, `product_type`, `vendor_id`, 
 	(195, 1, 'Consumer', 88, 2, 'STR2604000021', '2026-04-20', 320.00, 'Date Over', 159, NULL, NULL, NULL, '2026-04-20 15:48:42', '2026-04-20 15:48:42'),
 	(196, 1, 'Consumer', 7, 2, 'STR2604000022', '2026-04-25', 2224.13, 'Date Over', 159, 159, NULL, NULL, '2026-04-25 11:06:19', '2026-04-25 11:10:36');
 
--- Dumping structure for table technopa_crm.lifting_return_lists
+-- Dumping structure for table technopa_proerp.lifting_return_lists
 DROP TABLE IF EXISTS `lifting_return_lists`;
 CREATE TABLE IF NOT EXISTS `lifting_return_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -2753,7 +3015,7 @@ CREATE TABLE IF NOT EXISTS `lifting_return_lists` (
   CONSTRAINT `lifting_return_lists_lifting_return_id_foreign` FOREIGN KEY (`lifting_return_id`) REFERENCES `lifting_returns` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=476 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.lifting_return_lists: ~233 rows (approximately)
+-- Dumping data for table technopa_proerp.lifting_return_lists: ~233 rows (approximately)
 DELETE FROM `lifting_return_lists`;
 INSERT INTO `lifting_return_lists` (`id`, `company_id`, `lifting_return_id`, `vendor_id`, `store_id`, `lifting_id`, `lifting_product_id`, `product_type`, `product_id`, `variant_id`, `lifting_price`, `qty`, `amount`, `lifting_discount`, `remarks`, `created_at`, `updated_at`) VALUES
 	(2, 1, 3, 15, 2, 84, 2950, 'Consumer', 1014, NULL, 380.00, 3.00, 1140.00, 0.00, 'Cash Purchase', '2025-06-15 08:28:30', '2025-07-08 06:09:11'),
@@ -2990,7 +3252,7 @@ INSERT INTO `lifting_return_lists` (`id`, `company_id`, `lifting_return_id`, `ve
 	(472, 1, 195, 88, 2, 1512, 16243, 'Consumer', 3252, NULL, 160.00, 2.00, 320.00, 0.00, 'Date Over', '2026-04-20 15:48:42', '2026-04-20 15:48:42'),
 	(475, 1, 196, 7, 2, 20, 390, 'Consumer', 361, NULL, 580.00, 4.00, 2320.00, 95.87, 'Date Over', '2026-04-25 11:10:36', '2026-04-25 11:10:36');
 
--- Dumping structure for table technopa_crm.lifting_return_payments
+-- Dumping structure for table technopa_proerp.lifting_return_payments
 DROP TABLE IF EXISTS `lifting_return_payments`;
 CREATE TABLE IF NOT EXISTS `lifting_return_payments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -3004,7 +3266,7 @@ CREATE TABLE IF NOT EXISTS `lifting_return_payments` (
   KEY `lifting_return_payments_lifting_id_foreign` (`lifting_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=316 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.lifting_return_payments: ~184 rows (approximately)
+-- Dumping data for table technopa_proerp.lifting_return_payments: ~184 rows (approximately)
 DELETE FROM `lifting_return_payments`;
 INSERT INTO `lifting_return_payments` (`id`, `lifting_return_id`, `lifting_id`, `amount`, `created_at`, `updated_at`) VALUES
 	(6, 15, 8, 3355.96, '2025-07-14 13:55:19', '2025-07-14 13:55:19'),
@@ -3192,7 +3454,7 @@ INSERT INTO `lifting_return_payments` (`id`, `lifting_return_id`, `lifting_id`, 
 	(312, 195, 1512, 320.00, '2026-04-20 15:48:42', '2026-04-20 15:48:42'),
 	(315, 196, 20, 2224.13, '2026-04-25 11:10:36', '2026-04-25 11:10:36');
 
--- Dumping structure for table technopa_crm.locations
+-- Dumping structure for table technopa_proerp.locations
 DROP TABLE IF EXISTS `locations`;
 CREATE TABLE IF NOT EXISTS `locations` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -3206,7 +3468,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=600 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.locations: ~580 rows (approximately)
+-- Dumping data for table technopa_proerp.locations: ~580 rows (approximately)
 DELETE FROM `locations`;
 INSERT INTO `locations` (`id`, `parent_id`, `name`, `delivery_charge`, `district`, `thana`, `created_at`, `updated_at`) VALUES
 	(13, NULL, 'Dhaka', 60, 0, 0, '2023-02-02 09:23:07', '2023-07-29 09:19:33'),
@@ -3790,7 +4052,7 @@ INSERT INTO `locations` (`id`, `parent_id`, `name`, `delivery_charge`, `district
 	(598, 91, 'Zakiganj ', 120, 0, 1, NULL, '2023-08-14 07:55:43'),
 	(599, 91, 'South Shurma ', 120, 0, 1, NULL, '2023-08-14 07:55:43');
 
--- Dumping structure for table technopa_crm.menus
+-- Dumping structure for table technopa_proerp.menus
 DROP TABLE IF EXISTS `menus`;
 CREATE TABLE IF NOT EXISTS `menus` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -3802,7 +4064,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.menus: ~4 rows (approximately)
+-- Dumping data for table technopa_proerp.menus: ~4 rows (approximately)
 DELETE FROM `menus`;
 INSERT INTO `menus` (`id`, `name`, `position`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'Header Menu', 'header', 1, '2024-06-23 04:28:30', '2024-06-23 04:28:30'),
@@ -3810,7 +4072,7 @@ INSERT INTO `menus` (`id`, `name`, `position`, `status`, `created_at`, `updated_
 	(3, 'Information', 'footer', 1, '2024-06-23 11:57:52', '2024-06-23 11:57:52'),
 	(4, 'Support and services', 'footer', 1, '2024-06-23 11:58:17', '2024-06-23 11:58:17');
 
--- Dumping structure for table technopa_crm.menu_items
+-- Dumping structure for table technopa_proerp.menu_items
 DROP TABLE IF EXISTS `menu_items`;
 CREATE TABLE IF NOT EXISTS `menu_items` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -3827,13 +4089,13 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
   KEY `menu_items_menu_id_foreign` (`menu_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.menu_items: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.menu_items: ~2 rows (approximately)
 DELETE FROM `menu_items`;
 INSERT INTO `menu_items` (`id`, `menu_id`, `parent_id`, `category_id`, `page_id`, `custom_page`, `order`, `status`, `created_at`, `updated_at`) VALUES
 	(123, 2, NULL, 43, NULL, NULL, 9, 1, '2024-07-07 12:22:14', '2024-07-07 12:22:14'),
 	(124, 2, NULL, 44, NULL, NULL, 10, 1, '2024-07-07 12:22:14', '2024-07-07 12:22:14');
 
--- Dumping structure for table technopa_crm.migrations
+-- Dumping structure for table technopa_proerp.migrations
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -3842,7 +4104,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.migrations: ~126 rows (approximately)
+-- Dumping data for table technopa_proerp.migrations: ~126 rows (approximately)
 DELETE FROM `migrations`;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(1, '2014_10_12_000000_create_users_table', 1),
@@ -3972,7 +4234,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(210, '2025_07_12_170859_create_lifting_return_payments_table', 76),
 	(211, '2025_11_30_122204_create_stocks_table', 77);
 
--- Dumping structure for table technopa_crm.model_has_permissions
+-- Dumping structure for table technopa_proerp.model_has_permissions
 DROP TABLE IF EXISTS `model_has_permissions`;
 CREATE TABLE IF NOT EXISTS `model_has_permissions` (
   `permission_id` bigint unsigned NOT NULL,
@@ -3982,10 +4244,10 @@ CREATE TABLE IF NOT EXISTS `model_has_permissions` (
   KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.model_has_permissions: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.model_has_permissions: ~0 rows (approximately)
 DELETE FROM `model_has_permissions`;
 
--- Dumping structure for table technopa_crm.model_has_roles
+-- Dumping structure for table technopa_proerp.model_has_roles
 DROP TABLE IF EXISTS `model_has_roles`;
 CREATE TABLE IF NOT EXISTS `model_has_roles` (
   `role_id` bigint unsigned NOT NULL,
@@ -3995,7 +4257,7 @@ CREATE TABLE IF NOT EXISTS `model_has_roles` (
   KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.model_has_roles: ~81 rows (approximately)
+-- Dumping data for table technopa_proerp.model_has_roles: ~81 rows (approximately)
 DELETE FROM `model_has_roles`;
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 	(10, 'App\\Models\\User', 1),
@@ -4080,7 +4342,7 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 	(24, 'App\\Models\\User', 181),
 	(11, 'App\\Models\\User', 182);
 
--- Dumping structure for table technopa_crm.online_deliveries
+-- Dumping structure for table technopa_proerp.online_deliveries
 DROP TABLE IF EXISTS `online_deliveries`;
 CREATE TABLE IF NOT EXISTS `online_deliveries` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4101,10 +4363,10 @@ CREATE TABLE IF NOT EXISTS `online_deliveries` (
   UNIQUE KEY `online_deliveries_serial_no_unique` (`serial_no`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.online_deliveries: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.online_deliveries: ~0 rows (approximately)
 DELETE FROM `online_deliveries`;
 
--- Dumping structure for table technopa_crm.online_delivery_lists
+-- Dumping structure for table technopa_proerp.online_delivery_lists
 DROP TABLE IF EXISTS `online_delivery_lists`;
 CREATE TABLE IF NOT EXISTS `online_delivery_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4119,10 +4381,10 @@ CREATE TABLE IF NOT EXISTS `online_delivery_lists` (
   KEY `online_delivery_lists_online_delivery_id_foreign` (`online_delivery_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.online_delivery_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.online_delivery_lists: ~0 rows (approximately)
 DELETE FROM `online_delivery_lists`;
 
--- Dumping structure for table technopa_crm.orders
+-- Dumping structure for table technopa_proerp.orders
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4175,7 +4437,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   UNIQUE KEY `orders_order_code_unique` (`order_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.orders: ~6 rows (approximately)
+-- Dumping data for table technopa_proerp.orders: ~6 rows (approximately)
 DELETE FROM `orders`;
 INSERT INTO `orders` (`id`, `company_id`, `client_id`, `customer_id`, `order_code`, `store_id`, `invoice`, `date`, `potential_delivery_date`, `user_name`, `user_phone`, `shipping_address_id`, `shipping_address`, `area_id`, `shipping_charge`, `sub_total`, `discount`, `total`, `paid`, `due`, `receive`, `total_return`, `payment_method`, `coupon_id`, `delivery_man_id`, `collected`, `status`, `courier_assigned`, `order_type`, `pre_order`, `pending_at`, `confirmed_at`, `processing_at`, `delivered_at`, `collected_at`, `canceled_at`, `return_at`, `order_note`, `cancel_approve`, `gate_pass`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, NULL, 163, 'R962168', NULL, 'STOS2025060001', '2025-06-03', '2025-06-03', 'hiui', '01757839516', 1, 'Kechuatoil, Kharkhari, Dhamrai , Dhaka, Dhaka', NULL, 80, 640, 0, 720, 0, 720, NULL, 0, 'bkash Payment', NULL, NULL, 0, 'Pending', 0, 'online', 0, '2025-06-03 10:04:52', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, '2025-06-03 10:04:52', '2025-06-03 10:04:52'),
@@ -4185,7 +4447,7 @@ INSERT INTO `orders` (`id`, `company_id`, `client_id`, `customer_id`, `order_cod
 	(5, 1, NULL, 168, 'R984002', NULL, 'STOS2026020001', '2026-02-22', '2026-02-22', 'Fahad Ahmed', '01300016724', 5, 'Inside Rahattarpul, 18 Number ward, East Bakalia Depoti Road Majer Rasta Chattogram, Chandgaon Thana, Chittagong, Chittagong', NULL, 80, 615, 5, 695, 0, 690, NULL, 0, 'Cash on Delivery', NULL, NULL, 0, 'Pending', 0, 'online', 0, '2026-02-21 21:25:37', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, '2026-02-21 21:25:37', '2026-02-21 21:25:37'),
 	(6, 1, NULL, 169, 'R548436', NULL, 'STOS2026040001', '2026-04-04', '2026-04-04', 'Abdullah Mahin', '01634191548', 6, 'Tower madrasa Paler bazar daudkandi Cumilla, Daudkandi , Comilla, Chittagong', NULL, 80, 140, 0, 220, 0, 220, NULL, 0, 'Cash on Delivery', NULL, NULL, 0, 'Pending', 0, 'online', 0, '2026-04-04 06:48:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, '2026-04-04 06:48:00', '2026-04-04 06:48:00');
 
--- Dumping structure for table technopa_crm.order_products
+-- Dumping structure for table technopa_proerp.order_products
 DROP TABLE IF EXISTS `order_products`;
 CREATE TABLE IF NOT EXISTS `order_products` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4207,7 +4469,7 @@ CREATE TABLE IF NOT EXISTS `order_products` (
   CONSTRAINT `order_products_chk_1` CHECK (json_valid(`choose_options`))
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.order_products: ~10 rows (approximately)
+-- Dumping data for table technopa_proerp.order_products: ~10 rows (approximately)
 DELETE FROM `order_products`;
 INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `variant_id`, `choose_options`, `sku`, `discount`, `sale_price`, `subtotal`, `return_amount`, `quantity`, `delivered`, `created_at`, `updated_at`) VALUES
 	(1, 1, 191, NULL, '[]', NULL, 0.00, 320.00, 640.00, 0.00, 2.00, 0, '2025-06-03 10:04:52', '2025-06-03 10:04:52'),
@@ -4221,7 +4483,7 @@ INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `variant_id`, `cho
 	(9, 5, 3272, NULL, '[]', NULL, 0.00, 110.00, 110.00, 0.00, 1.00, 0, '2026-02-21 21:25:37', '2026-02-21 21:25:37'),
 	(10, 6, 3772, NULL, '[]', NULL, 0.00, 70.00, 140.00, 0.00, 2.00, 0, '2026-04-04 06:48:00', '2026-04-04 06:48:00');
 
--- Dumping structure for table technopa_crm.pages
+-- Dumping structure for table technopa_proerp.pages
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE IF NOT EXISTS `pages` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4237,13 +4499,13 @@ CREATE TABLE IF NOT EXISTS `pages` (
   UNIQUE KEY `pages_slug_unique` (`slug`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.pages: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.pages: ~2 rows (approximately)
 DELETE FROM `pages`;
 INSERT INTO `pages` (`id`, `name`, `sub_title`, `slug`, `description`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'Terms & Conditions', 'TERMS & CONDITIONS', 'terms-conditions', '<p>BRB Cable Industries Ltd. a private Limited Company was established with a view to manufacture Wires &amp; Cables in 1978. After successful incorporation, BRB starts its commercial production in 1980. During the year 2000 BRB launched its PVC Cables Plant for producing up to 33KV Cables along with XLPE insulated HT Cables, FRLS Cables and Aluminum Conductors up to 132KV. Moreover, Super Enameled Copper Wire Plant &amp; Instrumentation Cables were launched during this time. At this age BRB introduces C.C.V Plant (Catenary Continuous Vulcanization) for the first time in Bangladesh<br></p>', 1, '2023-11-27 15:00:21', '2024-05-13 06:28:16'),
 	(2, 'Privacy Policy', 'Privacy Policy', 'privacy-policy', '<p style="outline: 0px; padding: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px;">Nijer Bazar<br></p>', 1, '2023-11-27 15:11:23', '2024-10-12 11:18:02');
 
--- Dumping structure for table technopa_crm.password_reset_tokens
+-- Dumping structure for table technopa_proerp.password_reset_tokens
 DROP TABLE IF EXISTS `password_reset_tokens`;
 CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -4252,10 +4514,10 @@ CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.password_reset_tokens: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.password_reset_tokens: ~0 rows (approximately)
 DELETE FROM `password_reset_tokens`;
 
--- Dumping structure for table technopa_crm.permissions
+-- Dumping structure for table technopa_proerp.permissions
 DROP TABLE IF EXISTS `permissions`;
 CREATE TABLE IF NOT EXISTS `permissions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4265,9 +4527,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_name_guard_name_unique` (`name`,`guard_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=696 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=714 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.permissions: ~479 rows (approximately)
+-- Dumping data for table technopa_proerp.permissions: ~495 rows (approximately)
 DELETE FROM `permissions`;
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 	(1, 'Dashboard', 'web', '2023-09-19 09:04:28', '2023-09-19 09:04:28'),
@@ -4712,16 +4974,14 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(649, 'Bonus Management', 'web', '2026-07-16 06:54:56', '2026-07-16 06:54:56'),
 	(650, 'Increment Management', 'web', '2026-07-16 06:55:20', '2026-07-16 06:55:20'),
 	(651, 'Loan Management', 'web', '2026-07-16 06:55:45', '2026-07-16 06:55:45'),
-	(652, 'Advance Salary', 'web', '2026-07-16 06:56:09', '2026-07-16 06:56:09'),
 	(653, 'Overtime Management', 'web', '2026-07-16 06:56:34', '2026-07-16 06:56:34'),
-	(654, 'Expense Claim', 'web', '2026-07-16 06:57:08', '2026-07-16 06:57:08'),
+	(654, 'Expense Management', 'web', '2026-07-16 06:57:08', '2026-08-09 05:07:02'),
 	(655, 'Employee Documents', 'web', '2026-07-16 06:57:38', '2026-07-16 06:57:38'),
 	(656, 'Resignation', 'web', '2026-07-16 08:43:29', '2026-07-16 08:43:29'),
 	(657, 'Termination', 'web', '2026-07-16 08:44:09', '2026-07-16 08:44:09'),
 	(661, 'Performance Appraisal', 'web', '2026-07-16 08:45:43', '2026-07-16 08:45:43'),
 	(663, 'HR Dashboard', 'web', '2026-07-16 08:46:25', '2026-07-16 08:46:25'),
 	(664, 'HR Reports', 'web', '2026-07-16 08:46:46', '2026-07-16 08:46:46'),
-	(665, 'Payroll Reports', 'web', '2026-07-16 08:47:08', '2026-07-16 08:47:08'),
 	(667, 'admin.lead-source.edit', 'web', '2026-07-19 11:06:54', '2026-07-19 11:06:54'),
 	(668, 'admin.lead-source.create', 'web', '2026-07-20 08:31:24', '2026-07-20 08:31:24'),
 	(669, 'admin.lead-status.create', 'web', '2026-07-20 09:14:43', '2026-07-20 09:14:43'),
@@ -4748,9 +5008,27 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 	(692, 'admin.holiday.edit', 'web', '2026-07-29 08:34:41', '2026-07-29 08:34:41'),
 	(693, 'admin.payroll.edit', 'web', '2026-07-29 10:10:02', '2026-07-29 10:10:02'),
 	(694, 'admin.payroll.update-status', 'web', '2026-08-04 04:27:47', '2026-08-04 04:27:47'),
-	(695, 'admin.salary.structure.certificate', 'web', '2026-08-04 06:30:26', '2026-08-04 06:30:26');
+	(695, 'admin.salary.structure.certificate', 'web', '2026-08-04 06:30:26', '2026-08-04 06:30:26'),
+	(696, 'admin.employee-bonus.create', 'web', '2026-08-06 04:54:42', '2026-08-06 04:54:42'),
+	(697, 'admin.employee-bonus.edit', 'web', '2026-08-06 05:44:16', '2026-08-06 05:44:16'),
+	(698, 'admin.employee-increment.create', 'web', '2026-08-06 06:04:14', '2026-08-06 06:04:14'),
+	(699, 'admin.employee-increment.edit', 'web', '2026-08-06 06:04:28', '2026-08-06 06:04:28'),
+	(700, 'admin.employee-loan.create', 'web', '2026-08-06 06:36:44', '2026-08-06 06:36:44'),
+	(701, 'admin.employee-loan.edit', 'web', '2026-08-06 06:36:54', '2026-08-06 06:36:54'),
+	(702, 'admin.employee-overtime.create', 'web', '2026-08-09 04:55:52', '2026-08-09 04:55:52'),
+	(703, 'admin.employee-overtime.edit', 'web', '2026-08-09 04:56:02', '2026-08-09 04:56:02'),
+	(704, 'admin.expense.create', 'web', '2026-08-09 06:09:36', '2026-08-09 06:09:36'),
+	(705, 'admin.expense.edit', 'web', '2026-08-09 06:09:48', '2026-08-09 06:09:48'),
+	(706, 'admin.documents.create', 'web', '2026-08-09 06:54:08', '2026-08-09 06:54:08'),
+	(707, 'admin.documents.edit', 'web', '2026-08-09 06:54:19', '2026-08-09 06:54:19'),
+	(708, 'admin.resignation.create', 'web', '2026-08-09 09:13:00', '2026-08-09 09:13:00'),
+	(709, 'admin.resignation.edit', 'web', '2026-08-09 09:13:12', '2026-08-09 09:13:12'),
+	(710, 'admin.termination.create', 'web', '2026-08-09 09:29:24', '2026-08-09 09:29:24'),
+	(711, 'admin.termination.edit', 'web', '2026-08-09 09:29:36', '2026-08-09 09:29:36'),
+	(712, 'admin.appraisal.create', 'web', '2026-08-09 10:26:53', '2026-08-09 10:26:53'),
+	(713, 'admin.appraisal.edit', 'web', '2026-08-09 10:27:05', '2026-08-09 10:27:05');
 
--- Dumping structure for table technopa_crm.personal_access_tokens
+-- Dumping structure for table technopa_proerp.personal_access_tokens
 DROP TABLE IF EXISTS `personal_access_tokens`;
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4768,10 +5046,10 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.personal_access_tokens: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.personal_access_tokens: ~0 rows (approximately)
 DELETE FROM `personal_access_tokens`;
 
--- Dumping structure for table technopa_crm.portfolios
+-- Dumping structure for table technopa_proerp.portfolios
 DROP TABLE IF EXISTS `portfolios`;
 CREATE TABLE IF NOT EXISTS `portfolios` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4791,10 +5069,10 @@ CREATE TABLE IF NOT EXISTS `portfolios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.portfolios: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.portfolios: ~0 rows (approximately)
 DELETE FROM `portfolios`;
 
--- Dumping structure for table technopa_crm.pre_order_sections
+-- Dumping structure for table technopa_proerp.pre_order_sections
 DROP TABLE IF EXISTS `pre_order_sections`;
 CREATE TABLE IF NOT EXISTS `pre_order_sections` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4811,10 +5089,10 @@ CREATE TABLE IF NOT EXISTS `pre_order_sections` (
   KEY `pre_order_sections_pre_order_setup_id_foreign` (`pre_order_setup_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.pre_order_sections: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.pre_order_sections: ~0 rows (approximately)
 DELETE FROM `pre_order_sections`;
 
--- Dumping structure for table technopa_crm.pre_order_setups
+-- Dumping structure for table technopa_proerp.pre_order_setups
 DROP TABLE IF EXISTS `pre_order_setups`;
 CREATE TABLE IF NOT EXISTS `pre_order_setups` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4832,10 +5110,10 @@ CREATE TABLE IF NOT EXISTS `pre_order_setups` (
   UNIQUE KEY `slug` (`slug`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.pre_order_setups: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.pre_order_setups: ~0 rows (approximately)
 DELETE FROM `pre_order_setups`;
 
--- Dumping structure for table technopa_crm.products
+-- Dumping structure for table technopa_proerp.products
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4884,14 +5162,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   UNIQUE KEY `products_slug_unique` (`slug`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.products: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.products: ~3 rows (approximately)
 DELETE FROM `products`;
 INSERT INTO `products` (`id`, `company_id`, `product_type`, `vendor_id`, `attribute_id`, `category_id`, `brand_id`, `name`, `code`, `slug`, `thumbnail`, `more_images`, `short_description`, `description`, `additional_info`, `meta_title`, `meta_description`, `meta_keyword`, `alert_quantity`, `min_order`, `max_order`, `video`, `video_id`, `ctn_size`, `attributes`, `choice_options`, `stock`, `status`, `trending`, `featured`, `top_rated`, `best_selling`, `serial`, `allowed_investor`, `shared_profit`, `show_on_website`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', NULL, 11, 43, NULL, 'Test', 'test', 'test', 'media/product//2026-05-07-2GgJIyuH0ujtj2tHSeASmHrmXFZzjepRdl5D5OYI.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, 110.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, NULL, NULL, NULL, '2026-05-07 07:42:47', '2026-07-13 08:26:24'),
 	(2, 1, 'Consumer', NULL, 11, 47, NULL, 'Mango', 'mng', 'mango-1', 'media/product//2026-07-23-jDsflBzX68L8KSVLTsQbo7vzyUyjArJPc8AyIKi6.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 0, NULL, NULL, 0.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, 1, NULL, NULL, '2026-07-23 09:34:38', '2026-07-23 09:34:58'),
 	(3, 1, 'Consumer', NULL, 12, 101, NULL, 'Hair Oil 100ml', 'barcode123', 'hair-oil-100ml', 'media/product//2026-07-27-vZ5LdniDJ6vZNe7BYEJnRdNTI30yRnn7ESesdwZW.webp', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 33223, 1, NULL, NULL, NULL, 0, NULL, NULL, 100.00, 1, 0, 0, 0, 0, 0, 1, NULL, 1, 1, NULL, NULL, NULL, '2026-07-27 04:27:44', '2026-07-27 04:28:41');
 
--- Dumping structure for table technopa_crm.product_prices
+-- Dumping structure for table technopa_proerp.product_prices
 DROP TABLE IF EXISTS `product_prices`;
 CREATE TABLE IF NOT EXISTS `product_prices` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4907,14 +5185,14 @@ CREATE TABLE IF NOT EXISTS `product_prices` (
   KEY `product_prices_product_id_foreign` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.product_prices: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.product_prices: ~3 rows (approximately)
 DELETE FROM `product_prices`;
 INSERT INTO `product_prices` (`id`, `product_id`, `lifting_price`, `sale_price`, `online_price`, `discount`, `discount_tk`, `created_at`, `updated_at`) VALUES
 	(1, 1, 33.00, 33.00, 33.00, 0.00, 0.00, '2026-05-07 07:42:47', '2026-05-07 07:42:47'),
 	(2, 2, 44.00, 66.00, 77.00, 0.00, 0.00, '2026-07-23 09:34:38', '2026-07-23 09:34:58'),
 	(3, 3, 50.00, 90.00, 100.00, 0.00, 0.00, '2026-07-27 04:27:44', '2026-07-27 04:27:44');
 
--- Dumping structure for table technopa_crm.product_skus
+-- Dumping structure for table technopa_proerp.product_skus
 DROP TABLE IF EXISTS `product_skus`;
 CREATE TABLE IF NOT EXISTS `product_skus` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4932,10 +5210,10 @@ CREATE TABLE IF NOT EXISTS `product_skus` (
   KEY `product_skus_product_id_foreign` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.product_skus: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.product_skus: ~0 rows (approximately)
 DELETE FROM `product_skus`;
 
--- Dumping structure for table technopa_crm.product_vendors
+-- Dumping structure for table technopa_proerp.product_vendors
 DROP TABLE IF EXISTS `product_vendors`;
 CREATE TABLE IF NOT EXISTS `product_vendors` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4946,10 +5224,10 @@ CREATE TABLE IF NOT EXISTS `product_vendors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.product_vendors: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.product_vendors: ~0 rows (approximately)
 DELETE FROM `product_vendors`;
 
--- Dumping structure for table technopa_crm.regions
+-- Dumping structure for table technopa_proerp.regions
 DROP TABLE IF EXISTS `regions`;
 CREATE TABLE IF NOT EXISTS `regions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -4970,12 +5248,12 @@ CREATE TABLE IF NOT EXISTS `regions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.regions: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.regions: ~1 rows (approximately)
 DELETE FROM `regions`;
 INSERT INTO `regions` (`id`, `company_id`, `code`, `name`, `incharge_name`, `phone`, `email`, `address`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(13, 1, 'PF', 'Region One', NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, '2024-07-13 12:44:10', '2024-07-13 12:44:10');
 
--- Dumping structure for table technopa_crm.retail_returns
+-- Dumping structure for table technopa_proerp.retail_returns
 DROP TABLE IF EXISTS `retail_returns`;
 CREATE TABLE IF NOT EXISTS `retail_returns` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5004,7 +5282,7 @@ CREATE TABLE IF NOT EXISTS `retail_returns` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.retail_returns: ~122 rows (approximately)
+-- Dumping data for table technopa_proerp.retail_returns: ~122 rows (approximately)
 DELETE FROM `retail_returns`;
 INSERT INTO `retail_returns` (`id`, `company_id`, `product_type`, `retail_sale_id`, `store_id`, `return_no`, `client_name`, `client_phone`, `date`, `amount`, `remarks`, `approve`, `approve_by`, `reject`, `reject_by`, `accounts_approve`, `accounts_approve_by`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(3, 1, 'Consumer', 706, 2, 'RR25050001', NULL, NULL, '2025-05-31', 25.00, 'Dry Store', 0, NULL, 0, NULL, 0, NULL, 159, NULL, 159, '2025-05-31 09:04:08', '2025-05-31 09:03:20', '2025-05-31 09:04:08'),
@@ -5130,7 +5408,7 @@ INSERT INTO `retail_returns` (`id`, `company_id`, `product_type`, `retail_sale_i
 	(123, 1, 'Consumer', 37629, 2, 'RR26040006', NULL, NULL, '2026-04-18', 185.00, NULL, 0, NULL, 0, NULL, 0, NULL, 159, NULL, NULL, NULL, '2026-04-18 14:26:42', '2026-04-18 14:26:42'),
 	(124, 1, 'Consumer', 1, 2, 'RR26050001', 'cffff', NULL, '2026-05-13', 66.00, NULL, 0, NULL, 0, NULL, 0, NULL, 1, NULL, NULL, NULL, '2026-05-13 05:42:09', '2026-05-13 05:42:09');
 
--- Dumping structure for table technopa_crm.retail_return_lists
+-- Dumping structure for table technopa_proerp.retail_return_lists
 DROP TABLE IF EXISTS `retail_return_lists`;
 CREATE TABLE IF NOT EXISTS `retail_return_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5152,7 +5430,7 @@ CREATE TABLE IF NOT EXISTS `retail_return_lists` (
   KEY `retail_return_lists_retail_return_id_foreign` (`retail_return_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.retail_return_lists: ~127 rows (approximately)
+-- Dumping data for table technopa_proerp.retail_return_lists: ~127 rows (approximately)
 DELETE FROM `retail_return_lists`;
 INSERT INTO `retail_return_lists` (`id`, `company_id`, `product_type`, `retail_return_id`, `retail_sale_list_id`, `product_id`, `variant_id`, `store_id`, `price`, `qty`, `amount`, `product_discount`, `sales_discount`, `created_at`, `updated_at`) VALUES
 	(3, 1, 'Consumer', 3, 1862, 1232, NULL, 2, 25.00, 1.00, 25.00, 0.00, 0.00, '2025-05-31 09:03:20', '2025-05-31 09:03:20'),
@@ -5283,7 +5561,7 @@ INSERT INTO `retail_return_lists` (`id`, `company_id`, `product_type`, `retail_r
 	(147, 1, 'Consumer', 123, 83392, 267, NULL, 2, 185.00, 1.00, 185.00, 0.00, 0.00, '2026-04-18 14:26:42', '2026-04-18 14:26:42'),
 	(148, 1, 'Consumer', 124, 1, 1, NULL, 2, 33.00, 2.00, 66.00, 0.00, 0.00, '2026-05-13 05:42:11', '2026-05-13 05:42:11');
 
--- Dumping structure for table technopa_crm.retail_sales
+-- Dumping structure for table technopa_proerp.retail_sales
 DROP TABLE IF EXISTS `retail_sales`;
 CREATE TABLE IF NOT EXISTS `retail_sales` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5315,14 +5593,14 @@ CREATE TABLE IF NOT EXISTS `retail_sales` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.retail_sales: ~3 rows (approximately)
+-- Dumping data for table technopa_proerp.retail_sales: ~3 rows (approximately)
 DELETE FROM `retail_sales`;
 INSERT INTO `retail_sales` (`id`, `company_id`, `product_type`, `payment_type`, `coa_setup_id`, `retail_return_id`, `store_id`, `invoice`, `date`, `client_name`, `client_phone`, `total_amount`, `product_discount`, `discount`, `net_amount`, `return_deduction`, `receive_amount`, `change_amount`, `status`, `staff_id`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', NULL, 26, NULL, 2, 'RS26050001', '2026-05-13', 'cffff', NULL, 66.00, 0.00, 0.00, 66.00, 0.00, 66.00, 0.00, 1, NULL, 1, NULL, NULL, NULL, '2026-05-13 05:16:39', '2026-05-13 05:16:39'),
 	(2, 1, 'Consumer', NULL, 26, NULL, 2, 'RS26070001', '2026-07-07', 'www', '333', 33.00, 0.00, 0.00, 33.00, 0.00, 33.00, 0.00, 1, NULL, 1, NULL, NULL, NULL, '2026-07-07 10:15:58', '2026-07-07 10:15:58'),
 	(3, 1, 'Consumer', NULL, 26, NULL, 2, 'RS26070002', '2026-07-13', 'w', '33333', 33.00, 0.00, 0.00, 33.00, 0.00, 66.00, 0.00, 1, NULL, 1, NULL, NULL, NULL, '2026-07-13 08:26:24', '2026-07-13 08:26:24');
 
--- Dumping structure for table technopa_crm.retail_sale_lists
+-- Dumping structure for table technopa_proerp.retail_sale_lists
 DROP TABLE IF EXISTS `retail_sale_lists`;
 CREATE TABLE IF NOT EXISTS `retail_sale_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5344,7 +5622,7 @@ CREATE TABLE IF NOT EXISTS `retail_sale_lists` (
   KEY `retail_sale_lists_retail_sale_id_foreign` (`retail_sale_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.retail_sale_lists: ~4 rows (approximately)
+-- Dumping data for table technopa_proerp.retail_sale_lists: ~4 rows (approximately)
 DELETE FROM `retail_sale_lists`;
 INSERT INTO `retail_sale_lists` (`id`, `company_id`, `product_type`, `retail_sale_id`, `product_id`, `variant_id`, `rate`, `qty`, `product_discount`, `discount`, `amount`, `returned_qty`, `returned_amount`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', 1, 1, NULL, 33.00, 2.00, 0.00, 0.00, 66.00, 2.00, 66.00, '2026-05-13 05:16:41', '2026-05-13 05:42:12'),
@@ -5352,7 +5630,7 @@ INSERT INTO `retail_sale_lists` (`id`, `company_id`, `product_type`, `retail_sal
 	(3, 1, 'Consumer', 3, 1, NULL, 33.00, 1.00, 0.00, 0.00, 33.00, 0.00, 0.00, '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
 	(4, 1, 'Consumer', 3, 1, NULL, 33.00, 1.00, 0.00, 0.00, 33.00, 0.00, 0.00, '2026-07-13 08:26:24', '2026-07-13 08:26:24');
 
--- Dumping structure for table technopa_crm.reviews
+-- Dumping structure for table technopa_proerp.reviews
 DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE IF NOT EXISTS `reviews` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5367,10 +5645,10 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.reviews: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.reviews: ~0 rows (approximately)
 DELETE FROM `reviews`;
 
--- Dumping structure for table technopa_crm.roles
+-- Dumping structure for table technopa_proerp.roles
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -5383,7 +5661,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   UNIQUE KEY `roles_name_guard_name_unique` (`name`,`guard_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.roles: ~16 rows (approximately)
+-- Dumping data for table technopa_proerp.roles: ~16 rows (approximately)
 DELETE FROM `roles`;
 INSERT INTO `roles` (`id`, `company_id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 	(1, NULL, 'System Admin', 'web', '2023-10-24 06:03:09', '2023-10-24 06:03:09'),
@@ -5403,7 +5681,7 @@ INSERT INTO `roles` (`id`, `company_id`, `name`, `guard_name`, `created_at`, `up
 	(23, NULL, 'Website Management', 'web', '2026-07-16 09:02:39', '2026-07-16 09:02:39'),
 	(24, NULL, 'Settings', 'web', '2026-07-16 09:39:07', '2026-07-16 09:39:07');
 
--- Dumping structure for table technopa_crm.role_has_permissions
+-- Dumping structure for table technopa_proerp.role_has_permissions
 DROP TABLE IF EXISTS `role_has_permissions`;
 CREATE TABLE IF NOT EXISTS `role_has_permissions` (
   `permission_id` bigint unsigned NOT NULL,
@@ -5412,7 +5690,7 @@ CREATE TABLE IF NOT EXISTS `role_has_permissions` (
   KEY `role_has_permissions_role_id_foreign` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.role_has_permissions: ~1,484 rows (approximately)
+-- Dumping data for table technopa_proerp.role_has_permissions: ~1,489 rows (approximately)
 DELETE FROM `role_has_permissions`;
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(1, 1),
@@ -6146,7 +6424,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(649, 10),
 	(650, 10),
 	(651, 10),
-	(652, 10),
 	(653, 10),
 	(654, 10),
 	(655, 10),
@@ -6155,7 +6432,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(661, 10),
 	(663, 10),
 	(664, 10),
-	(665, 10),
 	(667, 10),
 	(668, 10),
 	(669, 10),
@@ -6183,6 +6459,24 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(693, 10),
 	(694, 10),
 	(695, 10),
+	(696, 10),
+	(697, 10),
+	(698, 10),
+	(699, 10),
+	(700, 10),
+	(701, 10),
+	(702, 10),
+	(703, 10),
+	(704, 10),
+	(705, 10),
+	(706, 10),
+	(707, 10),
+	(708, 10),
+	(709, 10),
+	(710, 10),
+	(711, 10),
+	(712, 10),
+	(713, 10),
 	(1, 13),
 	(610, 13),
 	(612, 13),
@@ -6694,7 +6988,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(649, 19),
 	(650, 19),
 	(651, 19),
-	(652, 19),
 	(653, 19),
 	(654, 19),
 	(655, 19),
@@ -6703,7 +6996,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(661, 19),
 	(663, 19),
 	(664, 19),
-	(665, 19),
 	(1, 20),
 	(334, 20),
 	(335, 20),
@@ -6891,7 +7183,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 	(329, 24),
 	(382, 24);
 
--- Dumping structure for table technopa_crm.sales
+-- Dumping structure for table technopa_proerp.sales
 DROP TABLE IF EXISTS `sales`;
 CREATE TABLE IF NOT EXISTS `sales` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -6917,12 +7209,12 @@ CREATE TABLE IF NOT EXISTS `sales` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sales: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.sales: ~1 rows (approximately)
 DELETE FROM `sales`;
 INSERT INTO `sales` (`id`, `company_id`, `product_type`, `store_id`, `client_id`, `coa_setup_id`, `invoice`, `date`, `sales_type`, `total_amount`, `discount`, `total_paid`, `status`, `staff_id`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', 2, 3033, NULL, 'STS2607000001', '2026-07-13', 'credit', 33.00, 3.00, 0.00, 1, 60, 1, NULL, NULL, NULL, '2026-07-13 08:42:31', '2026-07-13 08:42:31');
 
--- Dumping structure for table technopa_crm.sales_lists
+-- Dumping structure for table technopa_proerp.sales_lists
 DROP TABLE IF EXISTS `sales_lists`;
 CREATE TABLE IF NOT EXISTS `sales_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -6948,12 +7240,12 @@ CREATE TABLE IF NOT EXISTS `sales_lists` (
   KEY `sales_lists_sales_id_foreign` (`sales_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sales_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.sales_lists: ~1 rows (approximately)
 DELETE FROM `sales_lists`;
 INSERT INTO `sales_lists` (`id`, `company_id`, `product_type`, `sales_id`, `store_id`, `client_id`, `product_id`, `variant_id`, `order_product_id`, `rate`, `qty`, `returned_qty`, `returned_amount`, `discount`, `amount`, `is_return`, `delivery_status`, `created_at`, `updated_at`) VALUES
 	(1, 1, 'Consumer', 1, 2, 3033, 1, NULL, NULL, 33.00, 1.00, 0.00, 0.00, 3.00, 33.00, 0, 'Pending', '2026-07-13 08:42:31', '2026-07-13 08:42:31');
 
--- Dumping structure for table technopa_crm.sales_product_data
+-- Dumping structure for table technopa_proerp.sales_product_data
 DROP TABLE IF EXISTS `sales_product_data`;
 CREATE TABLE IF NOT EXISTS `sales_product_data` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -6965,10 +7257,10 @@ CREATE TABLE IF NOT EXISTS `sales_product_data` (
   KEY `sales_product_data_sales_id_foreign` (`sales_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sales_product_data: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.sales_product_data: ~0 rows (approximately)
 DELETE FROM `sales_product_data`;
 
--- Dumping structure for table technopa_crm.sales_returns
+-- Dumping structure for table technopa_proerp.sales_returns
 DROP TABLE IF EXISTS `sales_returns`;
 CREATE TABLE IF NOT EXISTS `sales_returns` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -6996,10 +7288,10 @@ CREATE TABLE IF NOT EXISTS `sales_returns` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sales_returns: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.sales_returns: ~0 rows (approximately)
 DELETE FROM `sales_returns`;
 
--- Dumping structure for table technopa_crm.sales_return_lists
+-- Dumping structure for table technopa_proerp.sales_return_lists
 DROP TABLE IF EXISTS `sales_return_lists`;
 CREATE TABLE IF NOT EXISTS `sales_return_lists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7022,10 +7314,10 @@ CREATE TABLE IF NOT EXISTS `sales_return_lists` (
   KEY `sales_return_lists_sales_return_id_foreign` (`sales_return_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sales_return_lists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.sales_return_lists: ~0 rows (approximately)
 DELETE FROM `sales_return_lists`;
 
--- Dumping structure for table technopa_crm.settings
+-- Dumping structure for table technopa_proerp.settings
 DROP TABLE IF EXISTS `settings`;
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7065,12 +7357,12 @@ CREATE TABLE IF NOT EXISTS `settings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.settings: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.settings: ~1 rows (approximately)
 DELETE FROM `settings`;
 INSERT INTO `settings` (`id`, `app_name`, `title`, `primary_mobile`, `secondary_mobile`, `primary_email`, `secondary_email`, `office_time`, `address`, `description`, `meta_title`, `meta_keyword`, `meta_description`, `meta_image`, `google_map`, `favicon`, `logo`, `footer_logo`, `placeholder`, `facebook_page`, `facebook_group`, `youtube`, `twitter`, `linkedin`, `google`, `whatsapp`, `instagram`, `pinterest`, `banner_one`, `banner_one_link`, `banner_two`, `banner_two_link`, `created_at`, `updated_at`) VALUES
 	(1, 'AppproERP', 'AppproERP', '01805030076', '01805030076', 'technoparkbd@gmail.com', 'technoparkbd@gmail.com', NULL, '316/2, DIT Road, 5th Floor, East Rampura, Dhaka', NULL, NULL, '01805030076', NULL, 'media/default//2026-07-16-GaJWYbIV3ahWmswJNxG9XIXuFrdcBIAJNvTkRAoN.webp', NULL, 'media/default//2026-07-16-PHSfscLfHL6DHvFDEmCO0KkvkfnZT4sROS1B8xYM.webp', 'media/default//2026-07-16-quMsHHqJbjfK5TSq3VKy76CvqEqOqLvuEXsAkVyt.webp', 'media/default//2026-07-16-vodFHymOJWBvxcKovsAaNjV97Z6jnv9teDpXRgNi.webp', 'media/default//2026-07-16-Z8Kj4zvAn5Y3d7YCA3IMMoYkOtzkkMVaaZS5NW1r.webp', 'https://www.facebook.com/people/Saheb-Bazar/61575484293604/', NULL, '#', '#', '#', '#', 'https://whatsapp.com', NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-08 16:05:10', '2026-07-21 03:18:53');
 
--- Dumping structure for table technopa_crm.shipping_addresses
+-- Dumping structure for table technopa_proerp.shipping_addresses
 DROP TABLE IF EXISTS `shipping_addresses`;
 CREATE TABLE IF NOT EXISTS `shipping_addresses` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7089,7 +7381,7 @@ CREATE TABLE IF NOT EXISTS `shipping_addresses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.shipping_addresses: ~6 rows (approximately)
+-- Dumping data for table technopa_proerp.shipping_addresses: ~6 rows (approximately)
 DELETE FROM `shipping_addresses`;
 INSERT INTO `shipping_addresses` (`id`, `user_id`, `address_type`, `name`, `email`, `phone`, `street`, `address`, `division_id`, `district_id`, `upozila_id`, `created_at`, `updated_at`) VALUES
 	(1, 163, 'home', 'hiui', 'shahadat80@gmail.com', '01757839516', 'Kechuatoil, Kharkhari', 'Kechuatoil, Kharkhari, Dhamrai , Dhaka, Dhaka', 13, 45, 370, '2025-06-03 10:04:52', '2025-06-03 10:04:52'),
@@ -7099,7 +7391,7 @@ INSERT INTO `shipping_addresses` (`id`, `user_id`, `address_type`, `name`, `emai
 	(5, 168, 'home', 'Fahad Ahmed', 'aheedulislamfahad@gmail.com', '01300016724', 'Inside Rahattarpul, 18 Number ward, East Bakalia Depoti Road Majer Rasta Chattogram', 'Inside Rahattarpul, 18 Number ward, East Bakalia Depoti Road Majer Rasta Chattogram, Chandgaon Thana, Chittagong, Chittagong', 20, 37, 303, '2026-02-21 21:25:37', '2026-02-21 21:25:37'),
 	(6, 169, 'home', 'Abdullah Mahin', 'nmdloverboy12345@gmail.com', '01634191548', 'Tower madrasa Paler bazar daudkandi Cumilla', 'Tower madrasa Paler bazar daudkandi Cumilla, Daudkandi , Comilla, Chittagong', 20, 38, 313, '2026-04-04 06:48:00', '2026-04-04 06:48:00');
 
--- Dumping structure for table technopa_crm.showcase_items
+-- Dumping structure for table technopa_proerp.showcase_items
 DROP TABLE IF EXISTS `showcase_items`;
 CREATE TABLE IF NOT EXISTS `showcase_items` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7115,10 +7407,10 @@ CREATE TABLE IF NOT EXISTS `showcase_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.showcase_items: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.showcase_items: ~0 rows (approximately)
 DELETE FROM `showcase_items`;
 
--- Dumping structure for table technopa_crm.sliders
+-- Dumping structure for table technopa_proerp.sliders
 DROP TABLE IF EXISTS `sliders`;
 CREATE TABLE IF NOT EXISTS `sliders` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7132,13 +7424,13 @@ CREATE TABLE IF NOT EXISTS `sliders` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.sliders: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.sliders: ~2 rows (approximately)
 DELETE FROM `sliders`;
 INSERT INTO `sliders` (`id`, `heading`, `title`, `image`, `show_btn`, `status`, `created_at`, `updated_at`) VALUES
 	(4, 'Welcome', 'Welcome', 'media/slider//2025-05-12-XQoLyMMQSKU23P0fD5vqEOwx9okufAt2I1gpXqvJ.webp', 1, 1, '2023-12-30 18:33:26', '2025-05-12 09:17:27'),
 	(11, 'Opening', 'Opening', 'media/slider//2025-05-12-zfg3YXA3XmhD3hm9UjLT7Zj8mqwfwAGWecPnCRq8.webp', 1, 1, '2024-07-07 11:39:40', '2025-05-12 09:17:56');
 
--- Dumping structure for table technopa_crm.social_works
+-- Dumping structure for table technopa_proerp.social_works
 DROP TABLE IF EXISTS `social_works`;
 CREATE TABLE IF NOT EXISTS `social_works` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7151,10 +7443,10 @@ CREATE TABLE IF NOT EXISTS `social_works` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.social_works: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.social_works: ~0 rows (approximately)
 DELETE FROM `social_works`;
 
--- Dumping structure for table technopa_crm.special_food_items
+-- Dumping structure for table technopa_proerp.special_food_items
 DROP TABLE IF EXISTS `special_food_items`;
 CREATE TABLE IF NOT EXISTS `special_food_items` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7168,10 +7460,10 @@ CREATE TABLE IF NOT EXISTS `special_food_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.special_food_items: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.special_food_items: ~0 rows (approximately)
 DELETE FROM `special_food_items`;
 
--- Dumping structure for table technopa_crm.staff
+-- Dumping structure for table technopa_proerp.staff
 DROP TABLE IF EXISTS `staff`;
 CREATE TABLE IF NOT EXISTS `staff` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7208,7 +7500,7 @@ CREATE TABLE IF NOT EXISTS `staff` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.staff: ~6 rows (approximately)
+-- Dumping data for table technopa_proerp.staff: ~6 rows (approximately)
 DELETE FROM `staff`;
 INSERT INTO `staff` (`id`, `company_id`, `branch_id`, `code`, `name`, `short_name`, `designation`, `phone`, `address`, `email`, `national_id`, `joining_date`, `ac_no`, `ac_branch`, `basic_salary`, `house_rent`, `medical_allowance`, `others`, `deducted`, `increment_percent`, `increment_amount`, `total_salary`, `leave_balance`, `type`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(52, 1, 1, '10013', 'Office Sale', 'Office Sale', NULL, '017', NULL, NULL, NULL, '2024-02-03', NULL, NULL, 55555, 5555, 55, 55, NULL, NULL, NULL, 6666, 0, 'sales', 1, 2, 2, 1, '2025-04-28 09:53:34', '2024-02-03 11:09:05', '2025-04-28 09:53:34'),
@@ -7218,7 +7510,7 @@ INSERT INTO `staff` (`id`, `company_id`, `branch_id`, `code`, `name`, `short_nam
 	(62, 1, 1, 'Dipu', 'Dipu', 'Dipu', NULL, NULL, NULL, NULL, NULL, '2025-05-10', NULL, NULL, 44444, 5555, 555, 55, NULL, NULL, NULL, 88888, 0, 'sales', 1, 159, NULL, NULL, NULL, '2025-05-10 12:24:46', '2025-05-10 12:24:46'),
 	(63, 1, 1, 'digt233', 'Mozammel', 'Mozammel', 'DME', '01303740757', '316/2, Rampura Dhaka', 'nijer.bazar@gmail.com', NULL, '2026-05-01', 'AC#34334444432', 'Rampura', 10000, 5000, 3000, 2000, NULL, NULL, 0, 20000, 0, 'digital', 1, 1, NULL, NULL, NULL, '2026-07-28 05:24:07', '2026-07-28 05:24:07');
 
--- Dumping structure for table technopa_crm.static_site_items
+-- Dumping structure for table technopa_proerp.static_site_items
 DROP TABLE IF EXISTS `static_site_items`;
 CREATE TABLE IF NOT EXISTS `static_site_items` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7241,10 +7533,10 @@ CREATE TABLE IF NOT EXISTS `static_site_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.static_site_items: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.static_site_items: ~0 rows (approximately)
 DELETE FROM `static_site_items`;
 
--- Dumping structure for table technopa_crm.stocks
+-- Dumping structure for table technopa_proerp.stocks
 DROP TABLE IF EXISTS `stocks`;
 CREATE TABLE IF NOT EXISTS `stocks` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7263,7 +7555,7 @@ CREATE TABLE IF NOT EXISTS `stocks` (
   KEY `stocks_product_id_foreign` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.stocks: ~8 rows (approximately)
+-- Dumping data for table technopa_proerp.stocks: ~8 rows (approximately)
 DELETE FROM `stocks`;
 INSERT INTO `stocks` (`id`, `date`, `store_id`, `product_id`, `qty`, `unit_price`, `type`, `reference`, `note`, `created_at`, `updated_at`) VALUES
 	(1, '2026-05-07', 2, 1, 10.00, 33.00, 'in', 'Purchase #STL2605000001', 'Stock increased from purchase', '2026-05-07 09:50:05', '2026-05-07 09:50:05'),
@@ -7275,7 +7567,7 @@ INSERT INTO `stocks` (`id`, `date`, `store_id`, `product_id`, `qty`, `unit_price
 	(7, '2026-07-13', 2, 1, 1.00, 33.00, 'out', 'Retail Sale #RS26070002', 'Stock decreased due to retail sale', '2026-07-13 08:26:24', '2026-07-13 08:26:24'),
 	(8, '2026-07-27', 2, 3, 100.00, 50.00, 'in', 'Purchase #STL2607000002', 'Stock increased from purchase', '2026-07-27 04:28:41', '2026-07-27 04:28:41');
 
--- Dumping structure for table technopa_crm.stores
+-- Dumping structure for table technopa_proerp.stores
 DROP TABLE IF EXISTS `stores`;
 CREATE TABLE IF NOT EXISTS `stores` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7296,7 +7588,7 @@ CREATE TABLE IF NOT EXISTS `stores` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.stores: ~6 rows (approximately)
+-- Dumping data for table technopa_proerp.stores: ~6 rows (approximately)
 DELETE FROM `stores`;
 INSERT INTO `stores` (`id`, `company_id`, `branch_id`, `code`, `type`, `name`, `address`, `remarks`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(2, 1, 1, 'HQ', 'Product Stock', 'Shankhari Bazar', 'Dhaka', 'Dry Store', 1, 1, 2, NULL, NULL, '2023-10-24 09:26:05', '2025-04-27 10:55:02'),
@@ -7306,7 +7598,7 @@ INSERT INTO `stores` (`id`, `company_id`, `branch_id`, `code`, `type`, `name`, `
 	(14, 1, 1, '4', 'Product Stock', 'Old Dhaka', 'Old Dhaka', 'Old Dhaka', 0, 2, 2, 2, '2025-04-27 10:54:22', '2024-10-02 09:58:30', '2025-04-27 10:54:22'),
 	(15, 1, 1, '5', 'Product Stock', 'Dhonmondi Mohammodpur', 'Dhonmondi', 'Dhonmondi', 0, 2, 2, 2, '2025-04-27 10:54:26', '2024-10-02 10:00:20', '2025-04-27 10:54:26');
 
--- Dumping structure for table technopa_crm.store_areas
+-- Dumping structure for table technopa_proerp.store_areas
 DROP TABLE IF EXISTS `store_areas`;
 CREATE TABLE IF NOT EXISTS `store_areas` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7319,7 +7611,7 @@ CREATE TABLE IF NOT EXISTS `store_areas` (
   KEY `store_areas_area_id_foreign` (`area_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.store_areas: ~46 rows (approximately)
+-- Dumping data for table technopa_proerp.store_areas: ~46 rows (approximately)
 DELETE FROM `store_areas`;
 INSERT INTO `store_areas` (`id`, `store_id`, `area_id`, `created_at`, `updated_at`) VALUES
 	(8, 11, 33, '2024-09-23 10:19:34', '2024-09-23 10:19:34'),
@@ -7369,7 +7661,7 @@ INSERT INTO `store_areas` (`id`, `store_id`, `area_id`, `created_at`, `updated_a
 	(130, 2, 21, '2025-04-27 10:55:02', '2025-04-27 10:55:02'),
 	(131, 2, 30, '2025-04-27 10:55:02', '2025-04-27 10:55:02');
 
--- Dumping structure for table technopa_crm.subscriptions
+-- Dumping structure for table technopa_proerp.subscriptions
 DROP TABLE IF EXISTS `subscriptions`;
 CREATE TABLE IF NOT EXISTS `subscriptions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7382,7 +7674,7 @@ CREATE TABLE IF NOT EXISTS `subscriptions` (
   UNIQUE KEY `subscriptions_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.subscriptions: ~16 rows (approximately)
+-- Dumping data for table technopa_proerp.subscriptions: ~16 rows (approximately)
 DELETE FROM `subscriptions`;
 INSERT INTO `subscriptions` (`id`, `email`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, '0184468980@dipok', NULL, NULL, '2025-05-04 21:58:59', '2025-05-04 21:58:59'),
@@ -7402,7 +7694,7 @@ INSERT INTO `subscriptions` (`id`, `email`, `deleted_by`, `deleted_at`, `created
 	(15, 'wuenmdef@checkyourform.xyz', NULL, NULL, '2026-02-01 00:54:00', '2026-02-01 00:54:00'),
 	(16, 'nmdloverboy12345@gmail.com', NULL, NULL, '2026-04-04 06:54:15', '2026-04-04 06:54:15');
 
--- Dumping structure for table technopa_crm.territories
+-- Dumping structure for table technopa_proerp.territories
 DROP TABLE IF EXISTS `territories`;
 CREATE TABLE IF NOT EXISTS `territories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7424,13 +7716,13 @@ CREATE TABLE IF NOT EXISTS `territories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.territories: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.territories: ~2 rows (approximately)
 DELETE FROM `territories`;
 INSERT INTO `territories` (`id`, `company_id`, `area_id`, `code`, `name`, `incharge_name`, `phone`, `email`, `address`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(57, 1, 17, 'PF', 'Territory One', NULL, NULL, NULL, NULL, 1, 1, NULL, 2, '2024-09-08 07:16:59', '2024-07-13 12:44:50', '2024-09-08 07:16:59'),
 	(58, 1, 19, 'T', 'Jamtola', NULL, NULL, NULL, NULL, 1, 1, 1, NULL, NULL, '2024-10-13 17:25:31', '2026-07-13 08:38:34');
 
--- Dumping structure for table technopa_crm.testimonials
+-- Dumping structure for table technopa_proerp.testimonials
 DROP TABLE IF EXISTS `testimonials`;
 CREATE TABLE IF NOT EXISTS `testimonials` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7445,10 +7737,10 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.testimonials: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.testimonials: ~0 rows (approximately)
 DELETE FROM `testimonials`;
 
--- Dumping structure for table technopa_crm.transfers
+-- Dumping structure for table technopa_proerp.transfers
 DROP TABLE IF EXISTS `transfers`;
 CREATE TABLE IF NOT EXISTS `transfers` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7473,10 +7765,10 @@ CREATE TABLE IF NOT EXISTS `transfers` (
   UNIQUE KEY `transfers_transfer_no_unique` (`transfer_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.transfers: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.transfers: ~0 rows (approximately)
 DELETE FROM `transfers`;
 
--- Dumping structure for table technopa_crm.transfer_products
+-- Dumping structure for table technopa_proerp.transfer_products
 DROP TABLE IF EXISTS `transfer_products`;
 CREATE TABLE IF NOT EXISTS `transfer_products` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7493,10 +7785,10 @@ CREATE TABLE IF NOT EXISTS `transfer_products` (
   KEY `transfer_products_transfer_id_foreign` (`transfer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.transfer_products: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.transfer_products: ~0 rows (approximately)
 DELETE FROM `transfer_products`;
 
--- Dumping structure for table technopa_crm.users
+-- Dumping structure for table technopa_proerp.users
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7531,7 +7823,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.users: ~25 rows (approximately)
+-- Dumping data for table technopa_proerp.users: ~25 rows (approximately)
 DELETE FROM `users`;
 INSERT INTO `users` (`id`, `role`, `company_id`, `name`, `user_name`, `email`, `phone`, `address`, `image`, `cover_image`, `area_id`, `branch_id`, `store_id`, `status`, `is_staff`, `staff_id`, `email_verified_at`, `otp`, `otp_expire`, `password`, `remember_token`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 1, 'Admin', 'admin', 'admin@gmail.com', NULL, NULL, 'backend/images/avatar/profile-fHw3gVPuAyMu063utRJkBq6pbdA6dxyeJSNVEcyY.jpeg', 'backend/images/avatar/cover-l3lkkXigzq6ncpa8QmCPAS4B4vPJyGGixEBFtxgc.png', NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2023-11-24 11:04:22', '$2a$12$yxZO/Kv/5ANCuMMA/QJD2eVwPNj9BSyDwdTJCdzVpedljgS8qGi0e', NULL, NULL, 1, NULL, NULL, '2023-10-24 06:03:09', '2026-07-28 06:05:49'),
@@ -7560,7 +7852,7 @@ INSERT INTO `users` (`id`, `role`, `company_id`, `name`, `user_name`, `email`, `
 	(182, 2, 1, 'fffffffff', '33333', NULL, '33333', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-21 13:18:01', '$2y$10$7FfGIcAJoirwX1Ic4KE94ukpQ0G1QVkfyErF4.teqHMNiFgtIDLd.', NULL, 1, NULL, 1, '2026-07-21 09:56:56', '2026-07-21 07:18:01', '2026-07-21 09:56:56'),
 	(185, 2, 1, 'SGS', '019215554555', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, '2026-07-21 16:05:00', '$2y$10$OwJTRNDR75EiXiPh2Anv2.5NJv96FyUCVp4iWCkja0zbSJOWCyKJW', NULL, 1, NULL, NULL, NULL, '2026-07-21 10:05:00', '2026-07-21 10:05:52');
 
--- Dumping structure for table technopa_crm.vehicles
+-- Dumping structure for table technopa_proerp.vehicles
 DROP TABLE IF EXISTS `vehicles`;
 CREATE TABLE IF NOT EXISTS `vehicles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7578,13 +7870,13 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   KEY `vehicles_company_id_foreign` (`company_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.vehicles: ~2 rows (approximately)
+-- Dumping data for table technopa_proerp.vehicles: ~2 rows (approximately)
 DELETE FROM `vehicles`;
 INSERT INTO `vehicles` (`id`, `company_id`, `type`, `registration_no`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(11, 1, 'Frozen Pickup', 'Dhaka Metro Sha 11-1969', 1, 2, NULL, NULL, NULL, '2024-06-08 08:59:24', '2024-06-08 08:59:24'),
 	(12, 1, 'Frozen Pickup', 'Dhaka Metro Sha 11-3080', 1, 2, NULL, NULL, NULL, '2024-06-08 08:59:39', '2024-06-08 08:59:39');
 
--- Dumping structure for table technopa_crm.vendors
+-- Dumping structure for table technopa_proerp.vendors
 DROP TABLE IF EXISTS `vendors`;
 CREATE TABLE IF NOT EXISTS `vendors` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7606,7 +7898,7 @@ CREATE TABLE IF NOT EXISTS `vendors` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.vendors: ~127 rows (approximately)
+-- Dumping data for table technopa_proerp.vendors: ~127 rows (approximately)
 DELETE FROM `vendors`;
 INSERT INTO `vendors` (`id`, `company_id`, `coa_setup_id`, `code`, `name`, `contact_person`, `email`, `phone`, `address`, `status`, `created_by`, `updated_by`, `deleted_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
 	(1, 1, 166, 'V0001', '3S Distributor', NULL, NULL, '01728636977', 'Jatrabri', 1, 2, 159, NULL, NULL, '2025-04-27 12:02:52', '2025-04-28 11:02:16'),
@@ -7737,7 +8029,7 @@ INSERT INTO `vendors` (`id`, `company_id`, `coa_setup_id`, `code`, `name`, `cont
 	(129, 1, 307, 'V0122', 'Mesas Naz Enterprise', 'rakin 01405594148', NULL, '01781814878/01892108564', NULL, 1, 160, 160, NULL, NULL, '2026-03-16 08:15:17', '2026-03-16 08:16:03'),
 	(130, 1, 309, 'V0123', 'M/S Hasan Brothers Corp', 'Yeasin', NULL, NULL, NULL, 1, 159, NULL, 159, '2026-04-11 07:45:06', '2026-04-11 07:42:57', '2026-04-11 07:45:06');
 
--- Dumping structure for table technopa_crm.vendor_payments
+-- Dumping structure for table technopa_proerp.vendor_payments
 DROP TABLE IF EXISTS `vendor_payments`;
 CREATE TABLE IF NOT EXISTS `vendor_payments` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7762,10 +8054,10 @@ CREATE TABLE IF NOT EXISTS `vendor_payments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.vendor_payments: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.vendor_payments: ~0 rows (approximately)
 DELETE FROM `vendor_payments`;
 
--- Dumping structure for table technopa_crm.vendor_payment_data
+-- Dumping structure for table technopa_proerp.vendor_payment_data
 DROP TABLE IF EXISTS `vendor_payment_data`;
 CREATE TABLE IF NOT EXISTS `vendor_payment_data` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -7778,10 +8070,10 @@ CREATE TABLE IF NOT EXISTS `vendor_payment_data` (
   KEY `vendor_payment_data_vendor_payment_id_foreign` (`vendor_payment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.vendor_payment_data: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.vendor_payment_data: ~0 rows (approximately)
 DELETE FROM `vendor_payment_data`;
 
--- Dumping structure for view technopa_crm.view_all_sales
+-- Dumping structure for view technopa_proerp.view_all_sales
 DROP VIEW IF EXISTS `view_all_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_all_sales` (
@@ -7798,7 +8090,7 @@ CREATE TABLE `view_all_sales` (
 	`date` DATE NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_client_collections
+-- Dumping structure for view technopa_proerp.view_client_collections
 DROP VIEW IF EXISTS `view_client_collections`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_client_collections` (
@@ -7808,7 +8100,7 @@ CREATE TABLE `view_client_collections` (
 	`amount` DECIMAL(16,2) NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_client_realization_sales
+-- Dumping structure for view technopa_proerp.view_client_realization_sales
 DROP VIEW IF EXISTS `view_client_realization_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_client_realization_sales` (
@@ -7832,7 +8124,7 @@ CREATE TABLE `view_client_realization_sales` (
 	`staff_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_client_returns
+-- Dumping structure for view technopa_proerp.view_client_returns
 DROP VIEW IF EXISTS `view_client_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_client_returns` (
@@ -7844,7 +8136,7 @@ CREATE TABLE `view_client_returns` (
 	`amount` DECIMAL(17,2) NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_client_sales
+-- Dumping structure for view technopa_proerp.view_client_sales
 DROP VIEW IF EXISTS `view_client_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_client_sales` (
@@ -7868,7 +8160,7 @@ CREATE TABLE `view_client_sales` (
 	`staff_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_collectionable_sales
+-- Dumping structure for view technopa_proerp.view_collectionable_sales
 DROP VIEW IF EXISTS `view_collectionable_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_collectionable_sales` (
@@ -7886,7 +8178,7 @@ CREATE TABLE `view_collectionable_sales` (
 	`collectionable_amount` DECIMAL(41,2) NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_collection_history
+-- Dumping structure for view technopa_proerp.view_collection_history
 DROP VIEW IF EXISTS `view_collection_history`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_collection_history` (
@@ -7910,7 +8202,7 @@ CREATE TABLE `view_collection_history` (
 	`entry_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_liftings
+-- Dumping structure for view technopa_proerp.view_liftings
 DROP VIEW IF EXISTS `view_liftings`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_liftings` (
@@ -7936,7 +8228,7 @@ CREATE TABLE `view_liftings` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_lifting_and_returns
+-- Dumping structure for view technopa_proerp.view_lifting_and_returns
 DROP VIEW IF EXISTS `view_lifting_and_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_lifting_and_returns` (
@@ -7953,7 +8245,7 @@ CREATE TABLE `view_lifting_and_returns` (
 	`total_paid` DECIMAL(16,2) NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_lifting_returns
+-- Dumping structure for view technopa_proerp.view_lifting_returns
 DROP VIEW IF EXISTS `view_lifting_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_lifting_returns` (
@@ -7968,7 +8260,7 @@ CREATE TABLE `view_lifting_returns` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_online_all_sales
+-- Dumping structure for view technopa_proerp.view_online_all_sales
 DROP VIEW IF EXISTS `view_online_all_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_online_all_sales` (
@@ -7990,7 +8282,7 @@ CREATE TABLE `view_online_all_sales` (
 	`area_id` BIGINT UNSIGNED NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_online_returns
+-- Dumping structure for view technopa_proerp.view_online_returns
 DROP VIEW IF EXISTS `view_online_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_online_returns` (
@@ -8007,7 +8299,7 @@ CREATE TABLE `view_online_returns` (
 	`store_id` BIGINT UNSIGNED NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_online_sales
+-- Dumping structure for view technopa_proerp.view_online_sales
 DROP VIEW IF EXISTS `view_online_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_online_sales` (
@@ -8027,7 +8319,7 @@ CREATE TABLE `view_online_sales` (
 	`status` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_payments
+-- Dumping structure for view technopa_proerp.view_payments
 DROP VIEW IF EXISTS `view_payments`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_payments` (
@@ -8041,7 +8333,7 @@ CREATE TABLE `view_payments` (
 	`vendor_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_product_returns
+-- Dumping structure for view technopa_proerp.view_product_returns
 DROP VIEW IF EXISTS `view_product_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_product_returns` (
@@ -8055,7 +8347,7 @@ CREATE TABLE `view_product_returns` (
 	`amount` DECIMAL(17,2) NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_product_sales
+-- Dumping structure for view technopa_proerp.view_product_sales
 DROP VIEW IF EXISTS `view_product_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_product_sales` (
@@ -8079,7 +8371,7 @@ CREATE TABLE `view_product_sales` (
 	`staff_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_retail_returns
+-- Dumping structure for view technopa_proerp.view_retail_returns
 DROP VIEW IF EXISTS `view_retail_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_retail_returns` (
@@ -8097,7 +8389,7 @@ CREATE TABLE `view_retail_returns` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_retail_sales
+-- Dumping structure for view technopa_proerp.view_retail_sales
 DROP VIEW IF EXISTS `view_retail_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_retail_sales` (
@@ -8113,7 +8405,7 @@ CREATE TABLE `view_retail_sales` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_retail_sales_all
+-- Dumping structure for view technopa_proerp.view_retail_sales_all
 DROP VIEW IF EXISTS `view_retail_sales_all`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_retail_sales_all` (
@@ -8129,7 +8421,7 @@ CREATE TABLE `view_retail_sales_all` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_sales
+-- Dumping structure for view technopa_proerp.view_sales
 DROP VIEW IF EXISTS `view_sales`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_sales` (
@@ -8152,7 +8444,7 @@ CREATE TABLE `view_sales` (
 	`returned_amount` DECIMAL(16,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_sales_history
+-- Dumping structure for view technopa_proerp.view_sales_history
 DROP VIEW IF EXISTS `view_sales_history`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_sales_history` (
@@ -8184,7 +8476,7 @@ CREATE TABLE `view_sales_history` (
 	`sales_type` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_sales_returns
+-- Dumping structure for view technopa_proerp.view_sales_returns
 DROP VIEW IF EXISTS `view_sales_returns`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_sales_returns` (
@@ -8204,7 +8496,7 @@ CREATE TABLE `view_sales_returns` (
 	`amount` DECIMAL(17,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_transfers
+-- Dumping structure for view technopa_proerp.view_transfers
 DROP VIEW IF EXISTS `view_transfers`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_transfers` (
@@ -8222,7 +8514,7 @@ CREATE TABLE `view_transfers` (
 	`qty` DECIMAL(16,2) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view technopa_crm.view_trial_balance
+-- Dumping structure for view technopa_proerp.view_trial_balance
 DROP VIEW IF EXISTS `view_trial_balance`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_trial_balance` (
@@ -8240,7 +8532,7 @@ CREATE TABLE `view_trial_balance` (
 	`head_name` VARCHAR(1) NULL COLLATE 'utf8mb4_unicode_ci'
 ) ENGINE=MyISAM;
 
--- Dumping structure for table technopa_crm.wallets
+-- Dumping structure for table technopa_proerp.wallets
 DROP TABLE IF EXISTS `wallets`;
 CREATE TABLE IF NOT EXISTS `wallets` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -8264,10 +8556,10 @@ CREATE TABLE IF NOT EXISTS `wallets` (
   KEY `wallets_investor_id_foreign` (`investor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.wallets: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.wallets: ~0 rows (approximately)
 DELETE FROM `wallets`;
 
--- Dumping structure for table technopa_crm.wishlists
+-- Dumping structure for table technopa_proerp.wishlists
 DROP TABLE IF EXISTS `wishlists`;
 CREATE TABLE IF NOT EXISTS `wishlists` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -8278,7 +8570,7 @@ CREATE TABLE IF NOT EXISTS `wishlists` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table technopa_crm.wishlists: ~0 rows (approximately)
+-- Dumping data for table technopa_proerp.wishlists: ~1 rows (approximately)
 DELETE FROM `wishlists`;
 INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
 	(1, 169, 3874, '2026-04-04 06:55:15', '2026-04-04 06:55:15');
