@@ -116,7 +116,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-customer">
                         <div class="card-metrics">
                             <span class="metric-title">Total Employee</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-value">{{$total_employee}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-users"></i>
@@ -128,7 +128,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-sales">
                         <div class="card-metrics">
                             <span class="metric-title">Total Salary</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳{{$total_salary}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-receipt"></i>
@@ -140,7 +140,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-cash">
                         <div class="card-metrics">
                             <span class="metric-title">Total Expense</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳{{$total_expense}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fas fa-dollar-sign"></i>
@@ -152,7 +152,7 @@ if (! function_exists('bn_number')) {
                     <div class="custom-info-card card-due">
                         <div class="card-metrics">
                             <span class="metric-title">Total Disbursed</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-value">৳{{$total_disbursed}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-money-bill-alt"></i>
@@ -170,8 +170,8 @@ if (! function_exists('bn_number')) {
                 <div class="col-md-3 col-sm-6">
                     <div class="custom-info-card card-products">
                         <div class="card-metrics">
-                            <span class="metric-title">Proposal Submit</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-title">Total Reisgnation</span>
+                            <span class="metric-value">{{$total_resignation}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-box-open"></i>
@@ -182,8 +182,8 @@ if (! function_exists('bn_number')) {
                 <div class="col-md-3 col-sm-6">
                     <div class="custom-info-card card-stock">
                         <div class="card-metrics">
-                            <span class="metric-title">Total Quotation</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-title">Total Termination</span>
+                            <span class="metric-value">{{$total_termination}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fad fa-chart-pie"></i>
@@ -194,8 +194,8 @@ if (! function_exists('bn_number')) {
                 <div class="col-md-3 col-sm-6">
                     <div class="custom-info-card card-due">
                         <div class="card-metrics">
-                            <span class="metric-title">Sales Pipeline</span>
-                            <span class="metric-value">৳ 0</span>
+                            <span class="metric-title">Total Loan</span>
+                            <span class="metric-value">৳{{$total_loan}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-receipt"></i>
@@ -206,8 +206,8 @@ if (! function_exists('bn_number')) {
                 <div class="col-md-3 col-sm-6">
                     <div class="custom-info-card card-customer">
                         <div class="card-metrics">
-                            <span class="metric-title">Converted Client</span>
-                            <span class="metric-value">0</span>
+                            <span class="metric-title">Total Installment</span>
+                            <span class="metric-value">৳{{$total_installment}}</span>
                         </div>
                         <div class="card-icon-box">
                             <i class="fal fa-money-bill-alt"></i>
@@ -217,14 +217,14 @@ if (! function_exists('bn_number')) {
 
                 <div class="col-md-12 col-sm-12">
 
-                <a href="{{ route('admin.crm-report.index') }}" class="text-decoration-none">
+                <a href="{{ route('admin.hrm.report') }}" class="text-decoration-none">
 
                     <div class="report-card">
 
                         <div class="report-content">
 
                             <span class="report-label">
-                                CRM Reports
+                                HRM Reports
                             </span>
 
                             <h4 class="report-title">
@@ -232,7 +232,7 @@ if (! function_exists('bn_number')) {
                             </h4>
 
                             <p class="report-text mb-0">
-                                View lead performance, proposal value, expected value and business analytics.
+                                View performance, Salary, Payrolls, Paid, Unpaid and Business analytics.
                             </p>
 
                         </div>

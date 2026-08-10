@@ -111,6 +111,8 @@ use App\Http\Controllers\Hrm\DocumentController;
 use App\Http\Controllers\Hrm\ResignationController;
 use App\Http\Controllers\Hrm\TerminationController;
 use App\Http\Controllers\Hrm\AppraisalController;
+use App\Http\Controllers\Hrm\HrmReportController;
+
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('login.index');
     Route::post('/login', [AdminController::class, 'login'])->name('login');
@@ -170,7 +172,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/resignation',ResignationController::class);
     Route::resource('/termination',TerminationController::class);
     Route::resource('/appraisal',AppraisalController::class);
-    ;
+    Route::get('/hrm-report',[HrmReportController::class,'hrmReport'])->name('hrm.report');
+    
 
 });
 
