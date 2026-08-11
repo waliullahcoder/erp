@@ -25,6 +25,7 @@ body,*{
     font-family: 'SolaimanLipi', sans-serif;
 }
 </style>
+@include('layouts.admin.partial.dynamic')
 </head>
 
 <body class="bg-light">

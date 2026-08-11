@@ -140,7 +140,7 @@
         </div>
         <!-- End Aside Menu -->
 
-        <div class="d-flex align-items-center social-wrapper" style="height: 55px; border-top: 1px solid #cbd0dd;">
+        <div class="d-flex align-items-center social-wrapper" style="height: 55px;">
             <ul class="w-100 p-2 d-flex align-items-center justify-content-center social">
                 @if (@$admin_setting->facebook)
                     <li>

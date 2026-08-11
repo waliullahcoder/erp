@@ -2,7 +2,7 @@
         <style>
             .nav-container-center {
                 flex-grow: 1;
-                margin: 0 15px;
+                margin: 13px 15px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -13,9 +13,6 @@
                 align-items: center;
                 gap: 6px;
                 padding: 6px 12px;
-                border: 1px solid #f1f5f9;
-                background: #f8fafc;
-                color: #475569;
                 text-decoration: none;
                 font-size: 13px;
                 font-weight: 500;
@@ -23,16 +20,11 @@
                 transition: all 0.2s ease;
             }
             .quick-link-btn:hover {
-                background: #ffffff;
-                color: #0f172a;
-                border-color: #cbd5e1;
                 transform: translateY(-1px);
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             }
             .list-dropdown-btn {
-                background: #edf2f7;
-                border: 1px solid #e2e8f0;
-                color: #2d3748;
+               
                 font-weight: 600;
                 padding: 6px 14px;
                 font-size: 13px;
@@ -42,11 +34,7 @@
                 gap: 6px;
                 transition: all 0.2s;
             }
-            .list-dropdown-btn:hover, .list-dropdown-btn:focus {
-                background: #ff6505;
-                color: #ffffff;
-                border-color: #df5b0a;
-            }
+          
             .custom-dropdown-menu .dropdown-item {
                 display: flex;
                 align-items: center;
@@ -85,8 +73,6 @@
             .language-switch{
     display:flex;
     align-items:center;
-    background:white;
-    border:1px solid rgba(255,255,255,.25);
     border-radius:50px;
     backdrop-filter:blur(10px);
 }
@@ -139,7 +125,7 @@
 }
         </style>
 
-<div class="navbar-header shadow-sm" style="background: #198754; border-bottom: 1px solid #5ba55a; padding: 6px 0;">
+<div class="navbar-header shadow-sm">
     <div class="px-sm-3 px-10px d-flex gap-2 align-items-center justify-content-between">
         
         <!-- Left: Brand Toggle -->
@@ -149,8 +135,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                             <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                            <path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#4f46e5" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999)"></path>
-                            <path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#4f46e5" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999)"></path>
+                            <path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#e8e7f8" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999)"></path>
+                            <path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#f8f7ff" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999)"></path>
                         </g>
                     </svg>
                 </span>
@@ -259,7 +245,7 @@
         <!-- Right: User Avatar Dropdown -->
         <div class="d-flex align-items-center flex-shrink-0">
             <div class="dropdown ms-sm-3 topbar-user">
-                <button type="button" class="btn btn-light rounded-3 border-0 d-flex align-items-center p-1 pe-md-3" data-bs-toggle="dropdown" style="background: #f1f5f9;">
+                <button type="button" class="btn btn-light rounded-3 border-0 d-flex align-items-center p-1 pe-md-3" data-bs-toggle="dropdown">
                     <span class="d-flex align-items-center gap-2">
                         <img class="rounded-circle lazyload border"
                             data-src="{{ file_exists(Auth::user()->image) ? asset(Auth::user()->image) : asset('backend/images/avatar/default/user.jpg') }}"
@@ -270,7 +256,7 @@
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-2" style="min-width: 200px; overflow: hidden;">
-                    <div class="px-3 py-2.5" style="background: #f8fafc; border-bottom: 1px solid #f1f5f9;">
+                    <div class="px-3 py-2.5">
                         <h6 class="fw-bold text-dark fs-13 mb-0">{{ Auth::user()->name }}</h6>
                         <small class="text-muted fs-11">{{ Auth::user()->email }}</small>
                     </div>
@@ -278,7 +264,7 @@
                         href="{{ Auth::user()->role == 1 ? Route('admin.profile.index') : Route('client.profile.index') }}">
                         <i class="fad fa-user text-primary"></i> <span>{{__('messages.profile')}}</span>
                     </a>
-                    <div class="dropdown-divider my-0" style="border-top-color: #f1f5f9;"></div>
+                    <div class="dropdown-divider my-0"></div>
                     <a class="dropdown-item d-flex align-items-center gap-2 fs-13 py-2 px-3 text-danger"
                         href="{{ Auth::user()->role == 1 ? Route('admin.logout') : Route('client.logout') }}">
                         <i class="fad fa-sign-out text-danger"></i> <span>{{__('messages.logout')}}</span>

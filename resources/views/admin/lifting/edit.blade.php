@@ -89,7 +89,7 @@
             </div>
         </div>
         <div class="col-md-2 col-sm-6" id="add_btn_area">
-            <label class="form-label d-sm-block d-none text-white"><b>Add Item</b></label>
+            <label class="form-label d-sm-block d-none"><b>Add Item</b></label>
             <button type="button" class="btn btn-xs btn-primary w-100 py-2" id="add_item">Add Product</button>
         </div>
         <div class="col-12">

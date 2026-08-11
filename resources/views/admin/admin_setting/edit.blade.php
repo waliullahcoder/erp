@@ -330,8 +330,6 @@
 
                             width: 100%;
 
-                            height: 220px;
-
                             background: #f8fafc;
 
                             overflow: hidden;
@@ -342,10 +340,6 @@
                         .template-image {
 
                             width: 100%;
-
-                            height: 100%;
-
-                            object-fit: cover;
 
                             display: block;
 
@@ -466,7 +460,7 @@
                        <div class="row g-3 mb-4">
 
                         {{-- ================= TEMPLATE 1 ================= --}}
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-3 col-md-6">
 
                             <label class="w-100 mb-0">
 
@@ -483,7 +477,7 @@
                                     <div class="theme-preview">
 
                                         {{-- Template Image --}}
-                                        <img src="{{ asset('frontend/assets/images/templates/template1.png') }}"
+                                        <img src="{{ asset('backend/images/template1.png') }}"
                                             class="template-image"
                                             alt="Ocean Blue">
 
@@ -510,7 +504,7 @@
 
 
                         {{-- ================= TEMPLATE 2 ================= --}}
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-3 col-md-6">
 
                             <label class="w-100 mb-0">
 
@@ -526,7 +520,7 @@
 
                                     <div class="theme-preview">
 
-                                        <img src="{{ asset('frontend/assets/images/templates/template2.png') }}"
+                                        <img src="{{ asset('backend/images/template1.png') }}"
                                             class="template-image"
                                             alt="Emerald Green">
 
@@ -553,7 +547,7 @@
 
 
                         {{-- ================= TEMPLATE 3 ================= --}}
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-3 col-md-6">
 
                             <label class="w-100 mb-0">
 
@@ -569,7 +563,7 @@
 
                                     <div class="theme-preview">
 
-                                        <img src="{{ asset('frontend/assets/images/templates/template3.png') }}"
+                                        <img src="{{ asset('backend/images/template1.png') }}"
                                             class="template-image"
                                             alt="Purple Premium">
 
@@ -580,6 +574,48 @@
                                         <div>
                                             <strong>Purple Premium</strong>
                                             <small>Elegant</small>
+                                        </div>
+
+                                        <span class="template-check">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                         {{-- ================= Custom 4 ================= --}}
+                        <div class="col-lg-3 col-md-6">
+
+                            <label class="w-100 mb-0">
+
+                                <input type="radio"
+                                    name="template_status"
+                                    value="custom"
+                                    class="template-radio"
+                                    {{ @$data->template_status == 'custom' ? 'checked' : '' }}>
+
+                                <div class="theme-template
+                                    {{ @$data->template_status == 'custom' ? 'active' : '' }}"
+                                    data-template="custom">
+
+                                    <div class="theme-preview">
+
+                                        <img src="{{ asset('backend/images/template1.png') }}"
+                                            class="template-image"
+                                            alt="Purple Premium">
+
+                                    </div>
+
+                                    <div class="template-info">
+
+                                        <div>
+                                            <strong>Custom</strong>
+                                            <small>Change color you choice</small>
                                         </div>
 
                                         <span class="template-check">

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminSetting;
 use Illuminate\Http\Request;
 use App\Models\Store;
+use Illuminate\Support\Facades\Artisan;
 
 class AdminSettingController extends Controller
 {
@@ -96,6 +97,13 @@ class AdminSettingController extends Controller
         $data->logo = isset($request->logo) ? HelperClass::saveImage($request->logo, 300, 'media/admin-setting/', @$data->logo) : @$data->logo;
         $data->favicon = isset($request->favicon) ? HelperClass::saveImage($request->favicon, 150, 'media/admin-setting/', @$data->favicon) : @$data->favicon;
         $data->save();
+
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('config:cache');
+        Artisan::call('view:clear');
+        Artisan::call('route:clear');
+        Artisan::call('clear-compiled');
 
         return redirect()->back()->withSuccessMessage('Updated Successfully!');
     }

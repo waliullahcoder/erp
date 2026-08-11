@@ -18,7 +18,7 @@
             <input type="number" class="form-control" id="quantity" name="quantity" step="1" placeholder="Quantity">
         </div>
         <div class="col-md-4 col-sm-6">
-            <label class="form-label text-white"><b>Add</b></label>
+            <label class="form-label"><b>Add</b></label>
             <button type="button" class="btn btn-xs btn-primary w-100 px-2 py-2" id="add_item">Add Item</button>
         </div>
         <div class="col-12">

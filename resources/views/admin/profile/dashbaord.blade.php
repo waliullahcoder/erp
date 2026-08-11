@@ -5,17 +5,15 @@
     <style>
         .custom-info-card {
             border: none;
-            border-radius: 12px;
             padding: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #ffffff;
-            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid transparent;
+        }
+        .dashboard-chart-card{
+            padding: 20px;
+            color:#e44949;
         }
         .custom-info-card:hover {
             transform: translateY(-4px);
@@ -52,41 +50,7 @@
         }
         
         /* Premium Card Variations Base Styling */
-        .card-customer { border-color: #3b82f6;background: linear-gradient(70deg, #3b82f6, #ffffff); }
-        .card-customer .card-icon-box { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-
-        .card-sales { border-color: #10b981; background: linear-gradient(70deg, #10b981, #ffffff);}
-        .card-sales .card-icon-box { background: rgba(16, 185, 129, 0.1); color: #10b981; }
-
-        .card-cash { border-color: #198754; background: linear-gradient(70deg, #198754, #ffffff);}
-        .card-cash .card-icon-box { background: rgba(99, 102, 241, 0.1); color: #198754; }
-
-        .card-due { border-color: #ef4444; background: linear-gradient(70deg, #ef4444, #ffffff); }
-        .card-due .card-icon-box { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
-
-        .card-products { border-color: #06b6d4; background: linear-gradient(70deg, #06b6d4, #ffffff);}
-        .card-products .card-icon-box { background: rgba(6, 182, 212, 0.1); color: #06b6d4; }
-
-        .card-stock { border-color: #f59e0b; background: linear-gradient(70deg, #f59e0b, #ffffff);}
-        .card-stock .card-icon-box { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-
-        /* Chart Section Premium Border Box */
-        .dashboard-chart-card {
-            background: #ffffff;
-            border: none;
-            border-radius: 14px;
-            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
-            padding: 24px;
-        }
-        .chart-header-title {
-            color: #0f172a;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        .chart-header-sub {
-            color: #64748b;
-            font-size: 13px;
-        }
+        
     </style>
 
     <?php

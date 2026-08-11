@@ -55,7 +55,7 @@
             <input type="number" class="form-control" id="quantity" step="any" value="1" placeholder="Quantity">
         </div>
         <div class="col-md-2 col-6">
-            <label class="form-label text-white"><b>Add Item</b></label>
+            <label class="form-label"><b>Add Item</b></label>
             <button type="button" class="btn btn-xs btn-primary w-100 py-2" id="add_item">Add Product</button>
         </div>
         <div class="col-12">

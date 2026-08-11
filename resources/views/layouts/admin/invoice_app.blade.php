@@ -145,6 +145,7 @@ body,*{
         }
     </style>
     @stack('css')
+    @include('layouts.admin.partial.dynamic')
 </head>
 
 <body>
