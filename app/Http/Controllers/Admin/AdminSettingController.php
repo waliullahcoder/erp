@@ -70,8 +70,21 @@ class AdminSettingController extends Controller
         }
         $data->title = $request->title;
         $data->footer_text = $request->footer_text;
+        $data->template_status = $request->template_status;
+
+        $data->body_bg = $request->body_bg;
+        $data->card_bg = $request->card_bg;
+        $data->title_bg = $request->title_bg;
+
         $data->primary_color = $request->primary_color;
         $data->secondary_color = $request->secondary_color;
+
+        $data->primary_bg = $request->primary_bg;
+        $data->secondary_bg = $request->secondary_bg;
+
+        $data->text1_color = $request->text1_color;
+        $data->text2_color = $request->text2_color;
+        
         $data->facebook = $request->facebook;
         $data->twitter = $request->twitter;
         $data->linkedin = $request->linkedin;

@@ -8,7 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class AdminSetting extends Model
 {
     use HasFactory;
-    protected $fillable = ['logo', 'favicon', 'title', 'footer_text', 'primary_color', 'secondary_color', 'store_id', 'accounting', 'invest_value', 'facebook', 'twitter', 'linkedin', 'whatsapp', 'google'];
+    protected $fillable = ['logo', 'favicon', 'title', 'footer_text', 
+    'template_status',
+    'body_bg',
+    'card_bg',
+    'title_bg',
+    'primary_color', 
+    'secondary_color', 
+    'primary_bg', 
+    'secondary_bg',
+    'text1_color',
+    'text2_color',  
+    'store_id', 'accounting', 'invest_value', 'facebook', 'twitter', 'linkedin', 'whatsapp', 'google'];
 
     public function store()
     {

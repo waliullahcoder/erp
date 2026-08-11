@@ -69,17 +69,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <label for="primary_color" class="form-label"><b>Primary Color</b></label>
-                                <input type="text" id="primary_color" name="primary_color" placeholder="Primary Color"
-                                    class="form-control color" value="{{ @$data->primary_color }}">
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6">
-                                <label for="secondary_color" class="form-label"><b>Secondary Color</b></label>
-                                <input type="text" id="secondary_color" name="secondary_color"
-                                    placeholder="Secondary Color" class="form-control color"
-                                    value="{{ @$data->secondary_color }}">
-                            </div>
+                            
                             <div class="col-lg-3 col-md-4 col-sm-6">
                                 <label for="facebook" class="form-label"><b>Facebook</b></label>
                                 <input type="text" id="facebook" name="facebook" placeholder="Facebook"
@@ -105,6 +95,663 @@
                                 <input type="text" id="footer_text" name="footer_text" placeholder="Footer Text"
                                     class="form-control" value="{{ @$data->footer_text }}" required>
                             </div>
+                        <style>
+                        .theme-template {
+                            border: 2px solid #e5e7eb;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            cursor: pointer;
+                            background: #fff;
+                            transition: .25s ease;
+                            position: relative;
+                        }
+
+                        .theme-template:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 8px 25px rgba(0,0,0,.10);
+                        }
+
+                        .theme-template.active {
+                            border-color: #0d6efd;
+                            box-shadow: 0 0 0 3px rgba(13,110,253,.12);
+                        }
+
+
+                        /* Preview */
+
+                        .theme-preview {
+                            height: 130px;
+                            padding: 10px;
+                        }
+
+                        .preview-header {
+                            height: 20px;
+                            border-radius: 4px;
+                            margin-bottom: 8px;
+                        }
+
+                        .preview-body {
+                            display: flex;
+                            height: 82px;
+                            gap: 8px;
+                        }
+
+                        .preview-sidebar {
+                            width: 25%;
+                            border-radius: 4px;
+                        }
+
+                        .preview-content {
+                            flex: 1;
+                            background: #f8fafc;
+                            padding: 8px;
+                            border-radius: 4px;
+                        }
+
+                        .preview-content span {
+                            display: block;
+                            height: 10px;
+                            margin-bottom: 8px;
+                            border-radius: 3px;
+                        }
+
+
+                        /* =========================
+                        BLUE
+                        ========================= */
+
+                        .theme-blue {
+                            background: #f1f5f9;
+                        }
+
+                        .theme-blue .preview-header {
+                            background: #2563eb;
+                        }
+
+                        .theme-blue .preview-sidebar {
+                            background: #1e293b;
+                        }
+
+                        .theme-blue .preview-content span {
+                            background: #2563eb;
+                        }
+
+
+                        /* =========================
+                        GREEN
+                        ========================= */
+
+                        .theme-green {
+                            background: #f0fdf4;
+                        }
+
+                        .theme-green .preview-header {
+                            background: #059669;
+                        }
+
+                        .theme-green .preview-sidebar {
+                            background: #111827;
+                        }
+
+                        .theme-green .preview-content span {
+                            background: #10b981;
+                        }
+
+
+                        /* =========================
+                        PURPLE
+                        ========================= */
+
+                        .theme-purple {
+                            background: #faf5ff;
+                        }
+
+                        .theme-purple .preview-header {
+                            background: #7c3aed;
+                        }
+
+                        .theme-purple .preview-sidebar {
+                            background: #312e81;
+                        }
+
+                        .theme-purple .preview-content span {
+                            background: #8b5cf6;
+                        }
+
+
+                        /* =========================
+                        TEMPLATE INFO
+                        ========================= */
+
+                        .template-info {
+
+                            padding: 12px 14px;
+
+                            display: flex;
+
+                            justify-content: space-between;
+
+                            align-items: center;
+                        }
+
+                        .template-info strong {
+
+                            display: block;
+
+                            font-size: 14px;
+
+                            color: #1f2937;
+                        }
+
+                        .template-info small {
+
+                            color: #6b7280;
+
+                            font-size: 11px;
+                        }
+
+
+                        /* Check */
+
+                        .template-check {
+
+                            width: 26px;
+                            height: 26px;
+
+                            border-radius: 50%;
+
+                            display: flex;
+
+                            align-items: center;
+                            justify-content: center;
+
+                            background: #e5e7eb;
+
+                            color: #fff;
+
+                            font-size: 12px;
+                        }
+
+                        .theme-template.active .template-check {
+
+                            background: #0d6efd;
+
+                        }
+
+                        </style>
+                        <style>
+
+                        .theme-template {
+
+                            position: relative;
+
+                            background: #fff;
+
+                            border: 2px solid #e5e7eb;
+
+                            border-radius: 16px;
+
+                            overflow: hidden;
+
+                            cursor: pointer;
+
+                            transition: all .25s ease;
+
+                        }
+
+
+                        .theme-template:hover {
+
+                            transform: translateY(-4px);
+
+                            border-color: #94a3b8;
+
+                            box-shadow: 0 10px 30px rgba(0,0,0,.10);
+
+                        }
+
+
+                        /* Selected */
+
+                        .theme-template.active {
+
+                            border-color: #2563eb;
+
+                            box-shadow:
+                                0 0 0 3px rgba(37,99,235,.15),
+                                0 10px 30px rgba(37,99,235,.12);
+
+                        }
+
+
+                        /* Image Area */
+
+                        .theme-preview {
+
+                            width: 100%;
+
+                            height: 220px;
+
+                            background: #f8fafc;
+
+                            overflow: hidden;
+
+                        }
+
+
+                        .template-image {
+
+                            width: 100%;
+
+                            height: 100%;
+
+                            object-fit: cover;
+
+                            display: block;
+
+                            transition: transform .3s ease;
+
+                        }
+
+
+                        .theme-template:hover .template-image {
+
+                            transform: scale(1.03);
+
+                        }
+
+
+                        /* Information */
+
+                        .template-info {
+
+                            display: flex;
+
+                            justify-content: space-between;
+
+                            align-items: center;
+
+                            padding: 15px 17px;
+
+                            background: #fff;
+
+                        }
+
+
+                        .template-info strong {
+
+                            display: block;
+
+                            font-size: 15px;
+
+                            font-weight: 600;
+
+                            color: #1e293b;
+
+                        }
+
+
+                        .template-info small {
+
+                            display: block;
+
+                            margin-top: 3px;
+
+                            font-size: 12px;
+
+                            color: #64748b;
+
+                        }
+
+
+                        /* Check Icon */
+
+                        .template-check {
+
+                            width: 32px;
+
+                            height: 32px;
+
+                            border-radius: 50%;
+
+                            display: flex;
+
+                            align-items: center;
+
+                            justify-content: center;
+
+                            background: #e5e7eb;
+
+                            color: transparent;
+
+                            transition: all .25s ease;
+
+                        }
+
+
+                        .theme-template.active .template-check {
+
+                            background: #2563eb;
+
+                            color: #fff;
+
+                            transform: scale(1.05);
+
+                        }
+
+
+                        /* Hide Radio */
+
+                        .template-radio {
+
+                            position: absolute;
+
+                            opacity: 0;
+
+                            pointer-events: none;
+
+                        }
+
+                        </style>
+
+                         <hr>
+
+                        <h6 class="h6 mb-0 py-2">
+                            <i class="fas fa-palette text-primary me-1"></i>
+                            Choose Template
+                        </h6>
+
+                        <hr>
+
+                       <div class="row g-3 mb-4">
+
+                        {{-- ================= TEMPLATE 1 ================= --}}
+                        <div class="col-lg-4 col-md-6">
+
+                            <label class="w-100 mb-0">
+
+                                <input type="radio"
+                                    name="template_status"
+                                    value="template1"
+                                    class="template-radio"
+                                    {{ @$data->template_status == 'template1' ? 'checked' : '' }}>
+
+                                <div class="theme-template
+                                    {{ @$data->template_status == 'template1' ? 'active' : '' }}"
+                                    data-template="template1">
+
+                                    <div class="theme-preview">
+
+                                        {{-- Template Image --}}
+                                        <img src="{{ asset('frontend/assets/images/templates/template1.png') }}"
+                                            class="template-image"
+                                            alt="Ocean Blue">
+
+                                    </div>
+
+                                    <div class="template-info">
+
+                                        <div>
+                                            <strong>Ocean Blue</strong>
+                                            <small>Professional</small>
+                                        </div>
+
+                                        <span class="template-check">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        {{-- ================= TEMPLATE 2 ================= --}}
+                        <div class="col-lg-4 col-md-6">
+
+                            <label class="w-100 mb-0">
+
+                                <input type="radio"
+                                    name="template_status"
+                                    value="template2"
+                                    class="template-radio"
+                                    {{ @$data->template_status == 'template2' ? 'checked' : '' }}>
+
+                                <div class="theme-template
+                                    {{ @$data->template_status == 'template2' ? 'active' : '' }}"
+                                    data-template="template2">
+
+                                    <div class="theme-preview">
+
+                                        <img src="{{ asset('frontend/assets/images/templates/template2.png') }}"
+                                            class="template-image"
+                                            alt="Emerald Green">
+
+                                    </div>
+
+                                    <div class="template-info">
+
+                                        <div>
+                                            <strong>Emerald Green</strong>
+                                            <small>Modern CRM</small>
+                                        </div>
+
+                                        <span class="template-check">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        {{-- ================= TEMPLATE 3 ================= --}}
+                        <div class="col-lg-4 col-md-6">
+
+                            <label class="w-100 mb-0">
+
+                                <input type="radio"
+                                    name="template_status"
+                                    value="template3"
+                                    class="template-radio"
+                                    {{ @$data->template_status == 'template3' ? 'checked' : '' }}>
+
+                                <div class="theme-template
+                                    {{ @$data->template_status == 'template3' ? 'active' : '' }}"
+                                    data-template="template3">
+
+                                    <div class="theme-preview">
+
+                                        <img src="{{ asset('frontend/assets/images/templates/template3.png') }}"
+                                            class="template-image"
+                                            alt="Purple Premium">
+
+                                    </div>
+
+                                    <div class="template-info">
+
+                                        <div>
+                                            <strong>Purple Premium</strong>
+                                            <small>Elegant</small>
+                                        </div>
+
+                                        <span class="template-check">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                        <hr>
+
+                        <h6 class="h6 mb-0 py-2">
+                            <i class="fas fa-sliders-h text-primary me-1"></i>
+                            Custom Change Color
+                        </h6>
+
+                        <hr>
+
+
+                        <div class="row g-3">
+
+                            {{-- Body Background --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <label class="form-label">
+                                    <b>Body Background</b>
+                                </label>
+
+                                <input type="text"
+                                    id="body_bg"
+                                    name="body_bg"
+                                    class="form-control color"
+                                    value="{{ @$data->body_bg }}">
+                            </div>
+
+
+                            {{-- Card Background --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <label class="form-label">
+                                    <b>Card Background</b>
+                                </label>
+
+                                <input type="text"
+                                    id="card_bg"
+                                    name="card_bg"
+                                    class="form-control color"
+                                    value="{{ @$data->card_bg }}">
+                            </div>
+
+
+                            {{-- Title Background --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <label class="form-label">
+                                    <b>Title Background</b>
+                                </label>
+
+                                <input type="text"
+                                    id="title_bg"
+                                    name="title_bg"
+                                    class="form-control color"
+                                    value="{{ @$data->title_bg }}">
+                            </div>
+
+
+                            {{-- Primary Color --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Primary Color</b>
+                                </label>
+
+                                <input type="text"
+                                    id="primary_color"
+                                    name="primary_color"
+                                    placeholder="Primary Color"
+                                    class="form-control color"
+                                    value="{{ @$data->primary_color }}">
+
+                            </div>
+
+
+                            {{-- Secondary Color --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Secondary Color</b>
+                                </label>
+
+                                <input type="text"
+                                    id="secondary_color"
+                                    name="secondary_color"
+                                    placeholder="Secondary Color"
+                                    class="form-control color"
+                                    value="{{ @$data->secondary_color }}">
+
+                            </div>
+
+
+                            {{-- Primary BG --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Primary Background</b>
+                                </label>
+
+                                <input type="text"
+                                    id="primary_bg"
+                                    name="primary_bg"
+                                    class="form-control color"
+                                    value="{{ @$data->primary_bg }}">
+
+                            </div>
+
+
+                            {{-- Secondary BG --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Secondary Background</b>
+                                </label>
+
+                                <input type="text"
+                                    id="secondary_bg"
+                                    name="secondary_bg"
+                                    class="form-control color"
+                                    value="{{ @$data->secondary_bg }}">
+
+                            </div>
+
+
+                            {{-- Text 1 --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Text Color 1</b>
+                                </label>
+
+                                <input type="text"
+                                    id="text1_color"
+                                    name="text1_color"
+                                    class="form-control color"
+                                    value="{{ @$data->text1_color }}">
+
+                            </div>
+
+
+                            {{-- Text 2 --}}
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                                <label class="form-label">
+                                    <b>Text Color 2</b>
+                                </label>
+
+                                <input type="text"
+                                    id="text2_color"
+                                    name="text2_color"
+                                    class="form-control color"
+                                    value="{{ @$data->text2_color }}">
+
+                            </div>
+
+                        </div>
+
+
+
+
                         </div>
                     </div>
                     <div class="card-footer text-end">
@@ -126,5 +773,28 @@
                 });
             }
         });
+    </script>
+    <script>
+
+    $(document).ready(function () {
+
+        $('.theme-template').on('click', function () {
+
+            let template = $(this).data('template');
+
+            // Remove selected
+            $('.theme-template').removeClass('active');
+
+            // Add selected
+            $(this).addClass('active');
+
+            // Select corresponding radio
+            $('input[name="template_status"][value="' + template + '"]')
+                .prop('checked', true);
+
+        });
+
+    });
+
     </script>
 @endpush
