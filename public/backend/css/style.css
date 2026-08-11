@@ -463,10 +463,6 @@ ul {
     color: var(--bs-white) !important;
 }
 
-.bg-light {
-    background-color: #037056 !important;
-}
-
 a {
     text-decoration: none;
     background-color: transparent;

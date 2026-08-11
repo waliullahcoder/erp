@@ -35,223 +35,628 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
 }
 
-body{
+body {
+    min-height: 100vh;
 
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.16), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(245, 158, 11, 0.10), transparent 30%),
+        #111827;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 1200px;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: 1.3fr .8fr;
+
+    gap: 24px;
+}
+
+
+/* ================================
+   LEFT CRM SECTION
+================================ */
+
+.left {
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31, 41, 55, 0.96),
+            rgba(17, 24, 39, 0.98)
+        );
+
+    backdrop-filter: blur(20px);
+
+    padding: 42px;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.30);
+}
+
+
+/* Decorative Circle */
+
+.left::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(16,185,129,.07);
+
+    right: -100px;
+    top: -100px;
+}
+
+.left::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(245,158,11,.05);
+
+    left: -80px;
+    bottom: -80px;
+}
+
+
+/* Heading */
+
+.left h1 {
+
+    position: relative;
+    z-index: 2;
+
+    color: #f9fafb;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.left h1 i {
+
+    color: #10b981;
+
+    margin-right: 8px;
+}
+
+
+.left p {
+
+    position: relative;
+    z-index: 2;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   CRM MODULES
+================================ */
+
+.modules {
+
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(145px, 1fr));
+
+    gap: 14px;
+}
+
+
+.card {
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    padding: 22px 12px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    background: rgba(16,185,129,.12);
+
+    border-color: rgba(16,185,129,.35);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.25);
+}
+
+
+.card.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981
+        );
+
+    border-color: #10b981;
+
+    box-shadow:
+        0 12px 30px rgba(16,185,129,.25);
+}
+
+
+.card i {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: #d1d5db;
+
+    margin-bottom: 10px;
+
+    transition: .3s;
+}
+
+
+.card:hover i,
+.card.active i {
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+
+.card h4 {
+
+    color: #e5e7eb;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+.card.active h4 {
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   LOGIN CARD
+================================ */
+
+.login {
+
+    position: relative;
+
+    background: #f9fafb;
+
+    padding: 42px;
+
+    border-radius: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.30);
+
+    border: 1px solid #e5e7eb;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.logo i {
+
+    width: 72px;
+    height: 72px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981
+        );
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 12px 25px rgba(16,185,129,.25);
+}
+
+
+.logo h2 {
+
+    margin-top: 15px;
+
+    color: #111827;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.logo p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   SELECTED MODULE
+================================ */
+
+.selected {
+
+    background: #ecfdf5;
+
+    padding: 11px 14px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    font-weight: 600;
+
+    color: #047857;
+
+    text-align: center;
+
+    border: 1px solid #d1fae5;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.input {
+
+    margin-bottom: 18px;
+
+    position: relative;
+}
+
+
+.input input {
+
+    width: 100%;
+
+    padding: 14px 45px 14px 15px;
+
+    border-radius: 11px;
+
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .25s;
+}
+
+
+.input input::placeholder {
+
+    color: #9ca3af;
+}
+
+
+.input input:focus {
+
+    border-color: #10b981;
+
+    box-shadow:
+        0 0 0 3px rgba(16,185,129,.10);
+}
+
+
+/* ================================
+   PASSWORD EYE
+================================ */
+
+.eye {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 16px;
+
+    cursor: pointer;
+
+    color: #6b7280;
+
+    transition: .2s;
+}
+
+
+.eye:hover {
+
+    color: #059669;
+}
+
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981
+        );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(16,185,129,.20);
+}
+
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(16,185,129,.30);
+}
+
+
+button:active {
+
+    transform: translateY(0);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media(max-width: 900px) {
+
+    body {
+
+        padding: 20px;
+
+    }
+
+    .container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+    }
+
+    .login {
+
+        order: -1;
+
+    }
+
+    .left {
+
+        padding: 30px;
+
+    }
 
 }
 
-.container{
 
-width:1200px;
-max-width:100%;
-display:grid;
-grid-template-columns:1.3fr .8fr;
-gap:30px;
+@media(max-width: 576px) {
 
-}
+    body {
 
-.left{
+        padding: 12px;
 
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(20px);
-padding:35px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,.15);
+    }
 
-}
+    .left,
+    .login {
 
-.left h1{
+        padding: 25px 20px;
 
-color:#fff;
-margin-bottom:8px;
+        border-radius: 18px;
 
-}
+    }
 
-.left p{
+    .left h1 {
 
-color:#dbeafe;
-margin-bottom:30px;
+        font-size: 24px;
 
-}
+    }
 
-.modules{
+    .modules {
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:18px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-}
+        gap: 10px;
 
-.card{
+    }
 
-background:rgba(255,255,255,.06);
-border:1px solid rgba(255,255,255,.12);
-padding:25px 10px;
-border-radius:18px;
-text-align:center;
-cursor:pointer;
-transition:.35s;
+    .card {
 
-}
+        padding: 18px 8px;
 
-.card:hover{
+    }
 
-transform:translateY(-8px);
-background:#2563eb;
-box-shadow:0 15px 30px rgba(0,0,0,.35);
+    .card i {
+
+        font-size: 25px;
+
+    }
+
+    .card h4 {
+
+        font-size: 12px;
+
+    }
 
 }
 
-.card.active{
 
-background:#06b6d4;
+/* ================================
+   SMOOTH ANIMATION
+================================ */
 
-}
+@keyframes fadeUp {
 
-.card i{
+    from {
 
-font-size:35px;
-color:#fff;
-margin-bottom:12px;
+        opacity: 0;
 
-}
+        transform: translateY(15px);
 
-.card h4{
+    }
 
-color:#fff;
-font-size:15px;
+    to {
 
-}
+        opacity: 1;
 
-.login{
+        transform: translateY(0);
 
-background: linear-gradient(135deg, #06B6D4, #2563EB);
-padding:40px;
-border-radius:20px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-box-shadow:0 15px 40px rgba(0,0,0,.25);
+    }
 
 }
 
-.logo{
 
-text-align:center;
-margin-bottom:20px;
+.container {
 
-}
-
-.logo i{
-
-font-size:60px;
-color:#2563eb;
-
-}
-
-.logo h2{
-
-margin-top:10px;
-color:#1e293b;
-
-}
-
-.selected{
-
-background:#eff6ff;
-padding:10px;
-border-radius:8px;
-margin-bottom:20px;
-font-weight:600;
-color:#2563eb;
-text-align:center;
-
-}
-
-.input{
-
-margin-bottom:18px;
-position:relative;
-
-}
-
-.input input{
-
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:15px;
-outline:none;
-
-}
-
-.eye{
-
-position:absolute;
-right:15px;
-top:16px;
-cursor:pointer;
-color:#666;
-
-}
-
-button{
-
-width:100%;
-padding:14px;
-border:none;
-background:#2563eb;
-color:#fff;
-font-size:16px;
-font-weight:600;
-border-radius:10px;
-cursor:pointer;
-transition:.3s;
-
-}
-
-button:hover{
-
-background:#1d4ed8;
-
-}
-
-.footer{
-
-margin-top:15px;
-text-align:center;
-font-size:13px;
-color:#888;
-
-}
-
-@media(max-width:900px){
-
-.container{
-
-grid-template-columns:1fr;
-
-}
-
-.login{
-
-order:-1;
-
-}
+    animation: fadeUp .6s ease;
 
 }
 
