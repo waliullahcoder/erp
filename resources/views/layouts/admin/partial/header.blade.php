@@ -197,7 +197,7 @@
             </div>
 
             <!-- Vertical Separator Line (Only visible on desktop) -->
-            <div class="d-none d-md-block" style="width: 1px; height: 22px; background-color: #e2e8f0; margin: 0 4px;"></div>
+            <!-- <div class="d-none d-md-block" style="width: 1px; height: 22px; background-color: #e2e8f0; margin: 0 4px;"></div> -->
 
             <!-- DROPDOWN FOR LISTS (Protects Space, Always Visible) -->
             <div class="dropdown">

@@ -3866,7 +3866,7 @@ div.dataTables_wrapper div.dataTables_info {
 .uppy-Dashboard-files,
 .bootstrap-select .dropdown-menu .inner {
     scrollbar-color: rgba(24, 28, 41, 0.08);
-    scrollbar-width: thin;
+    scrollbar-width: none;
 }
 
 .tooltip-inner {

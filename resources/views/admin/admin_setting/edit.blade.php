@@ -477,17 +477,17 @@
                                     <div class="theme-preview">
 
                                         {{-- Template Image --}}
-                                        <img src="{{ asset('backend/images/template1.png') }}"
+                                        <img src="{{ asset('backend/images/darkness.png') }}"
                                             class="template-image"
-                                            alt="Ocean Blue">
+                                            alt="Darkness Blue">
 
                                     </div>
 
                                     <div class="template-info">
 
                                         <div>
-                                            <strong>Ocean Blue</strong>
-                                            <small>Professional</small>
+                                            <strong>Darkness Blue</strong>
+                                            <small>Night View</small>
                                         </div>
 
                                         <span class="template-check">
@@ -520,17 +520,17 @@
 
                                     <div class="theme-preview">
 
-                                        <img src="{{ asset('backend/images/template1.png') }}"
+                                        <img src="{{ asset('backend/images/lightness.png') }}"
                                             class="template-image"
-                                            alt="Emerald Green">
+                                            alt="Lightness Standard">
 
                                     </div>
 
                                     <div class="template-info">
 
                                         <div>
-                                            <strong>Emerald Green</strong>
-                                            <small>Modern CRM</small>
+                                            <strong>Lightness Standard</strong>
+                                            <small>Day View</small>
                                         </div>
 
                                         <span class="template-check">
@@ -563,17 +563,17 @@
 
                                     <div class="theme-preview">
 
-                                        <img src="{{ asset('backend/images/template1.png') }}"
+                                        <img src="{{ asset('backend/images/colorful.png') }}"
                                             class="template-image"
-                                            alt="Purple Premium">
+                                            alt="Colorful Theme">
 
                                     </div>
 
                                     <div class="template-info">
 
                                         <div>
-                                            <strong>Purple Premium</strong>
-                                            <small>Elegant</small>
+                                            <strong>Colorful Theme</strong>
+                                            <small>Color View</small>
                                         </div>
 
                                         <span class="template-check">
@@ -605,16 +605,16 @@
 
                                     <div class="theme-preview">
 
-                                        <img src="{{ asset('backend/images/template1.png') }}"
+                                        <img src="{{ asset('backend/images/custom.png') }}"
                                             class="template-image"
-                                            alt="Purple Premium">
+                                            alt="Custom View">
 
                                     </div>
 
                                     <div class="template-info">
 
                                         <div>
-                                            <strong>Custom</strong>
+                                            <strong>Custom View</strong>
                                             <small>Change color you choice</small>
                                         </div>
 
