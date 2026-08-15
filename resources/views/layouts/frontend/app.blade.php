@@ -58,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 30px;
+    padding: 12px;
 }
 
 
@@ -95,7 +95,7 @@ body {
 
     backdrop-filter: blur(20px);
 
-    padding: 42px;
+    padding: 20px;
 
     border-radius: 24px;
 
@@ -296,7 +296,7 @@ body {
 
     background: #f9fafb;
 
-    padding: 42px;
+    padding: 10px;
 
     border-radius: 24px;
 
@@ -321,13 +321,13 @@ body {
 
     text-align: center;
 
-    margin-bottom: 28px;
+    margin-bottom: 5px;
 }
 
 
 .logo i {
 
-    width: 72px;
+    width: 85px;
     height: 72px;
 
     display: inline-flex;
@@ -660,8 +660,235 @@ button:active {
 
 }
 
+
+/* ================================
+   LOGIN CREDENTIAL SWITCH
+================================ */
+
+.login {
+    position: relative;
+}
+
+.credential-switch {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    display: flex;
+    gap: 5px;
+
+    padding: 4px;
+    background: #f3f4f6;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    z-index: 10;
+}
+
+.credential-btn {
+    width: auto;
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #6b7280;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    box-shadow: none;
+    transform: none;
+
+    transition: all .25s ease;
+}
+
+.credential-btn i {
+    margin-right: 4px;
+}
+
+.credential-btn:hover {
+    transform: none;
+    background: #ffffff;
+    color: #059669;
+    box-shadow: none;
+}
+
+.credential-btn.active {
+    background: linear-gradient(
+        135deg,
+        #059669,
+        #10b981
+    );
+
+    color: #ffffff;
+
+    box-shadow: 0 4px 10px rgba(16,185,129,.20);
+}
+
+@media(max-width:576px) {
+    .credential-switch {
+        top: 12px;
+        right: 12px;
+    }
+
+    .credential-btn {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+}
+
+.selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 10px;
+    margin-bottom: 20px;
+    background: #ecfdf5;
+    border: 1px solid #d1fae5;
+    border-radius: 10px;
+    color: #047857;
+}
+
+.plan-buttons {
+    display: inline-flex;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.plan-btn {
+    width: auto !important;
+    padding: 5px 9px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+    color: #6b7280 !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    line-height: 1.2;
+}
+
+.plan-btn:hover,
+.plan-btn.active {
+    background: #059669 !important;
+    border-color: #059669 !important;
+    color: #fff !important;
+}
+
+.module-text {
+    font-size: 11px;
+    white-space: nowrap;
+}
 </style>
 
+<style>
+.pricing-banner {
+   
+    padding: 5px 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #f0fdfa,
+        #eff6ff
+    );
+
+    border: 1px solid #d1fae5;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.pricing-title {
+   
+
+    color: #047857;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pricing-title i {
+    font-size: 16px;
+}
+
+.pricing-items {
+   
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.price-item {
+   
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.price-label {
+    color: #374151;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.price-item strong {
+    color: #059669;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.price-item small {
+    color: #6b7280;
+    font-size: 9px;
+}
+
+.price-item.highlight {
+    padding: 7px 10px;
+    background: #ffffff;
+    border: 1px solid #a7f3d0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(16,185,129,.10);
+}
+
+.price-item.highlight strong {
+    color: #d97706;
+}
+
+.divider {
+    width: 1px;
+    height: 28px;
+    background: #d1d5db;
+}
+
+@media(max-width: 900px) {
+    .pricing-banner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pricing-title {
+        justify-content: center;
+    }
+
+    .pricing-items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .divider {
+        display: none;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -743,13 +970,59 @@ button:active {
 
 <div class="logo">
 
-<i class="fa-solid fa-cube"></i>
+<!-- <i class="fa-solid fa-cube"></i> -->
+<!-- 
+<h2>ERP Login</h2> -->
+<div class="pricing-banner">
+    <div class="pricing-title">
+        <i class="fa-solid fa-tags"></i>
+        <span>Pricing Plans</span>
+    </div>
 
-<h2>ERP Login</h2>
+    <div class="pricing-items">
+        <div class="price-item">
+            <span class="price-label">Monthly</span>
+            <strong>৳5,000</strong>
+            <small>Advanced + Support</small>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="price-item">
+            <span class="price-label">Basic</span>
+            <strong>৳10,000</strong>
+            <small>One-Time</small>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="price-item">
+            <span class="price-label">Advanced</span>
+            <strong>৳20,000</strong>
+            <small>Our Hosting</small>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="price-item highlight">
+            <span class="price-label">Advanced + Source Code</span>
+            <strong>৳120,000</strong>
+            <small>One-Time</small>
+        </div>
+    </div>
+</div>
 
 </div>
 
 <div class="selected">
+    <span class="plan-buttons">
+        <button type="button" class="plan-btn" data-module="Basic">Basic</button>
+        <button type="button" class="plan-btn active" data-module="Advance">Advance</button>
+    </span>
+
+    <!-- <span class="module-text">
+        Selected Module : <strong id="moduleName">Dashboard</strong>
+    </span> -->
 
 Selected Module :
 <span id="moduleName">Dashboard</span>
@@ -814,10 +1087,13 @@ const moduleUsers = {
     "Website CMS": { username: "website", password: "12345678" },
     "Order Management": { username: "orders", password: "12345678" },
     "Reports": { username: "reports", password: "12345678" },
-    "Settings": { username: "settings", password: "12345678" }
+    "Settings": { username: "settings", password: "12345678" },
+    "Advance": { username: "advance", password: "12345678" },
+    "Basic": { username: "basic", password: "12345678" }
 };
 
 let cards = document.querySelectorAll(".card");
+let plan_btn = document.querySelectorAll(".plan-btn");
 
 cards.forEach(card => {
 
@@ -837,6 +1113,39 @@ cards.forEach(card => {
     }
 
 });
+
+        // ===============================
+        // BASIC / ADVANCE PLAN BUTTON
+        // ===============================
+
+        let planBtns = document.querySelectorAll(".plan-btn");
+
+        planBtns.forEach(btn => {
+
+            btn.onclick = function () {
+
+                // Remove active from both buttons
+                planBtns.forEach(b => b.classList.remove("active"));
+
+                // Add active to clicked button
+                this.classList.add("active");
+
+                // Get Basic / Advance
+                let module = this.dataset.module;
+
+                // Update selected module
+                document.getElementById("moduleName").innerHTML = module;
+                document.getElementById("module").value = module;
+
+                // Auto Fill Username & Password
+                document.getElementById("username").value =
+                    moduleUsers[module].username;
+
+                document.getElementById("password").value =
+                    moduleUsers[module].password;
+            }
+
+        });
 
 </script>
 
