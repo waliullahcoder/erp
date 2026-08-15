@@ -127,7 +127,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'thumbnail' => 'image',
+            // 'thumbnail' => 'image',
             'category_id' => 'required',
             'code' => 'required|unique:products,code',
         ]);
