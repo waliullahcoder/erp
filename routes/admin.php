@@ -137,6 +137,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('/lead', LeadController::class);
     Route::get('/crm/dashboard',[LeadController::class,'dashboard'])->name('crm.dashboard');
     Route::put('/lead/{id}/status',[LeadController::class,'updateStatus'])->name('lead.status.update');
+    Route::get('/enlisted/new',[LeadController::class,'enlistedNew'])->name('enlisted.new');
 
     Route::resource('/meeting-schedule', MeetingController::class);
     Route::resource('/quotation', QuotationController::class);

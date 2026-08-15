@@ -22,7 +22,6 @@ class LeadController extends Controller
    public function index()
     {
         if (request()->ajax()) {
-
             $model = DB::table('crm_leads as l')
                 ->leftJoin('crm_lead_sources as ls', 'ls.id', '=', 'l.lead_source_id')
                 ->leftJoin('crm_lead_statuses as st', 'st.id', '=', 'l.lead_status_id')
@@ -118,6 +117,115 @@ class LeadController extends Controller
 
         return view('crm.leads.index',compact('lead_statuses'));
     }
+
+    public function enlistedNew()
+    {
+       
+
+        if (request()->ajax()) {
+            $model = DB::table('crm_leads as l')
+                ->leftJoin('crm_lead_sources as ls', 'ls.id', '=', 'l.lead_source_id')
+                ->leftJoin('crm_lead_statuses as st', 'st.id', '=', 'l.lead_status_id')
+                ->leftJoin('users as u', 'u.id', '=', 'l.assigned_to')
+                ->select(
+                    'l.id',
+                    'l.lead_no',
+                    'l.remarks',
+                    'l.company_name',
+                    'l.contact_person',
+                    'l.mobile',
+                    'ls.name as lead_source',
+                    'st.id as lead_status_id',
+                    'st.name as lead_status',
+                    'st.color as lead_status_color',
+                    'l.priority',
+                    'l.expected_value',
+                    'u.name as assigned_to',
+                    'l.follow_up_date',
+                    'l.next_follow_up'
+                )
+                ->where('l.lead_status_id', 1)
+                ->orderByDesc('l.id');
+            return DataTables::of($model)
+               
+                 ->editColumn('follow_up_date', function ($row) {
+                    return $row->follow_up_date
+                        ? date('d M, Y', strtotime($row->follow_up_date))
+                        : '-';
+                })
+                ->editColumn('next_follow_up', function ($row) {
+                    return $row->next_follow_up
+                        ? date('d M, Y', strtotime($row->next_follow_up))
+                        : '-';
+                })
+                ->editColumn('lead_status', function ($row) {
+
+                    return '<span class="badge"
+                                style="background-color:'.$row->lead_status_color.';
+                                    color:#fff;
+                                    padding:6px 12px;
+                                    border-radius:20px;">
+                                '.$row->lead_status.'
+                            </span>';
+
+                })
+
+               ->addColumn('actions', function ($row) {
+
+                    $btn = '';
+
+                    if(auth()->user()->can('admin.lead.show')){
+                        $btn .= '<a href="'.route('admin.lead.show',$row->id).'"
+                            class="btn btn-sm btn-primary">
+                            <i class="fas fa-eye"></i>
+                        </a>';
+                    }
+
+                    if(auth()->user()->can('admin.lead.edit') && $row->lead_status!='Converted'){
+                        $btn .= '<a href="'.route('admin.lead.edit',$row->id).'"
+                            class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i>
+                        </a>';
+                    }
+                    if(auth()->user()->can('admin.lead.edit') && $row->lead_status!='Converted'){
+                        $btn .= '<button type="button"
+                            class="btn btn-sm btn-secondary btn-status"
+                            data-id="'.$row->id.'"
+                            data-statusid="'.$row->lead_status_id.'"
+                            data-status="'.$row->lead_status.'"
+                            data-remarks="'.e($row->remarks).'"
+                            title="Update Status">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>';
+                    }
+
+                    if(auth()->user()->can('admin.lead.destroy')){
+                        $btn .= '<button class="btn btn-sm btn-danger link-delete"
+                            data-url="'.route('admin.lead.destroy',$row->id).'">
+                            <i class="fas fa-trash"></i>
+                        </button>';
+                    }
+
+                    return '<div class="btn-group">'.$btn.'</div>';
+                })
+
+                ->rawColumns([
+                    'lead_status',
+                    'status',
+                    'actions'
+                ])
+
+                ->make(true);
+               
+        }
+          $lead_statuses = DB::table('crm_lead_statuses')
+            ->where('status',1)
+            ->orderBy('sort_order')
+            ->get();
+        
+        return view('crm.leads.new',compact('lead_statuses'));
+    }
+    
     public function dashboard()
     {
            $total_lead= DB::table('crm_leads')->count();
